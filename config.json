@@ -5,6 +5,7 @@
   "checklist_issue": 6,
   "active": true,
   "problems": [
+    "hello-world",
     "bob",
     "etl",
     "hamming",
