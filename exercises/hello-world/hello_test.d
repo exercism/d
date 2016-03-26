@@ -4,16 +4,11 @@ import helloworld;
 
 import std.stdio;
 
-unittest {
+void main() {
     assert(hello() == "Hello, World!");
-}
-
-unittest {
     assert(hello("Alice") == "Hello, Alice!");
     assert(hello("Bob") == "Hello, Bob!");
-}
+    assert(hello("") == "Hello, !");
 
-
-void main() {
     writeln("All tests passed.");
 }
