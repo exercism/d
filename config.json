@@ -6,6 +6,7 @@
   "active": true,
   "problems": [
     "hello-world",
+    "gigasecond",
     "bob",
     "etl",
     "hamming",
