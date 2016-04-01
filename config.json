@@ -6,7 +6,8 @@
   "problems": [
     "hello-world",
     "hamming",
-    "gigasecond"
+    "gigasecond",
+    "rna-transcription"
   ],
   "deprecated": [
 
