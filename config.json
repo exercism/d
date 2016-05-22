@@ -5,7 +5,13 @@
   "checklist_issue": 6,
   "active": false,
   "problems": [
-
+    "hello-world",
+    "hamming",
+    "gigasecond",
+    "rna-transcription",
+    "raindrops",
+    "difference-of-squares",
+    "roman-numerals"
   ],
   "deprecated": [
 
