@@ -1,2 +1,5 @@
 bin/configlet
 bin/configlet.exe
+*.swp
+*.swo
+
