@@ -5,7 +5,8 @@
   "checklist_issue": 6,
   "active": false,
   "problems": [
-    "bob"
+    "bob",
+    "hamming"
 
   ],
   "deprecated": [
