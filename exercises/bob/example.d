@@ -27,7 +27,6 @@ bool all_printable (string text)
 bool has_alpha (string text)
 {
 	auto pos = countUntil!((dchar c) => !isAlpha(c))(text);
-	writeln("Position is %", pos);
 	return pos == -1;
 }
 
