@@ -68,9 +68,6 @@ string hey (string text)
 
 unittest
 {
-const int all_tests_enabled = 0;
-
-	assert(all_upper("WATCH OUT!"));
 	assert(hey("Tom-ay-to, tom-aaaah-to.") == "Whatever.");
 	assert(hey("WATCH OUT!") == "Whoa, chill out!");
 	assert(hey("Does this cryogenic chamber make me look fat?") == "Sure.");
@@ -88,11 +85,6 @@ const int all_tests_enabled = 0;
 	assert(hey("") == "Fine. Be that way!");
 	assert(hey("   ") == "Fine. Be that way!");
 	assert(hey(" A bit of silence can be nice.  ") == "Whatever.");
-
-static if (all_tests_enabled)
-{
-}
-
 }
 
 void main ()
