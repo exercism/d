@@ -110,6 +110,13 @@ bool aa_equal (const int[dchar] lhs, const int[dchar] rhs)
 	assert(aa_equal(expected, actual));
 }
 
+// throw exception
+{
+	immutable string[int] old = [1: "ae"];
+
+	assertThrown(transform(old));
+}
+
 // transforms a full dataset
 {
 	immutable string[int] old = [1: "AEIOULNRST",
