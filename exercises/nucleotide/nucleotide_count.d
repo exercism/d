@@ -40,6 +40,8 @@ immutable int all_tests_enabled = 0;
 	assert(aa_equal(expected, actual));
 }
 
+static if (all_tests_enabled)
+{
 // has_no_adenosine
 {
 	    const dna::counter dna("");
@@ -97,8 +99,6 @@ immutable int all_tests_enabled = 0;
 				    REQUIRE_EQUAL_CONTAINERS(expected, actual);
 }
 
-static if (all_tests_enabled)
-{
 }
 
 }
