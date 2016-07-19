@@ -3,22 +3,15 @@ module dna;
 
 import std.stdio;
 import std.string;
-import std.ascii : isUpper, isAlpha, toUpper, isPrintable;
-import std.algorithm.searching : countUntil, endsWith;
-
-
-bool all_printable (string text)
-{
-	auto pos = countUntil!((dchar c) => !isPrintable(c))(text);
-	return pos == -1;
-}
-
+import std.array;
+import std.algorithm.sorting: sort;
+import std.algorithm.comparison: equal;
 
 unittest
 {
 
 // test associative array equality
-bool aa_equal (const int[dchar] lhs, const int[dchar] rhs)
+bool aa_equal (const int[char] lhs, const int[char] rhs)
 {
 	auto lhs_pairs = lhs.byKeyValue.array;
 	auto rhs_pairs = rhs.byKeyValue.array;
@@ -32,10 +25,10 @@ immutable int all_tests_enabled = 0;
 
 // has_no_nucleotides
 {
-	const counter dna("");
-	const int[char] expected = ['A': 0, 'T': 0, 'C': 0, 'G':0];
+	const counter dna = new counter("");
+	const ulong[char] expected = ['A': 0, 'T': 0, 'C': 0, 'G':0];
 
-	const auto actual = dna.nucleotide_counts();
+	auto actual = dna.nucleotide_counts();
 
 	assert(aa_equal(expected, actual));
 }
@@ -44,61 +37,61 @@ static if (all_tests_enabled)
 {
 // has_no_adenosine
 {
-	    const dna::counter dna("");
+	const counter dna = new counter("");
 
-		    BOOST_REQUIRE_EQUAL(0, dna.count('A'));
+	assert(dna.count_one('A') == 0);
 }
 
-//repetitive_cytidine_gets_counts)
+// repetitive_cytidine_gets_count
 {
-	    const dna::counter dna("CCCCC");
+	const counter dna = new counter("CCCCC");
 
-		    BOOST_REQUIRE_EQUAL(5, dna.count('C'));
+	assert(dna.count_one('C') == 5);
 }
 
-//repetitive_sequence_has_only_guanosine)
+// repetitive_sequence_has_only_guanosine
 {
-	    const dna::counter dna("GGGGGGGG");
-	        const std::map<char, int> expected{ {'A', 0}, {'T', 0}, {'C', 0}, {'G', 8} };
+	const counter dna = new counter("GGGGGGGG");
+	const ulong[char] expected = ['A': 0, 'T': 0, 'C': 0, 'G': 8];
 
-			    const auto actual = dna.nucleotide_counts();
+	const auto actual = dna.nucleotide_counts();
 
-				    REQUIRE_EQUAL_CONTAINERS(expected, actual);
+	assert(aa_equal(expected, actual));
 }
 
-//counts_only_thymidine)
+// count_only_thymidine
 {
-	    const dna::counter dna("GGGGTAACCCGG");
+	const counter dna = new counter("GGGGTAACCCGG");
 
-		    BOOST_REQUIRE_EQUAL(1, dna.count('T'));
+	assert(dna.count_one('T') == 1);
 }
 
-//counts_a_nucleotide_only_once)
+// count_a_nucleotide_only_once
 {
-	    const dna::counter dna("GGTTGG");
 
-		    dna.count('T');
+	const counter dna = new counter("GGTTGG");
 
-			    BOOST_REQUIRE_EQUAL(2, dna.count('T'));
+	dna.count_one('T');
+
+	assert(dna.count_one('T') == 2);
 }
 
-//validates_nucleotides)
+// validates_nucleotides
 {
-	    const dna::counter dna("GGTTGG");
+	const counter dna = new counter("GGTTGG");
 
-		    BOOST_REQUIRE_THROW(dna.count('X'), std::invalid_argument);
+	assertThrown(dna.count_one('X'));
 }
 
-//counts_all_nucleotides)
+// count_all_nucleotides)
 {
-	    const dna::counter dna("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
-	        std::map<char, int> expected{ {'A', 20}, {'T', 21}, {'G', 17}, {'C', 12} };
+	const counter dna = new counter("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
+	const ulong[char] expected = ['A': 20, 'T': 21, 'G': 17, 'C': 12 ];
 
-			    auto actual = dna.nucleotide_counts();
+	auto actual = dna.nucleotide_counts();
 
-				    REQUIRE_EQUAL_CONTAINERS(expected, actual);
+	assert(aa_equal(expected, actual));
 }
-
 }
 
 }
