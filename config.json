@@ -9,7 +9,8 @@
     "hamming",
     "etl",
     "nucleotide-count",
-    "robot-name"
+    "robot-name",
+    "triangle"
 
   ],
   "deprecated": [
