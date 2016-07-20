@@ -10,7 +10,8 @@
     "etl",
     "nucleotide-count",
     "robot-name",
-    "triangle"
+    "triangle",
+    "series"
 
   ],
   "deprecated": [
