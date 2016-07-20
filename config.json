@@ -8,7 +8,8 @@
     "bob",
     "hamming",
     "etl",
-    "nucleotide-count"
+    "nucleotide-count",
+    "robot-name"
 
   ],
   "deprecated": [
