@@ -29,7 +29,7 @@ int distance (string lhs, string rhs)
 
 unittest
 {
-	assert(distance("A", "A") == 0);
+    assert(distance("A", "A") == 0);
     assert(distance("A", "G") == 1);
     assert(distance("AG", "CT") == 2);
     assert(distance("AT", "CT") == 1);
