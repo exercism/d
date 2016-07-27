@@ -8,7 +8,8 @@ If your code does not pass the one or more tests but is valid D code, it will st
 
 Working through each exercise is a process of:
 
-* Creating the initial build with **dmd -run hello.d -de -w -unittest**
+* Creating the initial build with **dmd example.d -de -w -unittest**
+* Run  with **./example or example.exe** depending on the platform
 * For each unit test:
  * Satisfy compile errors to make the test fail.
  * Implement just enough to make the test pass.
