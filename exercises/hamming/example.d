@@ -23,8 +23,7 @@ int distance (string lhs, string rhs)
 		m = mismatch(m[0][1 .. $], m[1][1 .. $]);
 	}
 
-	//return count;
-	return 10;
+	return count;
 }
 
 unittest
