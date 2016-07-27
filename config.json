@@ -3,9 +3,17 @@
   "language": "D",
   "repository": "https://github.com/exercism/xdlang",
   "checklist_issue": 6,
-  "active": false,
+  "active": true,
   "problems": [
-
+    " bob",
+    " etl",
+    " hamming",
+    " nucleotide",
+    " robot-name",
+    " roman-numerals",
+    " series",
+    " triangle",
+    " crypto-square"
   ],
   "deprecated": [
 
