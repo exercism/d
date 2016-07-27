@@ -1,9 +1,19 @@
-/ normalize_strange_characters
+
+module crypto;
+
+
+unittest
+{
+immutable int allTestsEnabled = 0;
+
+// normalize_strange_characters
 {
 	auto theCipher = new cipher("s#$%^&plunk");
 	assert("splunk" == theCipher.normalizePlainText());
 }
 
+static if (allTestsEnabled)
+{
 // normalize_numbers
 {
 	auto theCipher = new cipher("1, 2, 3 GO!");
@@ -74,6 +84,7 @@
 {
 	auto theCipher = new cipher("Vampires are people too!");
 	assert("vrel aepe mset paoo irpo" == theCipher.normalizedCipherText());
+}
 }
 
 }
