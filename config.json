@@ -13,7 +13,8 @@
     "triangle",
     "series",
     "roman-numerals",
-    "crypto-square"
+    "crypto-square",
+    "circular-buffer"
 
   ],
   "deprecated": [
