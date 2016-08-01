@@ -9,7 +9,7 @@ unittest
 {
 
 // test associative array equality
-bool aa_equal (const int[dchar] lhs, const int[dchar] rhs)
+bool aaEqual (const int[dchar] lhs, const int[dchar] rhs)
 {
 	auto lhs_pairs = lhs.byKeyValue.array;
 	auto rhs_pairs = rhs.byKeyValue.array;
@@ -19,7 +19,7 @@ bool aa_equal (const int[dchar] lhs, const int[dchar] rhs)
 	return equal!("a.key == b.key && a.value == b.value")(lhs_pairs, rhs_pairs);
 }
 
-immutable int all_tests_enabled = 0;
+immutable int allTestsEnabled = 0;
 
 // transform one value
 {
@@ -28,10 +28,10 @@ immutable int all_tests_enabled = 0;
 	const auto actual = transform(old);
 	const int[dchar] expected = ['a': 1];
 
-	assert(aa_equal(expected, actual));
+	assert(aaEqual(expected, actual));
 }
 
-static if (all_tests_enabled)
+static if (allTestsEnabled)
 {
 // transform more values
 {
@@ -40,7 +40,7 @@ static if (all_tests_enabled)
 	const auto actual = transform(old);
 	const int[dchar] expected = ['a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1];
 
-	assert(aa_equal(expected, actual));
+	assert(aaEqual(expected, actual));
 }
 
 // transforms more keys
@@ -50,7 +50,7 @@ static if (all_tests_enabled)
 	const auto actual = transform(old);
 	const int[dchar] expected = ['a': 1, 'e': 1, 'd': 2, 'g': 2];
 
-	assert(aa_equal(expected, actual));
+	assert(aaEqual(expected, actual));
 }
 
 // transforms a full dataset
@@ -72,7 +72,7 @@ static if (all_tests_enabled)
 								'u': 1, 'v': 4,  'w': 4, 'x': 8, 'y': 4,
 								'z': 10];
 
-	assert(aa_equal(expected, actual));
+	assert(aaEqual(expected, actual));
 }
 
 }
