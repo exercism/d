@@ -5,15 +5,16 @@
   "checklist_issue": 6,
   "active": true,
   "problems": [
-    " bob",
-    " etl",
-    " hamming",
-    " nucleotide",
-    " robot-name",
-    " roman-numerals",
-    " series",
-    " triangle",
-    " crypto-square"
+    "bob",
+    "etl",
+    "hamming",
+    "nucleotide-count",
+    "robot-name",
+    "roman-numerals",
+    "series",
+    "triangle",
+    "crypto-square",
+    "circular-buffer"
   ],
   "deprecated": [
 
