@@ -4,10 +4,10 @@ module bob;
 
 unittest
 {
-const int all_tests_enabled = 0;
+const int allTestsEnabled = 0;
 
 	assert(hey("Tom-ay-to, tom-aaaah-to.") == "Whatever.");
-static if (all_tests_enabled)
+static if (allTestsEnabled)
 {
 	assert(hey("WATCH OUT!") == "Whoa, chill out!");
 	assert(hey("Does this cryogenic chamber make me look fat?") == "Sure.");

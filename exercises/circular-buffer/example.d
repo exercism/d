@@ -50,7 +50,7 @@ public:
 		writeIndex = 0;
 	}
 
-	void force_push (ElementType element)
+	void forcePush (ElementType element)
 	{
 		if (this.full())
 		{
@@ -155,30 +155,30 @@ unittest
 	assertThrown(myBuffer.push('4'), "Full buffer should throw exception if new element pushed!");
 }
 
-// test force_push full buffer
+// test forcePush full buffer
 {
 	auto myBuffer = new Buffer!(char)(3);
 	myBuffer.push('1');
 	myBuffer.push('2');
 	myBuffer.push('3');
 
-	myBuffer.force_push('A');
+	myBuffer.forcePush('A');
 	assert(myBuffer.pop() == '2');
 	assert(myBuffer.pop() == '3');
 	assert(myBuffer.pop() == 'A');
 }
 
-// test force_push non-full buffer
+// test forcePush non-full buffer
 {
 	auto myBuffer = new Buffer!(int)(2);
-	myBuffer.force_push(1000);
-	myBuffer.force_push(2000);
+	myBuffer.forcePush(1000);
+	myBuffer.forcePush(2000);
 
 	assert(myBuffer.pop() == 1000);
 	assert(myBuffer.pop() == 2000);
 }
 
-// test alternate read and force_push
+// test alternate read and forcePush
 {
 	auto myBuffer = new Buffer!(char)(5);
 	myBuffer.push('1');
@@ -194,8 +194,8 @@ unittest
 	myBuffer.push('6');
 	myBuffer.push('7');
 	myBuffer.push('8');
-	myBuffer.force_push('A');
-	myBuffer.force_push('B');
+	myBuffer.forcePush('A');
+	myBuffer.forcePush('B');
 
 	assert(myBuffer.pop() == '6');
 	assert(myBuffer.pop() == '7');
@@ -210,5 +210,4 @@ unittest
 void main ()
 {
 }
-
 
