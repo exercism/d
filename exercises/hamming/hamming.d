@@ -1,13 +1,12 @@
 
 module hamming;
 
-
 unittest
 {
-const int all_tests_enabled = 0;
+const int allTestsEnabled = 0;
 
-	assert(distance("A", "A") == 0);
-static if (all_tests_enabled)
+    assert(distance("A", "A") == 0);
+static if (allTestsEnabled)
 {
     assert(distance("A", "G") == 1);
     assert(distance("AG", "CT") == 2);

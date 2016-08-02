@@ -1,39 +1,37 @@
 
 module nucleotide;
 
-import std.stdio;
 import std.string;
 import std.algorithm.comparison : equal;
 import std.algorithm.sorting : sort;
-import std.algorithm.iteration : each;
 import std.algorithm.searching : count;
 import std.typecons;
 import std.array : array;
 import std.exception;
 
 
-class counter
+class Counter
 {
 public:
 
 	this (string chain)
 	{
-		this.dna_chain = chain;
-		cached_counts = init_counts(chain);
+		this.dnaChain = chain;
+		cachedCounts = initCounts(chain);
 	}
 
 	this (const ref string chain)
 	{
-		this.dna_chain = chain;
-		cached_counts = init_counts(chain);
+		this.dnaChain = chain;
+		cachedCounts = initCounts(chain);
 	}
 
-	final const(ulong[char]) nucleotide_counts () const
+	final const(ulong[char]) nucleotideCounts () const
 	{
-		return cached_counts;
+		return cachedCounts;
 	}
 
-	final ulong count_one (const char c) const
+	final ulong countOne (const char c) const
 	{
 		char[] nucleotides = ['A', 'C', 'G', 'T'];
 		if (c != nucleotides[0] && c != nucleotides[1] && c != nucleotides[2] && c!= nucleotides[3])
@@ -41,12 +39,12 @@ public:
 			throw new Exception("Nucleotide invalid symbol.");
 		}
 
-		return cached_counts[c];
+		return cachedCounts[c];
 	}
 
 private:
 
-	ulong[char] init_counts (const ref string chain)
+	ulong[char] initCounts (const ref string chain)
 	{
 		ulong[char] counts = ['A': 0, 'C': 0, 'G': 0, 'T': 0];
 
@@ -60,15 +58,15 @@ private:
 		return counts;
 	}
 
-	const string dna_chain;
-	ulong[char] cached_counts;
+	const string dnaChain;
+	ulong[char] cachedCounts;
 }
 
 unittest
 {
 
 // test associative array equality
-bool aa_equal (const ulong[char] lhs, const ulong[char] rhs)
+bool aaEqual (const ulong[char] lhs, const ulong[char] rhs)
 {
 	auto lhs_pairs = lhs.byKeyValue.array;
 	auto rhs_pairs = rhs.byKeyValue.array;
@@ -80,70 +78,70 @@ bool aa_equal (const ulong[char] lhs, const ulong[char] rhs)
 
 // has_no_nucleotides
 {
-	const counter dna = new counter("");
+	const Counter dna = new Counter("");
 	const ulong[char] expected = ['A': 0, 'T': 0, 'C': 0, 'G':0];
 
-	auto actual = dna.nucleotide_counts();
+	auto actual = dna.nucleotideCounts();
 
-	assert(aa_equal(expected, actual));
+	assert(aaEqual(expected, actual));
 }
 
 // has_no_adenosine
 {
-	const counter dna = new counter("");
+	const Counter dna = new Counter("");
 
-	assert(dna.count_one('A') == 0);
+	assert(dna.countOne('A') == 0);
 }
 
 // repetitive_cytidine_gets_count
 {
-	const counter dna = new counter("CCCCC");
+	const Counter dna = new Counter("CCCCC");
 
-	assert(dna.count_one('C') == 5);
+	assert(dna.countOne('C') == 5);
 }
 
 // repetitive_sequence_has_only_guanosine
 {
-	const counter dna = new counter("GGGGGGGG");
+	const Counter dna = new Counter("GGGGGGGG");
 	const ulong[char] expected = ['A': 0, 'T': 0, 'C': 0, 'G': 8];
 
-	const auto actual = dna.nucleotide_counts();
+	const auto actual = dna.nucleotideCounts();
 
-	assert(aa_equal(expected, actual));
+	assert(aaEqual(expected, actual));
 }
 
 // count_only_thymidine
 {
-	const counter dna = new counter("GGGGTAACCCGG");
+	const Counter dna = new Counter("GGGGTAACCCGG");
 
-	assert(dna.count_one('T') == 1);
+	assert(dna.countOne('T') == 1);
 }
 
 // count_a_nucleotide_only_once
 {
 
-	const counter dna = new counter("GGTTGG");
+	const Counter dna = new Counter("GGTTGG");
 
-	dna.count_one('T');
+	dna.countOne('T');
 
-	assert(dna.count_one('T') == 2);
+	assert(dna.countOne('T') == 2);
 }
 
 // validates_nucleotides
 {
-	const counter dna = new counter("GGTTGG");
+	const Counter dna = new Counter("GGTTGG");
 
-	assertThrown(dna.count_one('X'));
+	assertThrown(dna.countOne('X'));
 }
 
-// count_all_nucleotides)
+// count_all_nucleotides
 {
-	const counter dna = new counter("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
+	const Counter dna = new Counter("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
 	const ulong[char] expected = ['A': 20, 'T': 21, 'G': 17, 'C': 12 ];
 
-	auto actual = dna.nucleotide_counts();
+	auto actual = dna.nucleotideCounts();
 
-	assert(aa_equal(expected, actual));
+	assert(aaEqual(expected, actual));
 }
 
 }

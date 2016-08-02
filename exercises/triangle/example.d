@@ -1,10 +1,9 @@
 
 module triangle;
 
-import std.stdio;
 import std.exception;
 
-enum TriangleType { equilateral, isosceles, scalene }
+enum TriangleType { equilateral, isosceles, scalene };
 
 /**
  * Return what kind of triagle that is.

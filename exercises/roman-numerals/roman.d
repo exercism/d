@@ -6,7 +6,8 @@ import std.stdio;
 
 unittest
 {
-immutable int all_tests_enabled = 0;
+
+immutable int allTestsEnabled = 0;
 
 // one_yields_I
 {
@@ -14,7 +15,7 @@ immutable int all_tests_enabled = 0;
 	assert("I" == convert(1));
 }
 
-static if (all_tests_enabled)
+static if (allTestsEnabled)
 {
 // two_yields_II
 {

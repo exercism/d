@@ -1,5 +1,5 @@
 
-module robot_factory;
+module robot;
 
 import std.regex;
 import std.stdio;
@@ -7,12 +7,10 @@ import std.stdio;
 unittest
 {
 
-immutable int all_tests_enabled = 0;
-
 // test for properly formatted name
 {
 	auto pattern = regex(`^[A-Z]{2}\d{3}`);
-	auto the_robot = new robot();
+	auto theRobot = new Robot();
 
 	// test the regex pattern
 	assert(matchAll("VAV224", pattern).empty);
@@ -22,54 +20,56 @@ immutable int all_tests_enabled = 0;
 	assert(matchAll("SB1", pattern).empty);
 	assert(matchAll("TT", pattern).empty);
 
-	writefln("Robot name: %s", the_robot.name);
+	writefln("Robot name: %s", theRobot.name);
 
 	// test that the name respects the pattern
 	// that is: "2 uppercase letters followed by 3 digits"
-	assert(!matchAll(the_robot.name, pattern).empty);
+	assert(!matchAll(theRobot.name, pattern).empty);
 }
 
-static if (all_tests_enabled)
+immutable int allTestsEnabled = 0;
+
+static if (allTestsEnabled)
 {
 // test name stickiness
 {
-	auto the_robot = new robot();
-	auto name = the_robot.name;
+	auto theRobot = new Robot();
+	auto name = theRobot.name;
 
-	writefln("Robot name: %s", the_robot.name);
-	assert(name == the_robot.name);
+	writefln("Robot name: %s", theRobot.name);
+	assert(name == theRobot.name);
 }
 
-// test different names for different robots
+// test different names for different Robots
 {
-	auto robot_1 = new robot();
-	auto robot_2 = new robot();
+	auto erTwoDeeTwo = new Robot();
+	auto beeBeeEight = new Robot();
 
-	writefln("Robot name: %s", robot_1.name);
-	writefln("Robot name: %s", robot_2.name);
-	assert(robot_1.name != robot_2.name);
+	writefln("Robot name: %s", erTwoDeeTwo.name);
+	writefln("Robot name: %s", beeBeeEight.name);
+	assert(erTwoDeeTwo.name != beeBeeEight.name);
 }
 
 // test name reset
 {
-	auto the_robot = new robot();
-	auto name_1 = the_robot.name;
-	the_robot.reset();
-	auto name_2 = the_robot.name;
+	auto theRobot = new Robot();
+	auto nameOne = theRobot.name;
+	theRobot.reset();
+	auto nameTwo = theRobot.name;
 
-	writefln("Robot name: %s", name_1);
-	writefln("Robot name: %s", name_2);
-	assert(name_1 != name_2);
+	writefln("Robot name: %s", nameOne);
+	writefln("Robot name: %s", nameTwo);
+	assert(nameOne != nameTwo);
 }
 
 // collision test
 {
 	foreach(i; 1..10000)
 	{
-		auto the_robot = new robot();
+		auto theRobot = new Robot();
 	}
 
-	writefln("Collisons: %s that is %s%%", robot.collisons, (robot.collisons/10000.0f) * 100);
+	writefln("Collisons: %s that is %s%%", Robot.collisons, (Robot.collisons/10000.0f) * 100);
 }
 }
 

@@ -1,21 +1,20 @@
 
 module triangle;
 
-import std.stdio;
 import std.exception;
 
 
 unittest
 {
 
-immutable int all_tests_enabled = 0;
+immutable int allTestsEnabled = 0;
 
 // equilateral_triangles_have_equal_sides
 {
 	assert(TriangleType.equilateral == kind(2, 2, 2));
 }
 
-static if (all_tests_enabled)
+static if (allTestsEnabled)
 {
 // larger_equilateral_triangles_also_have_equal_sides
 {
