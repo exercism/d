@@ -3,15 +3,24 @@
   "language": "D",
   "repository": "https://github.com/exercism/xdlang",
   "checklist_issue": 6,
-  "active": false,
+  "active": true,
   "problems": [
-
+    "bob",
+    "etl",
+    "hamming",
+    "nucleotide-count",
+    "robot-name",
+    "roman-numerals",
+    "series",
+    "triangle",
+    "crypto-square",
+    "circular-buffer"
   ],
   "deprecated": [
 
   ],
   "ignored": [
-
+    "docs"
   ],
   "foregone": [
 
