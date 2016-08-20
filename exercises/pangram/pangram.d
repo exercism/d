@@ -2,7 +2,11 @@ module pangram;
 
 unittest
 {
+    immutable bool all_test_enabled = false;
+
     assert(!isPangram(""));
+
+    static if (all_tests_enabled) {
     assert(isPangram("the quick brown fox jumps over the lazy dog"));
     // missing x
     assert(!isPangram("a quick movement of the enemy will jeopardize five gunboats"));
@@ -17,6 +21,7 @@ unittest
     assert(isPangram("\"Five quacking Zephyrs jolt my wax bed\""));
     // pangram with non-ascii characters
     assert(isPangram("Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich"));
+    }
 }
 
 void main () {}
