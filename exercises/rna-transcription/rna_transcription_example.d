@@ -1,4 +1,4 @@
-module rna;
+module rna_transcription;
 
 import std.exception;
 import std.regex;

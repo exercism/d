@@ -1,6 +1,6 @@
-import std.stdio;
+module difference_of_squares;
 
-import squares : squares;
+import std.stdio;
 
 void main() {
     assert(squares(5).squareOfSum == 225);

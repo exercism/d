@@ -1,4 +1,4 @@
-module squares;
+module difference_of_squares;
 
 import std.range : iota;
 import std.algorithm : sum, map;

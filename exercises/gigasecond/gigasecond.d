@@ -1,7 +1,7 @@
+module gigasecond;
+
 import std.stdio;
 import std.datetime;
-
-import gigasecond;
 
 void main() {
     assert(gsAnniversary(DateTime(2011, 4, 25)) == DateTime(2043, 1, 1, 1, 46, 40));

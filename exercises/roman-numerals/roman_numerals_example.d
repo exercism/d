@@ -1,5 +1,5 @@
 
-module roman;
+module roman_numerals;
 
 import std.string;
 import std.array;

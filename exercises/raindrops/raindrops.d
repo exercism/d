@@ -1,7 +1,5 @@
 import std.stdio;
 
-import raindrops;
-
 void main() {
     assert(convert(1) == "1");
     assert(convert(3) == "Pling");

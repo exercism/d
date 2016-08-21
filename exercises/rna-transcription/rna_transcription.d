@@ -1,7 +1,7 @@
+module rna_transcription;
+
 import std.exception : assertThrown;
 import std.stdio;
-
-import rna;
 
 void main() {
     assert(dnaComplement("C") == "G");
