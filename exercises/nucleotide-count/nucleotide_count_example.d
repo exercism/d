@@ -1,5 +1,5 @@
 
-module nucleotide;
+module nucleotide_count;
 
 import std.string;
 import std.algorithm.comparison : equal;
@@ -149,4 +149,3 @@ bool aaEqual (const ulong[char] lhs, const ulong[char] rhs)
 void main ()
 {
 }
-

@@ -1,7 +1,5 @@
 module helloworld_test;
 
-import helloworld;
-
 import std.stdio;
 
 void main() {

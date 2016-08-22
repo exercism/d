@@ -1,5 +1,5 @@
 
-module dna;
+module nucleotide_count;
 
 import std.string;
 import std.array;
@@ -98,4 +98,3 @@ static if (allTestsEnabled)
 void main ()
 {
 }
-
