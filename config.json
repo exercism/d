@@ -24,161 +24,139 @@
   ],
   "exercises": [
     {
-      "slug": "hello-world" ,
+      "slug": "hello-world",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "language basics"
+      ]
     },
     {
-      "slug": "gigasecond" ,
+      "slug": "gigasecond",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "language basics",
+        "time"
+      ]
     },
     {
-      "slug": "rna-transcription" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "rna-transcription",
+      "difficulty": 2,
+      "topics": [
+        "string manipulation",
+        "error handling",
+        "control-flow (foreach)"
+      ]
     },
     {
-      "slug": "raindrops" ,
+      "slug": "raindrops",
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "language basics",
+        "control-flow (if-statements)"
+      ]
     },
     {
-      "slug": "bob" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "bob",
+      "difficulty": 2,
+      "topics": [
+        "string manipulation",
+        "control-flow (if-statements)"
+      ]
     },
     {
-      "slug": "etl" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "etl",
+      "difficulty": 2,
+      "topics": [
+        "string manipulation",
+        "control-flow (foreach)",
+        "associative arrays"
+      ]
     },
     {
-      "slug": "hamming" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "hamming",
+      "difficulty": 2,
+      "topics": [
+        "error handling",
+        "control-flow (foreach)"
+      ]
     },
     {
-      "slug": "nucleotide-count" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "nucleotide-count",
+      "difficulty": 3,
+      "topics": [
+        "classes",
+        "parsing",
+        "associative arrays"
+      ]
     },
     {
-      "slug": "robot-name" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "robot-name",
+      "difficulty": 3,
+      "topics": [
+        "classes",
+        "random numbers"
+      ]
     },
     {
-      "slug": "difference-of-squares" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "difference-of-squares",
+      "difficulty": 2,
+      "topics": [
+        "control-flow (foreach)",
+        "template metaprogramming",
+        "functional",
+        "algorithms"
+      ]
     },
     {
-      "slug": "roman-numerals" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "roman-numerals",
+      "difficulty": 3,
+      "topics": [
+        "string manipulation",
+        "conversions",
+        "functional"
+      ]
     },
     {
-      "slug": "series" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "series",
+      "difficulty": 3,
+      "topics": [
+        "string manipulation",
+        "arrays"
+      ]
     },
     {
-      "slug": "triangle" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "triangle",
+      "difficulty": 2,
+      "topics": [
+        "language basics",
+        "control-flow (if-statements)"
+      ]
     },
     {
-      "slug": "crypto-square" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "crypto-square",
+      "difficulty": 3,
+      "topics": [
+        "string manipulation",
+        "classes",
+        "algorithms"
+      ]
     },
     {
-      "slug": "circular-buffer" ,
-      "difficulty": 1,
-      "topics": []
+      "slug": "circular-buffer",
+      "difficulty": 4,
+      "topics": [
+        "class templates",
+        "data-structures"
+      ]
     },
     {
       "slug": "pangram",
       "difficulty": 1,
-      "topics": []
-    }
-  ],
-  "exercises": [
-    {
-      "slug": "hello-world" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "gigasecond" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "rna-transcription" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "raindrops" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "bob" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "etl" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "hamming" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "nucleotide-count" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "robot-name" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "difference-of-squares" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "roman-numerals" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "series" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "triangle" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "crypto-square" ,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "circular-buffer" ,
-      "difficulty": 1,
-      "topics": []
+      "topics": [
+        "language basics",
+        "string manipulation",
+        "control-flow"
+      ]
     }
   ],
   "deprecated": [
@@ -191,3 +169,4 @@
 
   ]
 }
+
