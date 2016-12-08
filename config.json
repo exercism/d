@@ -24,7 +24,7 @@
   ],
   "exercises": [
     {
-      "slug": "hello-world" ,
+      "slug": "hello-world",
       "difficulty": 1,
       "topics": [
         "language basics"
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "slug": "rna-transcription" ,
+      "slug": "rna-transcription",
       "difficulty": 2,
       "topics": [
         "string manipulation",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "slug": "raindrops" ,
+      "slug": "raindrops",
       "difficulty": 1,
       "topics": [
         "language basics",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "slug": "bob" ,
+      "slug": "bob",
       "difficulty": 2,
       "topics": [
         "string manipulation",
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "slug": "etl" ,
+      "slug": "etl",
       "difficulty": 2,
       "topics": [
         "string manipulation",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "slug": "hamming" ,
+      "slug": "hamming",
       "difficulty": 2,
       "topics": [
         "error handling",
@@ -81,7 +81,7 @@
       ]
     },
     {
-      "slug": "nucleotide-count" ,
+      "slug": "nucleotide-count",
       "difficulty": 3,
       "topics": [
         "classes",
@@ -90,7 +90,7 @@
       ]
     },
     {
-      "slug": "robot-name" ,
+      "slug": "robot-name",
       "difficulty": 3,
       "topics": [
         "classes",
@@ -98,7 +98,7 @@
       ]
     },
     {
-      "slug": "difference-of-squares" ,
+      "slug": "difference-of-squares",
       "difficulty": 2,
       "topics": [
         "control-flow (foreach)",
@@ -108,7 +108,7 @@
       ]
     },
     {
-      "slug": "roman-numerals" ,
+      "slug": "roman-numerals",
       "difficulty": 3,
       "topics": [
         "string manipulation",
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "slug": "series" ,
+      "slug": "series",
       "difficulty": 3,
       "topics": [
         "string manipulation",
@@ -125,7 +125,7 @@
       ]
     },
     {
-      "slug": "triangle" ,
+      "slug": "triangle",
       "difficulty": 2,
       "topics": [
         "language basics",
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "slug": "crypto-square" ,
+      "slug": "crypto-square",
       "difficulty": 3,
       "topics": [
         "string manipulation",
@@ -142,7 +142,7 @@
       ]
     },
     {
-      "slug": "circular-buffer" ,
+      "slug": "circular-buffer",
       "difficulty": 4,
       "topics": [
         "class templates",
@@ -150,7 +150,7 @@
       ]
     },
     {
-      "slug": "pangram" ,
+      "slug": "pangram",
       "difficulty": 1,
       "topics": [
         "language basics",
