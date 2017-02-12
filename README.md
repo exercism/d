@@ -2,6 +2,8 @@
 
 Exercism exercises in the D Programming Language
 
+[![Build Status](https://travis-ci.org/exercism/xdlang.svg?branch=master)](https://travis-ci.org/exercism/xdlang)
+
 ## Filenames
 
 Each exercise is identified by a slug.
