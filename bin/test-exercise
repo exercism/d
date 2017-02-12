@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+  echo "usage: $0 exercise-slug"
+  exit 1
+fi
+
+dir=$1
+exercise=$(basename $dir)
+underscored=$(echo "$exercise" | tr - _)
+example="${underscored}_example"
+backupext=testbak
+
+cd $dir
+
+dmd ${example}.d -de -w -unittest && ./$example
