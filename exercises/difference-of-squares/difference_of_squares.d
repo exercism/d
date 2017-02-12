@@ -1,9 +1,10 @@
 module difference_of_squares;
 
-import std.stdio;
+unittest {
+const int allTestsEnabled = 0;
 
-void main() {
     assert(squares(5).squareOfSum == 225);
+static if (allTestsEnabled) {
     assert(squares(10).squareOfSum == 3_025);
     assert(squares(100).squareOfSum == 25_502_500);
 
@@ -15,6 +16,8 @@ void main() {
     assert(squares(5).difference == 170);
     assert(squares(10).difference == 2_640);
     assert(squares(100).difference == 25_164_150);
-
-    writeln("All tests passed");
 }
+
+}
+
+void main() {}

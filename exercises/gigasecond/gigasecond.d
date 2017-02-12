@@ -1,10 +1,12 @@
 module gigasecond;
 
-import std.stdio;
 import std.datetime;
 
-void main() {
+unittest {
+const int allTestsEnabled = 0;
+
     assert(gsAnniversary(DateTime(2011, 4, 25)) == DateTime(2043, 1, 1, 1, 46, 40));
+static if (allTestsEnabled) {
     assert(gsAnniversary(DateTime(1977, 6, 13)) == DateTime(2009, 2, 19, 1, 46, 40));
     assert(gsAnniversary(DateTime(1959, 7, 19)) == DateTime(1991, 3, 27, 1, 46, 40));
     assert(gsAnniversary(DateTime(2015, 1, 24, 22, 0, 0)) == DateTime(2046, 10, 2, 23, 46, 40));
@@ -16,6 +18,8 @@ void main() {
     assert(d == DateTime(2011, 4, 25));
 
     //For fun add a test for your own gigasecond anniversary
-
-    writeln("All tests pass");
 }
+
+}
+
+void main() {}
