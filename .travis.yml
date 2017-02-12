@@ -1,6 +1,7 @@
 ---
 language: bash
-script:
+install:
 - bin/fetch-configlet
+script:
 - bin/configlet .
 sudo: false
