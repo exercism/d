@@ -287,5 +287,3 @@ unittest {
     }
   }
 }
-
-void main() {}

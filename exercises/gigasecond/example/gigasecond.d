@@ -21,5 +21,3 @@ unittest {
     assert(gsAnniversary(d) == DateTime(2043, 1, 1, 1, 46, 40));
     assert(d == DateTime(2011, 4, 25));
 }
-
-void main () {}

@@ -145,7 +145,3 @@ bool aaEqual (const ulong[char] lhs, const ulong[char] rhs)
 }
 
 }
-
-void main ()
-{
-}

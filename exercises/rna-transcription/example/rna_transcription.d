@@ -33,5 +33,3 @@ unittest {
     assertThrown(dnaComplement("XXX"));
     assertThrown(dnaComplement("ACGTXXXCTTAA"));
 }
-
-void main () {}

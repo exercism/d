@@ -12,5 +12,3 @@ unittest {
     assert(hello("Bob") == "Hello, Bob!");
     assert(hello("") == "Hello, !");
 }
-
-void main () {}

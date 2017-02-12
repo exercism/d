@@ -85,8 +85,3 @@ unittest
     assert(hey("   ") == "Fine. Be that way!");
     assert(hey(" A bit of silence can be nice.  ") == "Whatever.");
 }
-
-void main ()
-{
-}
-

@@ -206,8 +206,3 @@ unittest
 }
 
 }
-
-void main ()
-{
-}
-

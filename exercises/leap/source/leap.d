@@ -4,5 +4,3 @@ unittest {
   assert(!is_leap(2100));
   assert(is_leap(2000));
 }
-
-void main() {}

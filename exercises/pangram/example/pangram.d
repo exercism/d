@@ -34,5 +34,3 @@ unittest
     // pangram with non-ascii characters
     assert(isPangram("Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich"));
 }
-
-void main() {}

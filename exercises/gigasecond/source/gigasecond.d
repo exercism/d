@@ -21,5 +21,3 @@ static if (allTestsEnabled) {
 }
 
 }
-
-void main() {}

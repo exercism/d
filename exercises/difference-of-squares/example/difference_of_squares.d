@@ -40,5 +40,3 @@ unittest {
     assert(squares(10).difference == 2_640);
     assert(squares(100).difference == 25_164_150);
 }
-
-void main () {}

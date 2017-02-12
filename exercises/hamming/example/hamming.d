@@ -37,8 +37,3 @@ unittest
     assert(distance("GATACA", "GCATAA") == 4);
     assert(distance("GGACGGATTCTG", "AGGACGGATTCT") == 9);
 }
-
-void main ()
-{
-}
-

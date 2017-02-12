@@ -107,8 +107,3 @@ bool aaEqual (const int[dchar] lhs, const int[dchar] rhs)
 }
 
 }
-
-void main ()
-{
-}
-

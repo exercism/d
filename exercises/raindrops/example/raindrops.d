@@ -51,5 +51,3 @@ unittest {
     assert(convert(52) == "52");
     assert(convert(105) == "PlingPlangPlong");
 }
-
-void main () {}
