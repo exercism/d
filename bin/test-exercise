@@ -6,11 +6,20 @@ if [ $# -eq 0 ]; then
 fi
 
 dir=$1
-exercise=$(basename $dir)
-underscored=$(echo "$exercise" | tr - _)
-example="${underscored}_example"
-backupext=testbak
 
 cd $dir
 
-dmd ${example}.d -de -w -unittest && ./$example
+status=0
+
+mv source testbak
+mv example source
+if ! dub test ; then
+  echo "$dir test has failed"
+  status=1
+fi
+# Restore so that if we are running locally,
+# we don't accidentally commit the directory moves.
+mv source example
+mv testbak source
+
+exit $status
