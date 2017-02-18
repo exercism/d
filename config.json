@@ -139,6 +139,17 @@
         "string manipulation",
         "control-flow"
       ]
+    },
+    {
+      "slug": "react" ,
+      "difficulty": 10,
+      "topics": [
+        "reactive programming",
+        "generics",
+        "nested classes",
+        "higher-order functions",
+        "delegates"
+      ]
     }
   ],
   "deprecated": [
