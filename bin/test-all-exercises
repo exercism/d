@@ -1,0 +1,20 @@
+#!/bin/sh
+
+test_one=$(dirname $0)/test-exercise
+exercises=$(dirname $(dirname $0))/exercises
+status=0
+failed_exercises=""
+
+for d in $exercises/*/; do
+  if ! $test_one $d; then
+    failed_exercises="$failed_exercises\n$(basename $d)"
+    status=1
+  fi
+done
+
+if [ $status -ne 0 ]; then
+  echo "The following exercises failed"
+  echo $failed_exercises
+fi
+
+exit $status

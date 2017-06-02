@@ -1,12 +1,13 @@
 module helloworld_test;
 
-import std.stdio;
+unittest {
+const int allTestsEnabled = 0;
 
-void main() {
     assert(hello() == "Hello, World!");
+static if (allTestsEnabled) {
     assert(hello("Alice") == "Hello, Alice!");
     assert(hello("Bob") == "Hello, Bob!");
     assert(hello("") == "Hello, !");
+}
 
-    writeln("All tests passed.");
 }

@@ -1,7 +1,8 @@
-import std.stdio;
+unittest {
+const int allTestsEnabled = 0;
 
-void main() {
     assert(convert(1) == "1");
+static if (allTestsEnabled) {
     assert(convert(3) == "Pling");
     assert(convert(5) == "Plang");
     assert(convert(7) == "Plong");
@@ -16,6 +17,8 @@ void main() {
     assert(convert(49) == "Plong");
     assert(convert(52) == "52");
     assert(convert(105) == "PlingPlangPlong");
-
-    writeln("All tests passed");
 }
+
+}
+
+void main() {}

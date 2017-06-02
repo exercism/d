@@ -1,6 +1,8 @@
 ---
-language: bash
-script:
+language: d
+install:
 - bin/fetch-configlet
+script:
 - bin/configlet .
+- bin/test-all-exercises
 sudo: false
