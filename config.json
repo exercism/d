@@ -4,24 +4,6 @@
   "repository": "https://github.com/exercism/xdlang",
   "checklist_issue": 6,
   "active": true,
-  "problems": [
-    "hello-world",
-    "gigasecond",
-    "rna-transcription",
-    "raindrops",
-    "bob",
-    "etl",
-    "hamming",
-    "nucleotide-count",
-    "robot-name",
-    "difference-of-squares",
-    "roman-numerals",
-    "series",
-    "triangle",
-    "crypto-square",
-    "circular-buffer",
-    "pangram"
-  ],
   "exercises": [
     {
       "slug": "hello-world",
