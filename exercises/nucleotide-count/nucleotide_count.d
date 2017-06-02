@@ -10,7 +10,7 @@ unittest
 {
 
 // test associative array equality
-bool aaEqual (const int[char] lhs, const int[char] rhs)
+bool aaEqual (const ulong[char] lhs, const ulong[char] rhs)
 {
 	auto lhs_pairs = lhs.byKeyValue.array;
 	auto rhs_pairs = rhs.byKeyValue.array;
