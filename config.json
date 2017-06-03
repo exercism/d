@@ -13,6 +13,13 @@
       ]
     },
     {
+      "slug": "leap",
+      "difficulty": 1,
+      "topics": [
+        "language basics"
+      ]
+    },
+    {
       "slug": "gigasecond" ,
       "difficulty": 1,
       "topics": [
