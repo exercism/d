@@ -13,10 +13,10 @@ Working through each exercise is a process of:
 * Creating the initial build with **dmd example.d -de -w -unittest**
 * Run  with **./example or example.exe** depending on the platform
 * For each unit test:
- * Satisfy compile errors to make the test fail.
- * Implement just enough to make the test pass.
- * Refactor your implementation to enhance readability, reduce duplication, etc.
- * Enable the next test
+  * Satisfy compile errors to make the test fail.
+  * Implement just enough to make the test pass.
+  * Refactor your implementation to enhance readability, reduce duplication, etc.
+  * Enable the next test
 
 *Note:* D has support for unit testing direct in the language so usually the unit tests
 reside in the same file as the implementation. The unittests are ran before the body of
