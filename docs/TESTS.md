@@ -10,8 +10,8 @@ If your code does not pass the one or more tests but is valid D code, it will st
 
 Working through each exercise is a process of:
 
-* Creating the initial build with **dmd example.d -de -w -unittest**
-* Run  with **./example or example.exe** depending on the platform
+* Running the tests with `dub test`
+  * If you have chosen not to install DUB, you would instead use `dmd source/*.d -de -w -main -unittest`, then run the resulting binary.
 * For each unit test:
   * Satisfy compile errors to make the test fail.
   * Implement just enough to make the test pass.

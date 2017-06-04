@@ -4,6 +4,7 @@ The D language track requires that you have the following software
 installed on your system:
 
 * a D version 2 compiler
+* (optional but recommended) DUB
 
 ### Prerequisite: D version 2 Compiler
 
@@ -52,3 +53,26 @@ There are also support for the D language in various IDEs e.g.
 [D plugin](https://plugins.jetbrains.com/plugin/7727?pr=clion) for IntelliJ's CLion. See the wiki
 for [more information](https://wiki.dlang.org/IDEs).
 
+### Prerequisite: DUB
+
+[DUB](https://github.com/dlang/dub) is a build manager for D.
+
+We recommend it as a way to simplify the process of running the tests, but it is still possible to run without DUB if you cannot or do not want to install it.
+
+#### Windows
+
+The [DUB website's download page](https://code.dlang.org/download) has a Windows installer.
+
+#### Mac OS X
+
+* The [DUB website's download page](https://code.dlang.org/download) has OS X binaries.
+* or using [Homebrew](http://brew.sh/): brew install dmd
+
+#### Linux
+
+* The [DUB website's download page](https://code.dlang.org/download) has Linux binaries.
+* Packages for various distributions are provided:
+    * [ArchLinux](https://www.archlinux.org/packages/community/x86_64/dub/)
+    * [Debian/Ubuntu](http://d-apt.sourceforge.net/)
+    * [Gentoo](https://github.com/gentoo/dlang/tree/master/dev-util/dub)
+    * [OpenSUSE](http://software.opensuse.org/download.html?project=devel%3Alanguages%3AD&package=dub)
