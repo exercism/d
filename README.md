@@ -14,8 +14,8 @@ E.g. `circular-buffer`.
 The following conventions are used when adding a new exercise:
 
 * Name the directory `$SLUG`
-* Place the tests in `$SLUG.d`, replacing underscores with hyphens.
-* Name the example solution `$SLUG_example`, replacing underscores with hyphens.
+* Place the tests in `$SLUG.d`, replacing hyphens with underscores.
+* Name the example solution `$SLUG_example`, replacing hyphens with underscores.
 
 E.g.
 
