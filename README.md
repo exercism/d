@@ -14,18 +14,22 @@ E.g. `circular-buffer`.
 The following conventions are used when adding a new exercise:
 
 * Name the directory `$SLUG`
-* Place the tests in `$SLUG.d`, replacing hyphens with underscores.
-* Name the example solution `$SLUG_example`, replacing hyphens with underscores.
+* Place the tests in `source/$SLUG.d`, replacing hyphens with underscores.
+* Place the example solution in `example/$SLUG.d`, replacing hyphens with underscores.
+* Add a file named `dub.sdl` with two lines: `name "$SLUG"` and `buildRequirements "disallowDeprecations"`.
 
 E.g.
 
 ```
 $ tree exercises/circular-buffer
 exercises/circular-buffer/
-├── circular_buffer.d
-└── circular_buffer_example.d
+├── dub.sdl
+├── source
+│   └── circular_buffer.d
+└── example
+    └── circular_buffer.d
 
-0 directories, 2 files
+2 directories, 3 files
 ```
 
 ## Contributing Guide
