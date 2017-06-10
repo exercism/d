@@ -20,7 +20,7 @@
       ]
     },
     {
-      "slug": "gigasecond" ,
+      "slug": "gigasecond",
       "difficulty": 1,
       "topics": [
         "language basics",
@@ -148,7 +148,7 @@
       ]
     },
     {
-      "slug": "react" ,
+      "slug": "react",
       "difficulty": 10,
       "topics": [
         "reactive programming",
@@ -169,4 +169,3 @@
 
   ]
 }
-
