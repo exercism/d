@@ -1,11 +1,9 @@
 
 module triangle;
 
-import std.exception;
-
-
 unittest
 {
+import std.exception : assertThrown;
 
 immutable int allTestsEnabled = 0;
 

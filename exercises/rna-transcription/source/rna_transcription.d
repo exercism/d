@@ -1,8 +1,8 @@
 module rna_transcription;
 
+unittest {
 import std.exception : assertThrown;
 
-unittest {
 const int allTestsEnabled = 0;
 
     assert(dnaComplement("C") == "G");

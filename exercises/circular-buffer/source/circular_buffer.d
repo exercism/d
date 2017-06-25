@@ -1,10 +1,10 @@
 
 module circular;
 
-import std.exception;
-
 unittest
 {
+import std.exception : assertThrown;
+
 immutable int allTestsEnabled = 0;
 
 // test read empty buffer

@@ -77,6 +77,8 @@ static if (allTestsEnabled)
 
 // validates_nucleotides
 {
+	import std.exception : assertThrown;
+
 	const Counter dna = new Counter("GGTTGG");
 
 	assertThrown(dna.countOne('X'));

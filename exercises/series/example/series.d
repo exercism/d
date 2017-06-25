@@ -1,7 +1,6 @@
 
 module series;
 
-import std.exception;
 import std.algorithm : equal;
 import std.ascii : isDigit;
 import std.string;
@@ -79,6 +78,7 @@ int[][] slice (string input, uint stride = 1)
 
 unittest
 {
+import std.exception : assertThrown;
 
 // short_digits
 {

@@ -7,7 +7,6 @@ import std.algorithm.sorting : sort;
 import std.algorithm.searching : count;
 import std.typecons;
 import std.array : array;
-import std.exception;
 
 
 class Counter
@@ -129,6 +128,8 @@ bool aaEqual (const ulong[char] lhs, const ulong[char] rhs)
 
 // validates_nucleotides
 {
+	import std.exception : assertThrown;
+
 	const Counter dna = new Counter("GGTTGG");
 
 	assertThrown(dna.countOne('X'));

@@ -3,6 +3,8 @@ module hamming;
 
 unittest
 {
+import std.exception : assertThrown;
+
 const int allTestsEnabled = 0;
 
     assert(distance("A", "A") == 0);
