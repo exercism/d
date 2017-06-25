@@ -1,6 +1,5 @@
 module rna_transcription;
 
-import std.exception;
 import std.regex;
 import std.string;
 
@@ -17,11 +16,15 @@ static this() {
 enum dnaRegex = regex(r"^[CGTA]*$");
 
 string dnaComplement(string dna) {
+    import std.exception : enforce;
+
     enforce(dna.matchFirst(dnaRegex), "Invalid DNA string");
     return dna.translate(rnaTransTable);
 }
 
 unittest {
+    import std.exception : assertThrown;
+
     assert(dnaComplement("C") == "G");
     assert(dnaComplement("G") == "C");
     assert(dnaComplement("T") == "A");

@@ -1,7 +1,6 @@
 
 module circular;
 
-import std.exception;
 import std.stdio;
 import std.string;
 
@@ -90,6 +89,7 @@ private:
 
 unittest
 {
+import std.exception : assertThrown;
 
 // test read empty buffer
 {

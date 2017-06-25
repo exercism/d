@@ -4,7 +4,6 @@ module hamming;
 
 import std.string;
 import std.algorithm.comparison : mismatch;
-import std.exception;
 
 int distance (string lhs, string rhs)
 {
@@ -27,6 +26,8 @@ int distance (string lhs, string rhs)
 
 unittest
 {
+    import std.exception : assertThrown;
+
     assert(distance("A", "A") == 0);
     assert(distance("A", "G") == 1);
     assert(distance("AG", "CT") == 2);

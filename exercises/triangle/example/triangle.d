@@ -1,8 +1,6 @@
 
 module triangle;
 
-import std.exception;
-
 enum TriangleType { equilateral, isosceles, scalene };
 
 /**
@@ -23,6 +21,7 @@ TriangleType kind (double a, double b, double c)
 
 unittest
 {
+import std.exception : assertThrown;
 
 // equilateral_triangles_have_equal_sides
 {

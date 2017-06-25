@@ -1,7 +1,6 @@
 
 module etl;
 
-import std.exception;
 import std.string;
 import std.ascii : isUpper, isAlpha, toLower;
 import std.algorithm.searching : countUntil;
@@ -79,6 +78,8 @@ bool aaEqual (const int[dchar] lhs, const int[dchar] rhs)
 
 // throw exception
 {
+	import std.exception : assertThrown;
+
 	immutable string[int] old = [1: "ae"];
 
 	assertThrown(transform(old));

@@ -1,11 +1,11 @@
 
 module series;
 
-import std.exception;
 import std.algorithm.comparison : equal;
 
 unittest
 {
+import std.exception : assertThrown;
 
 immutable int allTestsEnabled = 0;
 
