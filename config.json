@@ -1,7 +1,7 @@
 {
-  "slug": "dlang",
+  "slug": "d",
   "language": "D",
-  "repository": "https://github.com/exercism/dlang",
+  "repository": "https://github.com/exercism/d",
   "checklist_issue": 6,
   "active": true,
   "exercises": [
