@@ -6,21 +6,30 @@
   "active": true,
   "exercises": [
     {
+      "uuid": "a91c2216-9331-4485-ae4b-190ee9e2a7f8",
       "slug": "hello-world",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "language basics"
       ]
     },
     {
+      "uuid": "9f52d6a7-1002-4614-afc3-cce03187c59b",
       "slug": "leap",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "language basics"
       ]
     },
     {
+      "uuid": "8c976f92-fcfa-45f0-9bd1-2353822e51e8",
       "slug": "gigasecond",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "language basics",
@@ -28,7 +37,10 @@
       ]
     },
     {
+      "uuid": "208f9a34-bdf2-4c2b-b102-f0ef1a5d04fe",
       "slug": "rna-transcription",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "string manipulation",
@@ -37,7 +49,10 @@
       ]
     },
     {
+      "uuid": "f6d21f86-b4d3-4dec-b830-8e19e1018548",
       "slug": "raindrops",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "language basics",
@@ -45,7 +60,10 @@
       ]
     },
     {
+      "uuid": "99ee69a6-2c0f-4c7c-86f9-bee1633b4f51",
       "slug": "bob",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "string manipulation",
@@ -53,7 +71,10 @@
       ]
     },
     {
+      "uuid": "dc631076-1eb8-4120-bd8f-dccf33df9a3f",
       "slug": "etl",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "string manipulation",
@@ -62,7 +83,10 @@
       ]
     },
     {
+      "uuid": "87c87444-2349-40ab-a9a3-c0f0d2e200d6",
       "slug": "hamming",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "error handling",
@@ -70,7 +94,10 @@
       ]
     },
     {
+      "uuid": "23b23ac0-62ef-4a22-b634-d64206c8a226",
       "slug": "nucleotide-count",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "classes",
@@ -79,7 +106,10 @@
       ]
     },
     {
+      "uuid": "d7dd5df3-ff36-47ee-88db-e0f974a4cb19",
       "slug": "robot-name",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "classes",
@@ -87,7 +117,10 @@
       ]
     },
     {
+      "uuid": "d6c67e30-c950-40b6-b6db-0fa6df5652af",
       "slug": "difference-of-squares",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "control-flow (foreach)",
@@ -97,7 +130,10 @@
       ]
     },
     {
+      "uuid": "5647c00e-d4be-4546-bac3-6a3e1670c2a1",
       "slug": "roman-numerals",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "string manipulation",
@@ -106,7 +142,10 @@
       ]
     },
     {
+      "uuid": "14c3c478-9dc1-470b-8517-35c3ceac3f47",
       "slug": "series",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "string manipulation",
@@ -114,7 +153,10 @@
       ]
     },
     {
+      "uuid": "c9acd967-fc2a-4c74-b584-2572ce690e71",
       "slug": "triangle",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "language basics",
@@ -122,7 +164,10 @@
       ]
     },
     {
+      "uuid": "45afc532-3f6c-4b9e-90f6-c53a79551af1",
       "slug": "crypto-square",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "string manipulation",
@@ -131,7 +176,10 @@
       ]
     },
     {
+      "uuid": "2ba799a8-eab9-44a0-9b31-a10e72baa38b",
       "slug": "circular-buffer",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "class templates",
@@ -139,7 +187,10 @@
       ]
     },
     {
+      "uuid": "a4cf4571-1f97-438c-9c02-3fe7c52ee25f",
       "slug": "pangram",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "language basics",
@@ -148,7 +199,10 @@
       ]
     },
     {
+      "uuid": "31dd1e53-2b5e-4d40-ac4c-a68fe5e6635c",
       "slug": "react",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 10,
       "topics": [
         "reactive programming",
@@ -158,9 +212,6 @@
         "delegates"
       ]
     }
-  ],
-  "deprecated": [
-
   ],
   "foregone": [
 
