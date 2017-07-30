@@ -4,6 +4,7 @@
   "repository": "https://github.com/exercism/d",
   "checklist_issue": 6,
   "active": true,
+  "test_pattern": "source.*[.]d",
   "exercises": [
     {
       "uuid": "a91c2216-9331-4485-ae4b-190ee9e2a7f8",
