@@ -7,6 +7,8 @@ import std.math : sqrt, floor, ceil;
 import std.conv : to;
 
 import std.stdio;
+import std.algorithm : map, filter;
+import std.ascii : isAlphaNum;
 
 
 class Cipher
@@ -14,7 +16,7 @@ class Cipher
 public:
 	this (const string text)
 	{
-		this.normalized =  toLower(text.removechars(" `#$%^&.,<>:;'!~-?*@()[]{}_=|/\t\a\n\"+"));
+		this.normalized = text.filter!isAlphaNum.map!toLower.to!string;
 	}
 
 	string normalizePlainText ()
@@ -65,7 +67,7 @@ public:
 	{
 		string result = normalizedCipherText();
 
-		return result.removechars(" ");
+		return result.replace(" ", "");
 	}
 
 	string normalizedCipherText ()
