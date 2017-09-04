@@ -32,10 +32,11 @@ exercises/circular-buffer/
 2 directories, 3 files
 ```
 
-## Contributing Guide
+## Contributing
 
-Please see the [contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data)
+If you're having trouble getting this project set up locally, please open an issue and we'll help you get it sorted (and then see about improving the documentation).
 
+There is useful Exercism-wide documentation about contributing to language tracks in the [exercism/docs](https://github.com/exercism/docs/blob/master/language-tracks/README.md) repository.
 
 ### D icon
 The D "Digital Mars" logo is owned by Digital Mars, Inc. Digital Mars, Inc. allows anyone to use, modify and redistribute the logo provided that the copyright holder is properly attributed. The original image is part of the D programming language "dlang.org" source repository, released under version 1.0 of the Boost Software License. We have modified the image, changing the colour scheme, to create the D icon for Exercism.
