@@ -1,0 +1,8 @@
+{
+	"name": "hello-world",
+	"sourceFiles": ["hello_world.d"],
+	"importPaths": ["."],
+	"dependencies": {
+		"exercism": { "path": "./exercism" }
+	}
+}

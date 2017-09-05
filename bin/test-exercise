@@ -11,15 +11,12 @@ cd $dir
 
 status=0
 
-mv source testbak
-mv example source
-if ! dub test ; then
+cat .meta/solution.d *.d > .meta/tmp.d
+if ! dub -b unittest --single .meta/tmp.d ; then
   echo "$dir test has failed"
   status=1
 fi
-# Restore so that if we are running locally,
-# we don't accidentally commit the directory moves.
-mv source example
-mv testbak source
+
+rm .meta/tmp.d
 
 exit $status
