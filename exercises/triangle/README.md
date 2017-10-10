@@ -21,7 +21,7 @@ third is known as a _degenerate_ triangle - it has zero area and looks like
 a single line. Feel free to add your own code/tests to check for degenerate triangles.
 ## Getting Started
 
-Make sure you have read [D page](http://exercism.io/languages/dlang) on
+Make sure you have read [D page](http://exercism.io/languages/d) on
 exercism.io.  This covers the basic information on setting up the development
 environment expected by the exercises.
 

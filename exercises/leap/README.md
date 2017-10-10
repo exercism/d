@@ -28,7 +28,7 @@ phenomenon, go watch [this youtube video][video].
 
 ## Getting Started
 
-Make sure you have read [D page](http://exercism.io/languages/dlang) on
+Make sure you have read [D page](http://exercism.io/languages/d) on
 exercism.io.  This covers the basic information on setting up the development
 environment expected by the exercises.
 
