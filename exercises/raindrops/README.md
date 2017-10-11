@@ -19,7 +19,7 @@ Convert a number to a string, the contents of which depend on the number's facto
 
 ## Getting Started
 
-Make sure you have read [D page](http://exercism.io/languages/dlang) on
+Make sure you have read [D page](http://exercism.io/languages/d) on
 exercism.io.  This covers the basic information on setting up the development
 environment expected by the exercises.
 
