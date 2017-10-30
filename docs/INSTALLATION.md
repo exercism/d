@@ -66,7 +66,7 @@ The [DUB website's download page](https://code.dlang.org/download) has a Windows
 #### Mac OS X
 
 * The [DUB website's download page](https://code.dlang.org/download) has OS X binaries.
-* or using [Homebrew](http://brew.sh/): brew install dmd
+* or using [Homebrew](http://brew.sh/): brew install dub
 
 #### Linux
 
