@@ -11,12 +11,12 @@ unittest
 // test associative array equality
 bool aaEqual (const int[dchar] lhs, const int[dchar] rhs)
 {
-	auto lhs_pairs = lhs.byKeyValue.array;
-	auto rhs_pairs = rhs.byKeyValue.array;
-	lhs_pairs.sort!(q{a.key < b.key});
-	rhs_pairs.sort!(q{a.key < b.key});
+	auto lhsPairs = lhs.byKeyValue.array;
+	auto rhsPairs = rhs.byKeyValue.array;
+	lhsPairs.sort!(q{a.key < b.key});
+	rhsPairs.sort!(q{a.key < b.key});
 
-	return equal!("a.key == b.key && a.value == b.value")(lhs_pairs, rhs_pairs);
+	return equal!("a.key == b.key && a.value == b.value")(lhsPairs, rhsPairs);
 }
 
 immutable int allTestsEnabled = 0;
