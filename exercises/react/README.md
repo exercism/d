@@ -45,6 +45,5 @@ low-level algorithms or facilities by hand.  [DRefLanguage](https://dlang.org/sp
 and [DReference](https://dlang.org/phobos/index.html) are references to the D language and D standard library.
 
 
-
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
