@@ -2,11 +2,11 @@ module pangram;
 
 unittest
 {
-    immutable bool all_test_enabled = false;
+    immutable bool allTestsEnabled = false;
 
     assert(!isPangram(""));
 
-    static if (all_tests_enabled) {
+    static if (allTestsEnabled) {
     assert(isPangram("the quick brown fox jumps over the lazy dog"));
     // missing x
     assert(!isPangram("a quick movement of the enemy will jeopardize five gunboats"));
