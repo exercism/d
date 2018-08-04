@@ -127,6 +127,7 @@
         "algorithms",
         "control_flow_foreach",
         "functional",
+        "math",
         "template_metaprogramming"
       ]
     },
