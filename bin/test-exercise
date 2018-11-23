@@ -13,12 +13,16 @@ status=0
 
 mv source testbak
 mv example source
+if [ -f testbak/tests.d ]; then
+  cp testbak/tests.d source/tests.d
+fi
 if ! dub test ; then
   echo "$dir test has failed"
   status=1
 fi
 # Restore so that if we are running locally,
 # we don't accidentally commit the directory moves.
+rm -f source/tests.d
 mv source example
 mv testbak source
 
