@@ -2,4 +2,6 @@ bin/configlet
 bin/configlet.exe
 *.o
 .gdb*
-
+*-test-library
+.dub
+.idea
