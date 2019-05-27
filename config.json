@@ -225,6 +225,16 @@
         "control_flow_if_statements",
         "strings"
       ]
+    },
+    {
+      "slug": "reverse-string",
+      "uuid": "298095e4-329f-402e-b3bc-28252eddd79b",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "strings"
+      ]
     }
   ]
 }
