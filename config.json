@@ -284,6 +284,18 @@
         "maps",
         "strings"
       ]
+    },
+    {
+      "slug": "darts",
+      "uuid": "34ea72a7-8741-4421-812c-da4648c333ff",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "conditionals",
+        "floating_point_numbers",
+        "math"
+      ]
     }
   ]
 }
