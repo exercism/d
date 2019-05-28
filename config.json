@@ -270,6 +270,20 @@
         "optional_values",
         "text_formatting"
       ]
+    },
+    {
+      "slug": "isogram",
+      "uuid": "833e59f1-6f81-405f-9412-7d0c42aaa2cb",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "algorithms",
+        "conditionals",
+        "loops",
+        "maps",
+        "strings"
+      ]
     }
   ]
 }
