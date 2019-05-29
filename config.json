@@ -307,6 +307,17 @@
         "arrays",
         "strings"
       ]
+    },
+    {
+      "slug": "resistor-color-duo",
+      "uuid": "6fd7d4dd-7473-4530-a3dc-892be4321efb",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "arrays",
+        "transforming"
+      ]
     }
   ]
 }
