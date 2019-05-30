@@ -318,6 +318,20 @@
         "arrays",
         "transforming"
       ]
+    },
+    {
+      "slug": "perfect-numbers",
+      "uuid": "4382a967-c1fc-4295-ae95-077a103acc58",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "enumerations",
+        "exception_handling",
+        "filtering",
+        "integers",
+        "math"
+      ]
     }
   ]
 }
