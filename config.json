@@ -332,6 +332,17 @@
         "integers",
         "math"
       ]
+    },
+    {
+      "slug": "sum-of-multiples",
+      "uuid": "747d5874-2896-48fe-934c-030175d9729c",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "integers",
+        "math"
+      ]
     }
   ]
 }
