@@ -343,6 +343,17 @@
         "integers",
         "math"
       ]
+    },
+    {
+      "slug": "prime-factors",
+      "uuid": "9042f732-2aa4-438c-90ca-7f0da088b9eb",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "integers",
+        "math"
+      ]
     }
   ]
 }
