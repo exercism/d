@@ -354,6 +354,18 @@
         "integers",
         "math"
       ]
+    },
+    {
+      "slug": "luhn",
+      "uuid": "c0374786-2736-42c4-93d3-7576abfece88",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "algorithms",
+        "integers",
+        "strings"
+      ]
     }
   ]
 }
