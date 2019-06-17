@@ -366,6 +366,19 @@
         "integers",
         "strings"
       ]
+    },
+    {
+      "slug": "nth-prime",
+      "uuid": "1e854d3a-afce-48ab-8802-d4d0a43eeca3",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "algorithms",
+        "lists",
+        "loops",
+        "math"
+      ]
     }
   ]
 }
