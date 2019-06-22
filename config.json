@@ -379,6 +379,19 @@
         "loops",
         "math"
       ]
+    },
+    {
+      "slug": "matching-brackets",
+      "uuid": "ed189c57-0585-4534-a44a-e23d795f91a1",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "parsing",
+        "recursion",
+        "stacks",
+        "strings"
+      ]
     }
   ]
 }
