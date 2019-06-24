@@ -392,6 +392,16 @@
         "stacks",
         "strings"
       ]
+    },
+    {
+      "slug": "grains",
+      "uuid": "e29d6573-0829-4ad8-9ae9-0160e70738ea",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "integers"
+      ]
     }
   ]
 }
