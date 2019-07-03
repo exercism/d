@@ -213,6 +213,18 @@
         "nested_classes",
         "reactive_programming"
       ]
+    },
+    {
+      "slug": "run-length-encoding",
+      "uuid": "44d24e19-2600-469d-a405-d08d2a524b95",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "algorithms",
+        "control_flow_if_statements",
+        "strings"
+      ]
     }
   ]
 }
