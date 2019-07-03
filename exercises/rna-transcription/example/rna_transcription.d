@@ -5,7 +5,7 @@ import std.string;
 
 immutable dchar[dchar] rnaTransTable;
 
-static this() {
+shared static this() {
  rnaTransTable = [
      'C': 'G',
      'G': 'C',
