@@ -175,12 +175,12 @@ static if (allTestsEnabled) {
     auto b = r.new InputCell(false);
     auto carryIn = r.new InputCell(false);
 
-    auto aXorB = r.new ComputeCell(a, b, (int x, int y) => x != y);
-    auto sum = r.new ComputeCell(aXorB, carryIn, (int x, int y) => x != y);
+    auto aXorB = r.new ComputeCell(a, b, (bool x, bool y) => x != y);
+    auto sum = r.new ComputeCell(aXorB, carryIn, (bool x, bool y) => x != y);
 
-    auto aXorBAndCin = r.new ComputeCell(aXorB, carryIn, (int x, int y) => x && y);
-    auto aAndB = r.new ComputeCell(a, b, (int x, int y) => x && y);
-    auto carryOut = r.new ComputeCell(aXorBAndCin, aAndB, (int x, int y) => x || y);
+    auto aXorBAndCin = r.new ComputeCell(aXorB, carryIn, (bool x, bool y) => x && y);
+    auto aAndB = r.new ComputeCell(a, b, (bool x, bool y) => x && y);
+    auto carryOut = r.new ComputeCell(aXorBAndCin, aAndB, (bool x, bool y) => x || y);
 
     bool[5][] tests = [
       //            inputs,     expected
