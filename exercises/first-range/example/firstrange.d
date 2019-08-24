@@ -1,5 +1,5 @@
 module firstrange;
-module firstrange;
+
 import std.range;
 import std.algorithm;
 auto myFirstRange(T)(const T[] data)
