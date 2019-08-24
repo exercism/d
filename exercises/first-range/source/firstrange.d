@@ -1,38 +1,7 @@
 module firstrange;
-module firstrange;
 import std.range;
 import std.algorithm;
-auto myFirstRange(T)(const T[] data)
-{
-	struct myFirstRange(Type)
-	{
-		private
-		{
-			immutable Type[] data;
-			size_t loc = 0;
-		}
-		this(const Type[] pData)
-		{
-			data = pData.idup;
-		}
 
-		@property Type front() const
-		{
-			return data[loc];
-		}
-
-		void popFront()
-		{
-			++loc;
-		}
-
-		bool empty()
-		{
-			return data.length == loc;
-		}
-	}
-	return myFirstRange!T(data);
-}
 
 version = moreTests;
 @safe unittest
