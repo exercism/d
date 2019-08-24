@@ -20,7 +20,7 @@ just enough code to get the test to pass.  Once you've done that,
 uncomment the next test by moving the following line past the next test.
 
 ```D
-static if (all_tests_enabled)
+version = moreTests;
 ```
 
 This may result in compile errors as new constructs may be invoked that
@@ -34,9 +34,6 @@ low-level algorithms or facilities by hand.  [DRefLanguage](https://dlang.org/sp
 and [DReference](https://dlang.org/phobos/index.html) are references to the D language and D standard library.
 
 
-## Source
-
-Chapter 9 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=09](http://pine.fm/LearnToProgram/?Chapter=09)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
