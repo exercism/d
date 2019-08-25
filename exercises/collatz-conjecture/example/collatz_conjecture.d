@@ -25,15 +25,3 @@ int steps(int number)
 
     return result;
 }
-
-unittest
-{
-    import std.exception : assertThrown;
-
-    assert(steps(1) == 0);
-    assert(steps(16) == 4);
-    assert(steps(12) == 9);
-    assert(steps(1000000) == 152);
-    assertThrown(steps(0));
-    assertThrown(steps(-15));
-}

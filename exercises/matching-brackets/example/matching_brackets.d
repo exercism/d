@@ -28,25 +28,3 @@ pure bool isPaired(immutable string input)
 
     return stack.empty;
 }
-
-unittest
-{
-    assert(isPaired("[]"));
-    assert(isPaired(""));
-    assert(!isPaired("[["));
-    assert(!isPaired("}{"));
-    assert(!isPaired("{]"));
-    assert(isPaired("{ }"));
-    assert(!isPaired("{[])"));
-    assert(isPaired("{[]}"));
-    assert(isPaired("{}[]"));
-    assert(isPaired("([{}({}[])])"));
-    assert(!isPaired("{[)][]}"));
-    assert(!isPaired("([{])"));
-    assert(!isPaired("[({]})"));
-    assert(!isPaired("{}["));
-    assert(!isPaired("[]]"));
-    assert(isPaired("(((185 + 223.85) * 15) - 543)/2"));
-    assert(isPaired(
-            "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)"));
-}

@@ -48,22 +48,3 @@ pure string decode(immutable string input)
 
     return result;
 }
-
-unittest
-{
-    assert(encode("") == "");
-    assert(encode("XYZ") == "XYZ");
-    assert(encode("AABBBCCCC") == "2A3B4C");
-    assert(encode("WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB") == "12WB12W3B24WB");
-    assert(encode("  hsqq qww  ") == "2 hs2q q2w2 ");
-    assert(encode("aabbbcccc") == "2a3b4c");
-
-    assert(decode("") == "");
-    assert(decode("XYZ") == "XYZ");
-    assert(decode("2A3B4C") == "AABBBCCCC");
-    assert(decode("12WB12W3B24WB") == "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB");
-    assert(decode("2 hs2q q2w2 ") == "  hsqq qww  ");
-    assert(decode("2a3b4c") == "aabbbcccc");
-
-    assert("zzz ZZ  zZ".encode.decode == "zzz ZZ  zZ");
-}
