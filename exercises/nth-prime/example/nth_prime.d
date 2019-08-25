@@ -42,14 +42,3 @@ private pure bool isPrime(immutable int n)
     }
     return true;
 }
-
-unittest
-{
-    import std.exception : assertThrown;
-
-    assert(prime(1) == 2);
-    assert(prime(2) == 3);
-    assert(prime(6) == 13);
-    assert(prime(10_001) == 10_4743);
-    assertThrown(prime(0));
-}
