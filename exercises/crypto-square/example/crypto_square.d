@@ -63,14 +63,14 @@ public:
 		return result;
 	}
 
-	string cipherText ()
+	Cipher normalize ()
 	{
-		string result = normalizedCipherText();
+		delimiter = " ";
 
-		return result.replace(" ", "");
+		return this;
 	}
 
-	string normalizedCipherText ()
+	string cipherText ()
 	{
 		string result;
 		string[] segments = plainTextSegments();
@@ -85,7 +85,7 @@ public:
 			}
 
 			result ~= cryptoSegment;
-			result ~= " ";
+			result ~= delimiter;
 		}
 
 		return strip(result);
@@ -94,4 +94,5 @@ public:
 
 private:
 	const string normalized;
+	string delimiter = "";
 }
