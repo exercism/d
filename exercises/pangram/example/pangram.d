@@ -2,7 +2,7 @@ module pangram;
 
 import std.uni : toLower;
 
-bool isPangram(string str)
+pure bool isPangram(immutable string str)
 {
     bool[dchar] letters;
     foreach (char letter; str)

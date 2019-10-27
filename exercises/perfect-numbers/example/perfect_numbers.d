@@ -1,5 +1,7 @@
 module perfect_numbers;
 
+import std.exception : enforce;
+
 enum Classification
 {
     DEFICIENT,
@@ -9,10 +11,7 @@ enum Classification
 
 pure Classification classify(immutable int input)
 {
-    if (input <= 0)
-    {
-        throw new Exception("Classification is only possible for natural numbers");
-    }
+    enforce(input > 0, "Classification is only possible for natural numbers");
 
     int aliquot = 0;
     for (int i = 1; i < input; i++)

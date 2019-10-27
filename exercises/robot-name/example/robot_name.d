@@ -1,4 +1,3 @@
-
 module robot;
 
 import std.string;
@@ -11,73 +10,73 @@ import std.stdio;
 class Robot
 {
 public:
-	this ()
-	{
-		initName();
-	}
+    this()
+    {
+        initName();
+    }
 
-	string name () const @property
-	{
-		return name_;
-	}
+    string name() const @property
+    {
+        return name_;
+    }
 
-	void reset ()
-	{
-		string oldName = name_;
-		// intialize a new name
-		initName();
-		// free the old name in the dictionary
-		nameDictionary[oldName] = false;
-	}
+    void reset()
+    {
+        string oldName = name_;
+        // intialize a new name
+        initName();
+        // free the old name in the dictionary
+        nameDictionary[oldName] = false;
+    }
 
-	static uint collisons () @property
-	{
-		return collisions_;
-	}
+    static uint collisons() @property
+    {
+        return collisions_;
+    }
 
 private:
-	void initName ()
-	{
-		string newName = generateName();
-		while (newName in nameDictionary && nameDictionary[newName] == true)
-		{
-			++collisions_;
-			newName = generateName();
-		}
+    void initName()
+    {
+        string newName = generateName();
+        while (newName in nameDictionary && nameDictionary[newName] == true)
+        {
+            ++collisions_;
+            newName = generateName();
+        }
 
-		nameDictionary[newName] = true;
-		name_ = newName;
-	}
+        nameDictionary[newName] = true;
+        name_ = newName;
+    }
 
-	string generateName ()
-	{
-		char[] upper = uppercase.dup;
-		char[] dig = digits.dup;
-		randomShuffle(upper.representation);
-		randomShuffle(dig.representation);
+    string generateName()
+    {
+        char[] upper = uppercase.dup;
+        char[] dig = digits.dup;
+        randomShuffle(upper.representation);
+        randomShuffle(dig.representation);
 
-		string n = "".dup;
-		auto gen = Random(unpredictableSeed);
-		auto idx = uniform(0, upper.length, gen);
-		n ~= upper[idx];
-		idx = uniform(0, upper.length, gen);
-		n ~= upper[idx];
+        string n = "".dup;
+        auto gen = Random(unpredictableSeed);
+        auto idx = uniform(0, upper.length, gen);
+        n ~= upper[idx];
+        idx = uniform(0, upper.length, gen);
+        n ~= upper[idx];
 
-		foreach(i; [0, 1, 2])
-		{
-			idx = uniform(0, dig.length, gen);
-			n ~= dig[idx];
-		}
+        foreach (i; [0, 1, 2])
+        {
+            idx = uniform(0, dig.length, gen);
+            n ~= dig[idx];
+        }
 
-		return n;
-	}
+        return n;
+    }
 
-	string name_;
+    string name_;
 
-	// !! that causes a segmentation fault !!
-	//static char[] upper = uppercase.dup;
-	//static char[] dig = digits.dup;
+    // !! that causes a segmentation fault !!
+    //static char[] upper = uppercase.dup;
+    //static char[] dig = digits.dup;
 
-	static bool[string] nameDictionary;
-	static uint collisions_ = 0;
+    static bool[string] nameDictionary;
+    static uint collisions_ = 0;
 }

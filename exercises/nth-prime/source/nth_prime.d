@@ -6,21 +6,21 @@ unittest
 
     immutable int allTestsEnabled = 0;
 
-    // first prime
+    // First prime
     assert(prime(1) == 2);
 
     static if (allTestsEnabled)
     {
-        // second prime
+        // Second prime
         assert(prime(2) == 3);
 
-        // sixth prime
+        // Sixth prime
         assert(prime(6) == 13);
 
-        // big prime
+        // Big prime
         assert(prime(10_001) == 10_4743);
 
-        // there is no zeroth prime
+        // There is no zeroth prime
         assertThrown(prime(0));
     }
 

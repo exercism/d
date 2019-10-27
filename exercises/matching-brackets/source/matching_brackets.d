@@ -4,57 +4,57 @@ unittest
 {
     immutable int allTestsEnabled = 0;
 
-    // paired square brackets
+    // Paired square brackets
     assert(isPaired("[]"));
 
     static if (allTestsEnabled)
     {
-        // empty string
+        // Empty string
         assert(isPaired(""));
 
-        // unpaired brackets
+        // Unpaired brackets
         assert(!isPaired("[["));
 
-        // wrong ordered brackets
+        // Wrong ordered brackets
         assert(!isPaired("}{"));
 
-        // wrong closing bracket
+        // Wrong closing bracket
         assert(!isPaired("{]"));
 
-        // paired with whitespace
+        // Paired with whitespace
         assert(isPaired("{ }"));
 
-        // partially paired brackets
+        // Partially paired brackets
         assert(!isPaired("{[])"));
 
-        // simple nested brackets
+        // Simple nested brackets
         assert(isPaired("{[]}"));
 
-        // several paired brackets
+        // Several paired brackets
         assert(isPaired("{}[]"));
 
-        // paired and nested brackets
+        // Paired and nested brackets
         assert(isPaired("([{}({}[])])"));
 
-        // unopened closing brackets
+        // Unopened closing brackets
         assert(!isPaired("{[)][]}"));
 
-        // unpaired and nested brackets
+        // Unpaired and nested brackets
         assert(!isPaired("([{])"));
 
-        // paired and wrong nested brackets
+        // Paired and wrong nested brackets
         assert(!isPaired("[({]})"));
 
-        // paired and incomplete brackets
+        // Paired and incomplete brackets
         assert(!isPaired("{}["));
 
-        // too many closing brackets
+        // Too many closing brackets
         assert(!isPaired("[]]"));
 
-        // math expression
+        // Math expression
         assert(isPaired("(((185 + 223.85) * 15) - 543)/2"));
 
-        // complex latex expression
+        // Complex latex expression
         assert(isPaired(
                 "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)"));
     }

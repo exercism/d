@@ -4,27 +4,27 @@ unittest
 {
     immutable bool allTestsEnabled = false;
 
-    // no factors
+    // No factors
     assert(factors(1) == []);
 
     static if (allTestsEnabled)
     {
-        // prime number
+        // Prime number
         assert(factors(2) == [2]);
 
-        // square of a prime
+        // Square of a prime
         assert(factors(9) == [3, 3]);
 
-        // cube of a prime
+        // Cube of a prime
         assert(factors(8) == [2, 2, 2]);
 
-        // product of primes and non-primes
+        // Product of primes and non-primes
         assert(factors(12) == [2, 2, 3]);
 
-        // product of primes
+        // Product of primes
         assert(factors(901_255) == [5, 17, 23, 461]);
 
-        // factors include a large prime
+        // Factors include a large prime
         assert(factors(93_819_012_551) == [11, 9539, 894_119]);
     }
 }

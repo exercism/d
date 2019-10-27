@@ -1,98 +1,76 @@
-
 module nucleotide_count;
 
 import std.string;
 import std.array;
-import std.algorithm.sorting: sort;
-import std.algorithm.comparison: equal;
+import std.algorithm.sorting : sort;
+import std.algorithm.comparison : equal;
 
 unittest
 {
 
-// test associative array equality
-bool aaEqual (const ulong[char] lhs, const ulong[char] rhs)
-{
-	auto lhs_pairs = lhs.byKeyValue.array;
-	auto rhs_pairs = rhs.byKeyValue.array;
-	lhs_pairs.sort!(q{a.key < b.key});
-	rhs_pairs.sort!(q{a.key < b.key});
+    // test associative array equality
+    bool aaEqual(const ulong[char] lhs, const ulong[char] rhs)
+    {
+        auto lhs_pairs = lhs.byKeyValue.array;
+        auto rhs_pairs = rhs.byKeyValue.array;
+        lhs_pairs.sort!(q{a.key < b.key});
+        rhs_pairs.sort!(q{a.key < b.key});
 
-	return equal!("a.key == b.key && a.value == b.value")(lhs_pairs, rhs_pairs);
-}
+        return equal!("a.key == b.key && a.value == b.value")(lhs_pairs, rhs_pairs);
+    }
 
-immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 0;
 
-// has_no_nucleotides
-{
-	const Counter dna = new Counter("");
-	const ulong[char] expected = ['A': 0, 'T': 0, 'C': 0, 'G':0];
+    // Empty strand
+    {
+        const Counter dna = new Counter("");
+        const ulong[char] expected = ['A' : 0, 'T' : 0, 'C' : 0, 'G' : 0];
 
-	auto actual = dna.nucleotideCounts();
+        auto actual = dna.nucleotideCounts();
 
-	assert(aaEqual(expected, actual));
-}
+        assert(aaEqual(expected, actual));
+    }
 
-static if (allTestsEnabled)
-{
-// has_no_adenosine
-{
-	const Counter dna = new Counter("");
+    static if (allTestsEnabled)
+    {
+        // Can count one nucleotide in single-character input
+        {
+            const Counter dna = new Counter("G");
+            const ulong[char] expected = ['A' : 0, 'T' : 0, 'C' : 0, 'G' : 1];
 
-	assert(dna.countOne('A') == 0);
-}
+            const auto actual = dna.nucleotideCounts();
 
-// repetitive_cytidine_gets_count
-{
-	const Counter dna = new Counter("CCCCC");
+            assert(aaEqual(expected, actual));
+        }
 
-	assert(dna.countOne('C') == 5);
-}
+        // Strand with repeated nucleotide
+        {
+            const Counter dna = new Counter("GGGGGGGG");
+            const ulong[char] expected = ['A' : 0, 'T' : 0, 'C' : 0, 'G' : 8];
 
-// repetitive_sequence_has_only_guanosine
-{
-	const Counter dna = new Counter("GGGGGGGG");
-	const ulong[char] expected = ['A': 0, 'T': 0, 'C': 0, 'G': 8];
+            const auto actual = dna.nucleotideCounts();
 
-	const auto actual = dna.nucleotideCounts();
+            assert(aaEqual(expected, actual));
+        }
 
-	assert(aaEqual(expected, actual));
-}
+        // Strand with multiple nucleotides
+        {
+            const Counter dna = new Counter(
+                    "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
+            const ulong[char] expected = ['A' : 20, 'T' : 21, 'C' : 12, 'G' : 17];
 
-// count_only_thymidine
-{
-	const Counter dna = new Counter("GGGGTAACCCGG");
+            const auto actual = dna.nucleotideCounts();
 
-	assert(dna.countOne('T') == 1);
-}
+            assert(aaEqual(expected, actual));
+        }
 
-// count_a_nucleotide_only_once
-{
+        // Strand with invalid nucleotides
+        {
+            import std.exception : assertThrown;
 
-	const Counter dna = new Counter("GGTTGG");
+            assertThrown(new Counter("AGXXACT"));
+        }
 
-	dna.countOne('T');
-
-	assert(dna.countOne('T') == 2);
-}
-
-// validates_nucleotides
-{
-	import std.exception : assertThrown;
-
-	const Counter dna = new Counter("GGTTGG");
-
-	assertThrown(dna.countOne('X'));
-}
-
-// count_all_nucleotides)
-{
-	const Counter dna = new Counter("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
-	const ulong[char] expected = ['A': 20, 'T': 21, 'G': 17, 'C': 12 ];
-
-	auto actual = dna.nucleotideCounts();
-
-	assert(aaEqual(expected, actual));
-}
-}
+    }
 
 }

@@ -1,6 +1,11 @@
-bool is_leap(uint year) {
-  bool div_by(uint n) {
-    return year % n == 0;
-  }
-  return div_by(4) && (!div_by(100) || div_by(400));
+module leap;
+
+pure bool isLeap(immutable uint year)
+{
+    pure bool divBy(immutable uint n)
+    {
+        return year % n == 0;
+    }
+
+    return divBy(4) && (!divBy(100) || divBy(400));
 }
