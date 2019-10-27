@@ -1,21 +1,30 @@
 module rna_transcription;
 
-unittest {
-import std.exception : assertThrown;
+unittest
+{
+    import std.exception : assertThrown;
 
-const int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 0;
 
-    assert(dnaComplement("C") == "G");
-static if (allTestsEnabled) {
-    assert(dnaComplement("G") == "C");
-    assert(dnaComplement("T") == "A");
-    assert(dnaComplement("A") == "U");
+    // Empty RNA sequence
+    assert(toRna("") == "");
 
-    assert(dnaComplement("ACGTGGTCTTAA") == "UGCACCAGAAUU");
+    static if (allTestsEnabled)
+    {
+        // RNA complement of cytosine is guanine
+        assert(toRna("C") == "G");
 
-    assertThrown(dnaComplement("U"));
-    assertThrown(dnaComplement("XXX"));
-    assertThrown(dnaComplement("ACGTXXXCTTAA"));
-}
+        // RNA complement of guanine is cytosine
+        assert(toRna("G") == "C");
+
+        // RNA complement of thymine is adenine
+        assert(toRna("T") == "A");
+
+        // RNA complement of adenine is uracil
+        assert(toRna("A") == "U");
+
+        // RNA complement
+        assert(toRna("ACGTGGTCTTAA") == "UGCACCAGAAUU");
+    }
 
 }

@@ -1,6 +1,6 @@
 module collatz_conjecture;
 
-int steps(int number)
+pure int steps(immutable int number)
 {
     if (number < 1)
     {

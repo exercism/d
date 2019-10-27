@@ -1,13 +1,12 @@
 module nth_prime;
+
+import std.exception : enforce;
 import std.math : sqrt;
 import std.conv;
 
 pure int prime(immutable int number)
 {
-    if (number < 1)
-    {
-        throw new Exception("There is no zeroth prime");
-    }
+    enforce(number > 0, "There is no zeroth prime");
 
     int primes = 0;
     int i = 1;

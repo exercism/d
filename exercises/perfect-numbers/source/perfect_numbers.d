@@ -37,7 +37,6 @@ unittest
         // Large abundant number is classified correctly
         assert(classify(33_550_335) == Classification.ABUNDANT);
 
-        
         // Deficient numbers
 
         // Smallest prime deficient number is classified correctly
@@ -55,7 +54,6 @@ unittest
         // Edge case (no factors other than itself) is classified correctly
         assert(classify(1) == Classification.DEFICIENT);
 
-        
         // Invalid inputs
 
         // Zero is rejected (not a natural number)

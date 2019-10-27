@@ -1,129 +1,143 @@
-
 module circular;
 
 unittest
 {
-import std.exception : assertThrown;
+    import std.exception : assertThrown;
 
-immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 0;
 
-// test read empty buffer
-{
-	auto myBuffer = new Buffer!(int)(1UL);
-	assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
-}
+    // Reading empty buffer should fail"
+    {
+        auto myBuffer = new Buffer!(int)(1UL);
+        assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
+    }
 
-static if (allTestsEnabled)
-{
+    static if (allTestsEnabled)
+    {
 
-// test write and read back one item
-{
-	auto myBuffer = new Buffer!(char)(1);
-	myBuffer.push('1');
-	assert(myBuffer.pop() == '1');
-}
+        // Can read an item just written
+        {
+            auto myBuffer = new Buffer!(char)(1);
+            myBuffer.push('1');
+            assert(myBuffer.pop() == '1');
+        }
 
-// test write and read back multiple items
-{
-	auto myBuffer =  new Buffer!(char)(2);
-	myBuffer.push('1');
-	myBuffer.push('2');
-	assert(myBuffer.pop() == '1');
-	assert(myBuffer.pop() == '2');
-}
+        // Each item may only be read once"
+        {
+            auto myBuffer = new Buffer!(char)(1);
+            myBuffer.push('1');
+            assert(myBuffer.pop() == '1');
+            assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
+        }
 
-// test clearing the buffer
-{
-	auto myBuffer = new Buffer!(char)(3);
-	myBuffer.push('1');
-	myBuffer.push('2');
-	myBuffer.push('3');
+        // Items are read in the order they are written
+        {
+            auto myBuffer = new Buffer!(char)(2);
+            myBuffer.push('1');
+            myBuffer.push('2');
+            assert(myBuffer.pop() == '1');
+            assert(myBuffer.pop() == '2');
+        }
 
-	myBuffer.clear();
-	assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
-}
+        // Full buffer can't be written to
+        {
+            auto myBuffer = new Buffer!(char)(1);
+            myBuffer.push('1');
+            assertThrown(myBuffer.push('2'),
+                    "Full buffer should throw exception if new element pushed!");
+        }
 
-// test alternate write and read
-{
-	auto myBuffer = new Buffer!(char)(2);
-	myBuffer.push('1');
-	assert(myBuffer.pop() == '1');
-	myBuffer.push('2');
-	assert(myBuffer.pop() == '2');
-}
+        // A read frees up capacity for another write
+        {
+            auto myBuffer = new Buffer!(char)(1);
+            myBuffer.push('1');
+            assert(myBuffer.pop() == '1');
+            myBuffer.push('2');
+            assert(myBuffer.pop() == '2');
+        }
 
-// test read back oldest item
-{
-	auto myBuffer = new Buffer!(char)(4);
-	myBuffer.push('1');
-	myBuffer.push('2');
-	myBuffer.pop();
-	myBuffer.push('3');
-	myBuffer.pop();
+        // Read position is maintained even across multiple writes
+        {
+            auto myBuffer = new Buffer!(char)(3);
+            myBuffer.push('1');
+            myBuffer.push('2');
+            assert(myBuffer.pop() == '1');
+            myBuffer.push('3');
+            assert(myBuffer.pop() == '2');
+            assert(myBuffer.pop() == '3');
+        }
 
-	assert(myBuffer.pop() == '3');
-}
+        // Items cleared out of buffer can't be read
+        {
+            auto myBuffer = new Buffer!(char)(1);
+            myBuffer.push('1');
+            myBuffer.clear();
+            assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
+        }
 
-// test write buffer
-{
-	auto myBuffer = new Buffer!(char)(3);
-	myBuffer.push('1');
-	myBuffer.push('2');
-	myBuffer.push('3');
+        // Clear frees up capacity for another write
+        {
+            auto myBuffer = new Buffer!(char)(1);
+            myBuffer.push('1');
+            myBuffer.clear();
+            myBuffer.push('2');
+            assert(myBuffer.pop() == '2');
+        }
 
-	assertThrown(myBuffer.push('4'), "Full buffer should throw exception if new element pushed!");
-}
+        // Clear does nothing on empty buffer
+        {
+            auto myBuffer = new Buffer!(char)(1);
+            myBuffer.clear();
+            myBuffer.push('1');
+            assert(myBuffer.pop() == '1');
+        }
 
-// test forcePush full buffer
-{
-	auto myBuffer = new Buffer!(char)(3);
-	myBuffer.push('1');
-	myBuffer.push('2');
-	myBuffer.push('3');
+        // Overwrite acts like write on non-full buffer
+        {
+            auto myBuffer = new Buffer!(char)(2);
+            myBuffer.push('1');
+            myBuffer.forcePush('2');
+            assert(myBuffer.pop() == '1');
+            assert(myBuffer.pop() == '2');
+        }
 
-	myBuffer.forcePush('A');
-	assert(myBuffer.pop() == '2');
-	assert(myBuffer.pop() == '3');
-	assert(myBuffer.pop() == 'A');
-}
+        // Overwrite replaces the oldest item on full buffer
+        {
+            auto myBuffer = new Buffer!(char)(2);
+            myBuffer.push('1');
+            myBuffer.push('2');
+            myBuffer.forcePush('3');
+            assert(myBuffer.pop() == '2');
+            assert(myBuffer.pop() == '3');
+        }
 
-// test forcePush non-full buffer
-{
-	auto myBuffer = new Buffer!(int)(2);
-	myBuffer.forcePush(1000);
-	myBuffer.forcePush(2000);
+        // Overwrite replaces the oldest item remaining in buffer following a read
+        {
+            auto myBuffer = new Buffer!(char)(3);
+            myBuffer.push('1');
+            myBuffer.push('2');
+            myBuffer.push('3');
+            assert(myBuffer.pop() == '1');
+            myBuffer.push('4');
+            myBuffer.forcePush('5');
+            assert(myBuffer.pop() == '3');
+            assert(myBuffer.pop() == '4');
+            assert(myBuffer.pop() == '5');
+        }
 
-	assert(myBuffer.pop() == 1000);
-	assert(myBuffer.pop() == 2000);
-}
+        // Initial clear does not affect wrapping around
+        {
+            auto myBuffer = new Buffer!(char)(2);
+            myBuffer.clear();
+            myBuffer.push('1');
+            myBuffer.push('2');
+            myBuffer.forcePush('3');
+            myBuffer.forcePush('4');
+            assert(myBuffer.pop() == '3');
+            assert(myBuffer.pop() == '4');
+            assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
+        }
 
-// test alternate read and forcePush
-{
-	auto myBuffer = new Buffer!(char)(5);
-	myBuffer.push('1');
-	myBuffer.push('2');
-	myBuffer.push('3');
-	myBuffer.pop();
-	myBuffer.pop();
-
-	myBuffer.push('4');
-	myBuffer.pop();
-
-	myBuffer.push('5');
-	myBuffer.push('6');
-	myBuffer.push('7');
-	myBuffer.push('8');
-	myBuffer.forcePush('A');
-	myBuffer.forcePush('B');
-
-	assert(myBuffer.pop() == '6');
-	assert(myBuffer.pop() == '7');
-	assert(myBuffer.pop() == '8');
-	assert(myBuffer.pop() == 'A');
-	assert(myBuffer.pop() == 'B');
-	assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
-}
-
-}
+    }
 
 }

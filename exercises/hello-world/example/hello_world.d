@@ -1,5 +1,6 @@
 module helloworld;
 
-string hello() {
-  return "Hello, World!";
+string hello()
+{
+    return "Hello, World!";
 }

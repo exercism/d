@@ -6,24 +6,24 @@ unittest
 
     const int allTestsEnabled = 0;
 
-    // zero steps for one
+    // Zero steps for one
     assert(steps(1) == 0);
 
     static if (allTestsEnabled)
     {
-        // divide if even
+        // Divide if even
         assert(steps(16) == 4);
 
-        // even and odd steps
+        // Even and odd steps
         assert(steps(12) == 9);
 
-        // large number of even and odd steps
+        // Large number of even and odd steps
         assert(steps(1000000) == 152);
 
-        // zero is an error
+        // Zero is an error
         assertThrown(steps(0));
 
-        // negative value is an error
+        // Negative value is an error
         assertThrown(steps(-15));
     }
 }

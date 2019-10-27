@@ -2,7 +2,7 @@ module resistor_color_duo;
 
 unittest
 {
-    const int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 0;
 
     // Brown and black
     assert(ResistorColorDuo.value(["brown", "black"]) == 10);
@@ -17,6 +17,9 @@ unittest
 
         // Orange and orange
         assert(ResistorColorDuo.value(["orange", "orange"]) == 33);
+
+        // Ignore additional colors
+        assert(ResistorColorDuo.value(["green", "brown", "orange"]) == 51);
     }
 
 }

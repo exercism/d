@@ -1,4 +1,3 @@
-
 module etl;
 
 import std.string;
@@ -10,25 +9,25 @@ import std.algorithm.sorting : sort;
 import std.typecons;
 import std.array : array;
 
-bool allAlphaUpper (string text)
+pure bool allAlphaUpper(immutable string text)
 {
-	auto pos = countUntil!((dchar c) => !(isAlpha(c) && isUpper(c)))(text);
-	return pos == -1;
+    auto pos = countUntil!((dchar c) => !(isAlpha(c) && isUpper(c)))(text);
+    return pos == -1;
 }
 
-int[dchar] transform (const string[int] score_map)
+pure int[dchar] transform(immutable string[int] score_map)
 {
-	int[dchar] new_map;
+    int[dchar] new_map;
 
-	foreach (entry; score_map.byKeyValue())
-	{
-		if (!allAlphaUpper(entry.value))
-		{
-			throw new Exception(format("Invalid input %s", entry.value));
-		}
+    foreach (entry; score_map.byKeyValue())
+    {
+        if (!allAlphaUpper(entry.value))
+        {
+            throw new Exception(format("Invalid input %s", entry.value));
+        }
 
-		entry.value.each!((dchar c) => new_map[toLower(c)] = entry.key);
-	}
+        entry.value.each!((dchar c) => new_map[toLower(c)] = entry.key);
+    }
 
-	return new_map;
+    return new_map;
 }

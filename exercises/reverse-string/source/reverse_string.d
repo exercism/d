@@ -2,26 +2,26 @@ module reverse_string;
 
 unittest
 {
-    const int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 0;
 
-    // an empty string
+    // An empty string
     assert(reverseString("") == "");
 
     static if (allTestsEnabled)
     {
-        // a word
+        // A word
         assert(reverseString("robot") == "tobor");
 
-        // a capitalized word
+        // A capitalized word
         assert(reverseString("Ramen") == "nemaR");
 
-        // a sentence with punctuation
+        // A sentence with punctuation
         assert(reverseString("I'm hungry!") == "!yrgnuh m'I");
 
-        // a palindrome
+        // A palindrome
         assert(reverseString("racecar") == "racecar");
 
-        // an even-sized word
+        // An even-sized word
         assert(reverseString("drawer") == "reward");
     }
 }
