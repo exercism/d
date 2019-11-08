@@ -1,8 +1,13 @@
-# xDLang
+# Exercism D Track
+
+[![Build Status](https://travis-ci.org/exercism/d.svg?branch=master)](https://travis-ci.org/exercism/d)
+[![GitHub issues](https://img.shields.io/github/issues/exercism/d.svg)](https://github.com/exercism/d/issues)
+[![GitHub forks](https://img.shields.io/github/forks/exercism/d.svg)](https://github.com/exercism/d/network)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/exercism/d/master/LICENSE)
 
 Exercism exercises in the D Programming Language
 
-[![Build Status](https://travis-ci.org/exercism/dlang.svg?branch=master)](https://travis-ci.org/exercism/dlang)
+[![Build Status](https://travis-ci.org/exercism/dlang.svg?branch=master)](https://travis-ci.org/exercism/d)
 
 ## Filenames
 
@@ -38,5 +43,5 @@ If you're having trouble getting this project set up locally, please open an iss
 
 There is useful Exercism-wide documentation about contributing to language tracks in the [exercism/docs](https://github.com/exercism/docs/blob/master/language-tracks/README.md) repository.
 
-### D icon
+## D icon
 The D "Digital Mars" logo is owned by Digital Mars, Inc. Digital Mars, Inc. allows anyone to use, modify and redistribute the logo provided that the copyright holder is properly attributed. The original image is part of the D programming language "dlang.org" source repository, released under version 1.0 of the Boost Software License. We have modified the image, changing the colour scheme, to create the D icon for Exercism.
