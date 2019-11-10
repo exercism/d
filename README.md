@@ -7,8 +7,6 @@
 
 Exercism exercises in the D Programming Language
 
-[![Build Status](https://travis-ci.org/exercism/dlang.svg?branch=master)](https://travis-ci.org/exercism/d)
-
 ## Filenames
 
 Each exercise is identified by a slug.
