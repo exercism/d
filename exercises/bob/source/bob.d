@@ -25,13 +25,13 @@ unittest
         assert(hey("fffbbcbeab?") == "Sure.");
 
         // Talking forcefully
-        assert(hey("Let's go make out behind the gym!") == "Whatever.");
+        assert(hey("Hi there!") == "Whatever.");
 
         // Using acronyms in regular speech
-        assert(hey("It's OK if you don't want to go to the DMV.") == "Whatever.");
+        assert(hey("It's OK if you don't want to go work for NASA.") == "Whatever.");
 
         // Forceful question
-        assert(hey("WHAT THE HELL WERE YOU THINKING?") == "Calm down, I know what I'm doing!");
+        assert(hey("WHAT'S GOING ON?") == "Calm down, I know what I'm doing!");
 
         // Shouting numbers
         assert(hey("1, 2, 3 GO!") == "Whoa, chill out!");
@@ -46,7 +46,7 @@ unittest
         assert(hey("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!") == "Whoa, chill out!");
 
         // Shouting with no exclamation mark
-        assert(hey("I HATE THE DMV") == "Whoa, chill out!");
+        assert(hey("I HATE THE DENTIST") == "Whoa, chill out!");
 
         // Statement containing question mark
         assert(hey("Ending with a ? means a question.") == "Whatever.");
