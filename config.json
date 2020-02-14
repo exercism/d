@@ -178,6 +178,19 @@
       ]
     },
     {
+      "slug": "first-range",
+      "uuid": "5db8d8e8-ba48-4668-afc3-6949b898fd81",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "struct_templates",
+        "data_structures",
+        "containers"
+      ]
+    }
+    ,
+    {
       "slug": "circular-buffer",
       "uuid": "2ba799a8-eab9-44a0-9b31-a10e72baa38b",
       "core": false,
