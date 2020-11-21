@@ -1,0 +1,34 @@
+name: Tests
+on:
+  pull_request:
+  push:
+    branches:
+    - main
+    - gha
+  schedule:
+    # Weekly.
+    - cron: "0 0 * * 0"
+
+jobs:
+  track-config:
+    name: Check track configuration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Fetch
+        uses: exercism/github-actions/configlet-ci@main
+      - name: Lint
+        run: configlet lint
+  exercises:
+    name: Check exercises
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dc: [dmd-latest, ldc-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dlang-community/setup-dlang@v1
+        with:
+          compiler: ${{ matrix.dc }}
+      - name: Run tests
+        run: bin/test-all-exercises
