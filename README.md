@@ -1,6 +1,6 @@
 # Exercism D Track
 
-[![Build Status](https://travis-ci.org/exercism/d.svg?branch=master)](https://travis-ci.org/exercism/d)
+[![Tests](https://github.com/exercism/d/workflows/Tests/badge.svg?branch=main)](https://github.com/exercism/d/actions/workflows/tests.yml?query=branch%3Amain)
 [![GitHub issues](https://img.shields.io/github/issues/exercism/d.svg)](https://github.com/exercism/d/issues)
 [![GitHub forks](https://img.shields.io/github/forks/exercism/d.svg)](https://github.com/exercism/d/network)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/exercism/d/master/LICENSE)
