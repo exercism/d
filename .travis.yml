@@ -1,8 +1,0 @@
----
-language: d
-install:
-- bin/fetch-configlet
-script:
-- bin/configlet lint .
-- bin/test-all-exercises
-sudo: false
