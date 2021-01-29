@@ -2,6 +2,7 @@
   "language": "D",
   "active": true,
   "blurb": "",
+  "version": 3,
   "checklist_issue": 6,
   "test_pattern": "source.*[.]d",
   "exercises": [
