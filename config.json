@@ -17,6 +17,7 @@
   "checklist_issue": 6,
   "test_pattern": "source.*[.]d",
   "exercises": {
+    "concept": [],
     "practice": [
       {
         "slug": "armstrong-numbers",
