@@ -6,24 +6,24 @@ installed on your system:
 * a D version 2 compiler
 * (optional but recommended) DUB
 
-### Prerequisite: D version 2 Compiler
+## Prerequisite: D version 2 Compiler
 
 On the D language's website [dlang.org](https://dlang.org) the most recent compiler
 version of the reference compiler DMD (Digital Mars D) can be downloaded and installed:
 
-#### Windows
+### Windows
 
 * [Installer](http://downloads.dlang.org/releases/2.x/2.071.1/dmd-2.071.1.exe)
 * or: [Archive](http://downloads.dlang.org/releases/2.x/2.071.1/dmd.2.071.1.windows.7z)
 * using [chocolatey](https://chocolatey.org/packages/dmd): choco install dmd
 
-#### Mac OS X
+### Mac OS X
 
 * .dmg [package](http://downloads.dlang.org/releases/2.x/2.071.0/dmd.2.071.0.dmg)
 * or: [Archive](http://downloads.dlang.org/releases/2.x/2.071.0/dmd.2.071.0.osx.tar.xz)
 * using [Homebrew](http://brew.sh/): brew install dmd
 
-#### Linux / FreeBSD
+### Linux / FreeBSD
 To quickly install dmd within your user directory, run: *curl -fsS https://dlang.org/install.sh | bash -s dmd*
 
 Packages for various distributions are provided:
@@ -34,7 +34,7 @@ Packages for various distributions are provided:
 * [Gentoo](https://wiki.gentoo.org/wiki/Dlang)
 * [OpenSuse](http://dlang.org/download.html#dmd)
 
-#### Other compilers
+### Other compilers
 Besides the DMD reference compiler which uses its own backend, there are two other compilers that can
 be fetched through the dlang.org download section:
 
@@ -46,7 +46,7 @@ support for other platforms like e.g. ARM.
 
 See the wiki for [more information](https://wiki.dlang.org/Compilers).
 
-#### IDE support
+### IDE support
 
 There are also support for the D language in various IDEs e.g.
 [VisualD](http://rainers.github.io/visuald/visuald/StartPage.html) for Visual Studio and
