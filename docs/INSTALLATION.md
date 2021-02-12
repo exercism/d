@@ -1,4 +1,4 @@
-## Prerequisites
+# Prerequisites
 
 The D language track requires that you have the following software
 installed on your system:
