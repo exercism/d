@@ -16,6 +16,20 @@
   },
   "checklist_issue": 6,
   "test_pattern": "source.*[.]d",
+  "files": {
+    "solution": [
+      "source/%{snake_slug}.d"
+    ],
+    "test": [
+      "source/%{snake_slug}.d"
+    ],
+    "example": [
+      "example/%{snake_slug}.d"
+    ],
+    "exemplar": [
+      ".meta/exemplar.d"
+    ]
+  },
   "exercises": {
     "concept": [],
     "practice": [
