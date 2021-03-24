@@ -1,6 +1,14 @@
 {
   "blurb": "Implement the classic method for composing secret messages called a square code.",
   "authors": [],
+  "contributors": [
+    "amscotti",
+    "AntonMeep",
+    "kytrinyx",
+    "petertseng",
+    "sjwarner-bp",
+    "tmccombs"
+  ],
   "files": {
     "solution": [],
     "test": [],
