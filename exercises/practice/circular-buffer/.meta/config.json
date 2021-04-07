@@ -2,9 +2,15 @@
   "blurb": "A data structure that uses a single, fixed-size buffer as if it were connected end-to-end.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "source/circular_buffer.d"
+    ],
+    "test": [
+      "source/circular_buffer.d"
+    ],
+    "example": [
+      "example/circular_buffer.d"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Circular_buffer"
