@@ -2,9 +2,15 @@
   "blurb": "Make sure the brackets and braces all match.",
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "source/matching_brackets.d"
+    ],
+    "test": [
+      "source/matching_brackets.d"
+    ],
+    "example": [
+      "example/matching_brackets.d"
+    ]
   },
   "source": "Ginna Baker"
 }
