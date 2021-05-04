@@ -1,3 +1,5 @@
+# About
+
 [D](https://dlang.org) is a systems programming language with
 C-like syntax and static typing. It combines efficiency, control and modeling power with safety
 and programmer productivity. The language was developed originally by [Walter Bright](https://en.wikipedia.org/wiki/Walter_Bright) and [Andrei

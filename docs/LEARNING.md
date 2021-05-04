@@ -1,3 +1,5 @@
+# Learning
+
 ## Learning D
 
 In general, exercism assumes you already know the syntax and mechanisms
