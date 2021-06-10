@@ -8,7 +8,7 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "",
+  "blurb": "D is a systems programming language that emphasizes speed. D combines the performance and safety of compiled languages with the expressiveness of dynamic languages. Its syntax is inspired by C and C++.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
