@@ -1,6 +1,11 @@
 {
   "blurb": "Compute the prime factors of a given natural number.",
-  "authors": [],
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "petertseng"
+  ],
   "files": {
     "solution": [
       "source/prime_factors.d"

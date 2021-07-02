@@ -1,6 +1,14 @@
 {
   "blurb": "Implement a basic reactive system.",
-  "authors": [],
+  "authors": [
+    "petertseng"
+  ],
+  "contributors": [
+    "amscotti",
+    "kytrinyx",
+    "maxhaton",
+    "sjwarner-bp"
+  ],
   "files": {
     "solution": [
       "source/react.d"
