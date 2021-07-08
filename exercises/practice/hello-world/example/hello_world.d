@@ -2,5 +2,5 @@ module helloworld;
 
 string hello()
 {
-    return "Goodbye, World!";
+    return "Hello, World!";
 }
