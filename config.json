@@ -19,7 +19,6 @@
     "average_run_time": 2.0
   },
   "checklist_issue": 6,
-  "test_pattern": "source.*[.]d",
   "files": {
     "solution": [
       "source/%{snake_slug}.d"
