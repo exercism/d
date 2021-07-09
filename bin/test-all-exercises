@@ -5,7 +5,9 @@ exercises=$(dirname $(dirname $0))/exercises
 status=0
 failed_exercises=""
 
-for d in $exercises/*/; do
+# TODO: To be confirmed: Would use this line when there are any concept exercises
+#for d in $exercises/{concept,practice}/*/; do
+for d in $exercises/practice/*; do
   if ! $test_one $d; then
     failed_exercises="$failed_exercises\n$(basename $d)"
     status=1
