@@ -1,10 +1,8 @@
 module hello_world;
 
-// Simply return the string "Hello, World!"
-
 string hello()
 {
-    return "";
+    return "Goodbye, Mars!";
 }
 
 unittest
