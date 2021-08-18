@@ -474,32 +474,32 @@
     {
       "title": "Expressive",
       "content": "Support for multiple programming paradigms, with strong metaprogramming capabilities.",
-      "icon": ""
+      "icon": "expressive"
     },
     {
       "title": "Fast",
       "content": "D programs are compiled, leading to faster execution times than interpreted languages.",
-      "icon": ""
+      "icon": "fast"
     },
     {
       "title": "Safe",
       "content": "Functions tagged as @safe restrict them to a memory-safe subset of D.",
-      "icon": ""
+      "icon": "immutable"
     },
     {
       "title": "Language Interop",
       "content": "Seamlessly embed C and C++ into your D projects, giving you access to millions of libraries.",
-      "icon": ""
+      "icon": "interop"
     },
     {
       "title": "Better C",
       "content": "Integrate D into C projects using the -betterC compilation flag.",
-      "icon": ""
+      "icon": "powerful"
     },
     {
       "title": "Optional GC",
       "content": "Leave it enabled when it's needed, and disable it when it's not.",
-      "icon": ""
+      "icon": "garbage-collected"
     }
   ],
   "tags": [
