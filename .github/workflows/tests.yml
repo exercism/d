@@ -14,7 +14,7 @@ jobs:
     name: Check track configuration
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97
       - name: Fetch
         uses: exercism/github-actions/configlet-ci@main
       - name: Lint
@@ -26,7 +26,7 @@ jobs:
       matrix:
         dc: [dmd-latest, ldc-latest]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97
       - uses: dlang-community/setup-dlang@v1
         with:
           compiler: ${{ matrix.dc }}
