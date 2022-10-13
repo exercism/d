@@ -215,7 +215,7 @@
       },
       {
         "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
+        "name": "Sum of Multiples",
         "uuid": "747d5874-2896-48fe-934c-030175d9729c",
         "practices": [],
         "prerequisites": [],
@@ -252,7 +252,7 @@
       },
       {
         "slug": "difference-of-squares",
-        "name": "Difference Of Squares",
+        "name": "Difference of Squares",
         "uuid": "d6c67e30-c950-40b6-b6db-0fa6df5652af",
         "practices": [],
         "prerequisites": [],
@@ -267,7 +267,7 @@
       },
       {
         "slug": "etl",
-        "name": "Etl",
+        "name": "ETL",
         "uuid": "dc631076-1eb8-4120-bd8f-dccf33df9a3f",
         "practices": [],
         "prerequisites": [],
@@ -315,7 +315,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "208f9a34-bdf2-4c2b-b102-f0ef1a5d04fe",
         "practices": [],
         "prerequisites": [],
@@ -441,7 +441,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "44d24e19-2600-469d-a405-d08d2a524b95",
         "practices": [],
         "prerequisites": [],
