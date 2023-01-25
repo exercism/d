@@ -28,7 +28,7 @@ To quickly install dmd within your user directory, run: *curl -fsS https://dlang
 
 Packages for various distributions are provided:
 
-* [ArchLinux](https://wiki.archlinux.org/index.php/D_(programming_language)
+* [ArchLinux](https://wiki.archlinux.org/index.php/D_(programming_language))
 * [Debian/Ubuntu](http://d-apt.sourceforge.net/)
 * [Fedora/CentOS](http://dlang.org/download.html#dmd)
 * [Gentoo](https://wiki.gentoo.org/wiki/Dlang)
