@@ -17,8 +17,7 @@ module pangram;
 
 import std.algorithm : filter;
 import std.algorithm.iteration : fold;
-import std.ascii : isAlpha;
-import std.uni : toLower;
+import std.ascii : isAlpha,  toLower;
 
 @safe
 bool isPangram(string text)
@@ -39,7 +38,7 @@ module pangram;
 
 import std.algorithm.searching : all, find;
 import std.range : empty;
-import std.uni : toLower;
+import std.ascii : toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
@@ -62,8 +61,7 @@ import std.algorithm : filter, map;
 import std.algorithm.iteration : fold;
 import std.algorithm.setops : setIntersection;
 import std.array : array;
-import std.ascii : isAlpha;
-import std.uni : toLower;
+import std.ascii : isAlpha,  toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
@@ -87,8 +85,7 @@ module pangram;
 import std.algorithm : filter, sort;
 import std.algorithm.iteration : uniq;
 import std.array : array;
-import std.ascii : isAlpha;
-import std.uni : toLower;
+import std.ascii : isAlpha,  toLower;
 
 @safe
 bool isPangram(string text)
