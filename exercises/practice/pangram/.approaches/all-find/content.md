@@ -5,7 +5,7 @@ module pangram;
 
 import std.algorithm.searching : all, find;
 import std.range : empty;
-import std.ascii : toLower;
+import std.uni : toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
@@ -72,7 +72,7 @@ Finally, `isPangram ` returns the result of calling `all`.
 [immutable]: https://dlang.org/spec/const3.html#immutable_storage_class
 [string]: https://dlang.org/phobos/std_string.html
 [safe]: https://dlang.org/spec/function.html#function-safety
-[tolower]: https://dlang.org/phobos/std_ascii.html#toLower
+[tolower]: https://dlang.org/phobos/std_uni.html#toLower
 [ufcs]: https://tour.dlang.org/tour/en/gems/uniform-function-call-syntax-ufcs
 [all]: https://dlang.org/phobos/std_algorithm_searching.html#all
 [lambda]: https://tour.dlang.org/tour/en/basics/delegates
