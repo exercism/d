@@ -12,9 +12,7 @@ import std.uni : toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
-@safe
-pure bool isPangram(string text)
-{
+@safe pure bool isPangram(string text) {
     return text.toLower
         .filter!isAlpha
         .array
