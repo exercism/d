@@ -54,32 +54,7 @@ pure bool isPangram(string text)
 
 For more information, check the [`all` with `find` approach][approach-all-find].
 
-## Approach: `filter` and `map` with `setIntersection` and `fold`
-
-```d
-module pangram;
-
-import std.algorithm : filter, map;
-import std.algorithm.iteration : fold;
-import std.algorithm.setops : setIntersection;
-import std.array : array;
-import std.ascii : isAlpha, toLower;
-
-private immutable abc = "abcdefghijklmnopqrstuvwxyz";
-
-@safe
-pure bool isPangram(string text)
-{
-    return text.filter!isAlpha
-        .map!toLower
-        .setIntersection(abc)
-        .fold!((a, _) => a + 1)(0) == 26;
-}
-```
-
-For more information, check the [`filter` and `map` with `setIntersection` and `fold` approach][approach-filter-map-setintersection-fold].
-
-## Approach: `filter` and `sort` with `uniq`
+## Approach: `filter` and `sort` with `uniq` and `fold`
 
 ```d
 module pangram;
@@ -87,17 +62,25 @@ module pangram;
 import std.algorithm : filter, sort;
 import std.algorithm.iteration : uniq;
 import std.array : array;
+import std.algorithm.iteration : fold;
 import std.ascii : isAlpha;
 import std.uni : toLower;
+
+private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
 @safe
 pure bool isPangram(string text)
 {
-    return text.toLower.filter!isAlpha.array.sort.uniq.array.length == 26;
+    return text.toLower
+        .filter!isAlpha
+        .array
+        .sort
+        .uniq
+        .fold!((a, _) => a + 1)(0) == 26;
 }
 ```
 
-For more information, check the [`filter` and `sort` with `uniq` approach][approach-filter-sort-uniq].
+For more information, check the [`filter` and `sort` with `uniq` and `fold` approach][approach-filter-sort-uniq-fold].
 
 ## Which approach to use?
 
@@ -117,5 +100,4 @@ although the bitwise approach is likely most efficient.
 [pure]: https://dlang.org/spec/function.html#pure-functions
 [approach-bitwise-filter-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/bitwise-filter-fold
 [approach-all-find]: https://exercism.org/tracks/d/exercises/pangram/approaches/all-find
-[approach-filter-map-setintersection-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/filter-map-setintersection-fold
-[approach-filter-sort-uniq]: https://exercism.org/tracks/d/exercises/pangram/approaches/filter-sort-uniq
+[approach-filter-sort-uniq-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/filter-sort-uniq-fold
