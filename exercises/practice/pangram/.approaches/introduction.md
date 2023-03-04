@@ -3,13 +3,31 @@
 There are many ways to solve Pangram.
 One approach could use [bitwise operations][bitwise] with [`filter`][filter] and [`fold`][fold].
 Another approach could use the [`all`][all] function with the [`find`][find] function.
-Still another approach could use the [`filter`][filter], [`map`][map], [`setIntersection`][setintersection], and [`fold`][fold] functions.
-And yet another approach could use the [`filter`][filter], [`sort`][sort], and [`uniq`][uniq] functions.
+Still another approach could use the [`filter`][filter] and [`sort`][sort] with the [`uniq`][uniq] and [`fold`][fold] functions.
 
 ## General guidance
 
 No matter which approach is used, it is considered best practice to mark the `isPangram` function as
 [`@safe`][safe] and [`pure`][pure] (as well as any helper functions.)
+
+All of these approach examples use the Unicode version of lowercasing an entire string ([`std.uni.toLower`][uni-toLower]`)
+and then filtering, like so:
+
+```d
+text.toLower
+    .filter!isAlpha
+```
+
+Another way could use the ASCII version of lowercasing ([`std.ascii.toLower`][ascii-toLower]`), which only works on one character at a time,
+so it would need to be called something like so
+
+```d
+text.filter!isAlpha
+    .map!toLower
+```
+
+Although to `filter` and then `map!toLower` may be more efficient,
+the approaches lowercase without using [`map`][map] and then `filter` to simplify the explanations a bit.
 
 ## Approach: Bitwise operations with `filter` and `fold`
 
@@ -92,12 +110,13 @@ although the bitwise approach is likely most efficient.
 [find]: https://dlang.org/phobos/std_algorithm_searching.html#find
 [filter]: https://dlang.org/phobos/std_algorithm_iteration.html#.filter
 [map]: https://dlang.org/phobos/std_algorithm_iteration.html#map
-[setintersection]: https://dlang.org/phobos/std_algorithm_setops.html#setIntersection
 [fold]: https://dlang.org/phobos/std_algorithm_iteration.html#fold
 [sort]: https://dlang.org/phobos/std_algorithm_sorting.html#sort
 [uniq]: https://dlang.org/phobos/std_algorithm_iteration.html#uniq
 [safe]: https://dlang.org/spec/function.html#function-safety
 [pure]: https://dlang.org/spec/function.html#pure-functions
+[uni-tolower]: https://dlang.org/library/std/uni/to_lower.html
+[ascii-tolower]: https://dlang.org/library/std/ascii/to_lower.html
 [approach-bitwise-filter-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/bitwise-filter-fold
 [approach-all-find]: https://exercism.org/tracks/d/exercises/pangram/approaches/all-find
 [approach-filter-sort-uniq-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/filter-sort-uniq-fold
