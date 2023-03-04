@@ -6,9 +6,9 @@
   "approaches": [
     {
       "uuid": "7a98843c-4dd0-4c30-962d-021141c43635",
-      "slug": "bitwise-fold",
-      "title": "bitwise operations with fold",
-      "blurb": "Use bitwise operations with fold to return the answer.",
+      "slug": "bitwise-filter-fold",
+      "title": "bitwise operations with filter and fold",
+      "blurb": "Use bitwise operations with filter and fold to return the answer.",
       "authors": ["bobahop"]
     },
     {
