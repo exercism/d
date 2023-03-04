@@ -1,8 +1,0 @@
-@safe
-pure bool isPangram(string text)
-{
-    return text.filter!isAlpha
-        .map!toLower
-        .setIntersection(abc)
-        .fold!((a, _) => a + 1)(0) == 26;
-}

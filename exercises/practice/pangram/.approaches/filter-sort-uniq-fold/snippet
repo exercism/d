@@ -1,0 +1,6 @@
+return text.toLower
+    .filter!isAlpha
+    .array
+    .sort
+    .uniq
+    .fold!((a, _) => a + 1)(0) == 26;
