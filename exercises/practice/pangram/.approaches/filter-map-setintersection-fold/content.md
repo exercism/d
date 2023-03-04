@@ -17,7 +17,7 @@ pure bool isPangram(string text)
     return text.filter!isAlpha
         .map!toLower
         .setIntersection(abc)
-        .fold!((a, b) => a + 1)(0) == 26;
+        .fold!((a, _) => a + 1)(0) == 26;
 }
 ```
 
@@ -76,7 +76,8 @@ of any matching duplicate letters from the input text in the `setIntersection`.
 If all of the English letters are in the input text, then the number of letters resulting from `setIntersection` will be `26`.
 
 To count the letters, they are passed in to the [`fold`][fold] function, which is seeded with `0`.
-The [lambda][lambda] takes `a` for the accumulating value and `b` for the character being itereated and adds `1` to the accumulating value for each iteration.
+The [lambda][lambda] takes `a` for the accumulating value and the character is disregarded. 
+`1` is added to the accumulating value for each iteration.
 
 When the `fold` is done, it returns the count of elements resulting from the `setIntersection`.
 If all of the English letters are in the text input, then the result will equal `26`.
