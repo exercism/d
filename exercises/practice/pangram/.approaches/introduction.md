@@ -38,15 +38,16 @@ For more information, check the [bitwise operations with `fold` approach][approa
 module pangram;
 
 import std.algorithm.searching : all, find;
-import std.array : array;
 import std.range : empty;
+import std.uni : toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
 @safe
 bool isPangram(string text)
 {
-    return abc.array.all!((ltr) => !text.array.find(ltr).empty);
+    auto textLowered = text.toLower;
+    return abc.all!((ltr) => !textLowered.find(ltr).empty);
 }
 ```
 
