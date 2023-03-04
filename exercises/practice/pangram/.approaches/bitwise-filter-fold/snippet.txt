@@ -1,5 +1,4 @@
-@safe
-pure bool isPangram(string text)
+@safe pure bool isPangram(string text)
 {
     uint letters = 0;
     return text.toLower
