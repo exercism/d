@@ -1,0 +1,29 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "ff476add-2b39-4c15-b958-9d98c7bf4f7b",
+      "slug": "all-find",
+      "title": "all with find",
+      "blurb": "Use all with find to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "ff476add-2b39-4c15-b958-9d98c7bf4f7b",
+      "slug": "filter-map-setintersection-fold",
+      "title": "filter and map with fold",
+      "blurb": "Use filter and map with setIntersection and fold to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "c5d71daf-a930-43de-90f5-3c1e3bf750cb",
+      "slug": "filter-sort-uniq",
+      "title": "filter and sort with uniq",
+      "blurb": "Use filter and sort with uniq to return the answer.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
