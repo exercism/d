@@ -9,8 +9,7 @@ import std.uni : toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
-@safe
-pure bool isPangram(immutable string text)
+@safe pure bool isPangram(immutable string text)
 {
     auto textLowered = text.toLower;
     return abc.all!((ltr) => !textLowered.find(ltr).empty);
