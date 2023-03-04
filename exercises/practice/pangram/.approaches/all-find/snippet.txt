@@ -3,5 +3,6 @@ private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 @safe
 bool isPangram(string text)
 {
-    return abc.array.all!((ltr) => !text.array.find(ltr).empty);
+    auto textLowered = text.toLower;
+    return abc.all!((ltr) => !textLowered.find(ltr).empty);
 }
