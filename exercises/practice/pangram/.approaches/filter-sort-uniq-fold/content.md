@@ -1,22 +1,25 @@
-# `filter` and `map` with `setIntersection` and `fold`
+# `filter` and `sort` with `uniq` and `fold`
 
 ```d
 module pangram;
 
-import std.algorithm : filter, map;
-import std.algorithm.iteration : fold;
-import std.algorithm.setops : setIntersection;
+import std.algorithm : filter, sort;
+import std.algorithm.iteration : uniq;
 import std.array : array;
-import std.ascii : isAlpha, toLower;
+import std.algorithm.iteration : fold;
+import std.ascii : isAlpha;
+import std.uni : toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
 @safe
 pure bool isPangram(string text)
 {
-    return text.filter!isAlpha
-        .map!toLower
-        .setIntersection(abc)
+    return text.toLower
+        .filter!isAlpha
+        .array
+        .sort
+        .uniq
         .fold!((a, _) => a + 1)(0) == 26;
 }
 ```
@@ -57,43 +60,38 @@ The `ab`binding is changed to the `"gh"` value, and the `cd` binding still has i
 The `isPangram` function is marked [`@safe`][safe] to ensure the compiler disallows certain unsafe practices in the function implementation.
 It is also marked as [`pure`][pure] to ensure it does not modify any state external to itself.
 
-The [`filter`][filter] function is called on the input text.
+[Uniform Function Call Syntax][ufcs] is used to call a chain of functions, starting with the [toLower][tolower] function called on the text input.
+
+The lowercased letters are passed to the [`filter`][filter] function.
 It uses the [`isAlpha`][isalpha] function to filter in only characters that are [ASCII][ascii] alphabetic.
-The surviving letters are passed into the [`map`][map] function, which passes each letter to the [toLower][tolower] function.
+The surviving letters are passed into the [`array`][array] function so they can be sorted.
 
-```exercism/note
-The Unicode `std.uni.toLower` function can be called on an entire `string`,
-but the ASCII `std.ascii.toLower` function must be called on each character.
-```
+The [`sort`][sort] function sorts the lowercase letters and passes them into the [`uniq`][uniq] function, which requires a sorted array
+to work properly.
+`uniq` deduplicates the letters so that only one of each character remains.
 
-The lowercased letters are fed into the [`setIntersection`][setintersection] function, where they are compared
-with the `string` of lowercase English letters passed in.
-The result of `setIntersection` is all of the letters which are in both the filtered and lowercased input text
-and in the `string` of lowercase English letters.
-Since there is only one of each letter in the `string` of of lowercase English letters, there will be only one each
-of any matching duplicate letters from the input text in the `setIntersection`.
-
-If all of the English letters are in the input text, then the number of letters resulting from `setIntersection` will be `26`.
+If all of the English letters are in the input text, then the number of letter elements resulting from `uniq` will be `26`.
 
 To count the letters, they are passed in to the [`fold`][fold] function, which is seeded with `0`.
 The [lambda][lambda] takes `a` for the accumulating value and the character is disregarded. 
 `1` is added to the accumulating value for each iteration.
 
-When the `fold` is done, it returns the count of elements resulting from the `setIntersection`.
+When the `fold` is done, it returns the count of elements resulting from the `uniq`.
 If all of the English letters are in the text input, then the result will equal `26`.
 
-Finally, `isPangram` returns the result of comparing the result of the calculations with `26`.
+Finally, `isPangram` returns the result of comparing the result of `uniq` with `26`.
 
 [immutable]: https://dlang.org/spec/const3.html#immutable_storage_class
 [string]: https://dlang.org/phobos/std_string.html
+[ufcs]: https://tour.dlang.org/tour/en/gems/uniform-function-call-syntax-ufcs
 [filter]: https://dlang.org/phobos/std_algorithm_iteration.html#.filter
 [ascii]: https://www.asciitable.com/
-[map]: https://dlang.org/phobos/std_algorithm_iteration.html#map
-[setintersection]: https://dlang.org/phobos/std_algorithm_setops.html#setIntersection
+[array]: https://dlang.org/library/std/array/array.html
+[uniq]: https://dlang.org/phobos/std_algorithm_iteration.html#uniq
 [fold]: https://dlang.org/phobos/std_algorithm_iteration.html#fold
 [sort]: https://dlang.org/phobos/std_algorithm_sorting.html#sort
 [safe]: https://dlang.org/spec/function.html#function-safety
 [pure]: https://dlang.org/spec/function.html#pure-functions
 [isalpha]: https://dlang.org/phobos/std_ascii.html#isAlpha
-[tolower]: https://dlang.org/library/std/ascii/to_lower.html
+[tolower]: https://dlang.org/phobos/std_uni.html#toLower
 [lambda]: https://tour.dlang.org/tour/en/basics/delegates
