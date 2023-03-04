@@ -10,7 +10,7 @@ import std.uni : toLower;
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
 @safe
-bool isPangram(string text)
+pure bool isPangram(immutable string text)
 {
     auto textLowered = text.toLower;
     return abc.all!((ltr) => !textLowered.find(ltr).empty);
@@ -51,6 +51,7 @@ Although the immutable `cd` binding was set to the value of `ab`, `ab` can still
 The `ab`binding is changed to the `"gh"` value, and the `cd` binding still has its `"cd"` value.
 
 The `isPangram` function is marked [`@safe`][safe] to ensure the compiler disallows certain unsafe practices in the function implementation.
+It is also marked as [`pure`][pure] to ensure it does not modify any state external to itself.
 
 A binding is defined for the text input lowerecased with the [toLower][tolower] function using [Uniform Function Call Syntax][ufcs].
 
@@ -72,6 +73,7 @@ Finally, `isPangram ` returns the result of calling `all`.
 [immutable]: https://dlang.org/spec/const3.html#immutable_storage_class
 [string]: https://dlang.org/phobos/std_string.html
 [safe]: https://dlang.org/spec/function.html#function-safety
+[pure]: https://dlang.org/spec/function.html#pure-functions
 [tolower]: https://dlang.org/phobos/std_uni.html#toLower
 [ufcs]: https://tour.dlang.org/tour/en/gems/uniform-function-call-syntax-ufcs
 [all]: https://dlang.org/phobos/std_algorithm_searching.html#all
