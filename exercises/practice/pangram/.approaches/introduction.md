@@ -73,7 +73,7 @@ pure bool isPangram(string text)
     return text.filter!isAlpha
         .map!toLower
         .setIntersection(abc)
-        .fold!((a, b) => a + 1)(1) == 26;
+        .fold!((a, b) => a + 1)(0) == 26;
 }
 ```
 
