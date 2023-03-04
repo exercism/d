@@ -53,7 +53,7 @@ The `ab`binding is changed to the `"gh"` value, and the `cd` binding still has i
 The `isPangram` function is marked [`@safe`][safe] to ensure the compiler disallows certain unsafe practices in the function implementation.
 It is also marked as [`pure`][pure] to ensure it does not modify any state external to itself.
 
-A binding is defined for the text input lowerecased with the [toLower][tolower] function using [Uniform Function Call Syntax][ufcs].
+A binding is defined for the text input lowercased with the [toLower][tolower] function using [Uniform Function Call Syntax][ufcs].
 
 ```d
 auto textLowered = text.toLower;
