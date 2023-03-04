@@ -20,9 +20,9 @@
     },
     {
       "uuid": "886a22e0-906f-4f55-95a9-76071d5f326c",
-      "slug": "filter-map-sort-uniq-fold",
-      "title": "filter and map with sort, uniq and fold",
-      "blurb": "Use filter and map with sort, uniq and fold to return the answer.",
+      "slug": "filter-sort-uniq-fold",
+      "title": "filter and sort with uniq and fold",
+      "blurb": "Use filter and sort with uniq and fold to return the answer.",
       "authors": ["bobahop"]
     }
   ]
