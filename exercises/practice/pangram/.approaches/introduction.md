@@ -10,7 +10,7 @@ And yet another approach could use the [`filter`][filter], [`sort`][sort], and [
 
 No matter which approach is used, it is considered best practice to mark the `is_pangram` function as [`@safe`][safe] (as well as any helper functions.)
 
-## Approach: bitwise operations with `fold`
+## Approach: Bitwise operations with `fold`
 
 ```d
 module pangram;
