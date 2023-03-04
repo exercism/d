@@ -96,7 +96,7 @@ bool isPangram(string text)
 }
 ```
 
-For more information, check the [`filter` and `sort` with `uniq` approach][approach-filter-map-setintersection-fold].
+For more information, check the [`filter` and `sort` with `uniq` approach][approach-filter-sort-uniq].
 
 ## Which approach to use?
 
