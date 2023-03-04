@@ -30,7 +30,7 @@ bool isPangram(string text)
 }
 ```
 
-For more information, check the [bitwise operations with `fold` approach][approach-bitwise-filter-fold].
+For more information, check the [bitwise operations with `filter` and `fold` approach][approach-bitwise-filter-fold].
 
 ## Approach: `all` with `find`
 
