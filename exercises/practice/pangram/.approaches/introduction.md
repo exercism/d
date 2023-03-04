@@ -1,7 +1,7 @@
 # Introduction
 
 There are many ways to solve Pangram.
-One approach could use [bitwise operations][bitwise] with [`fold`][fold].
+One approach could use [bitwise operations][bitwise] with [`filter`][filter] and [`fold`][fold].
 Another approach could use the [`all`][all] function with the [`find`][find] function.
 Still another approach could use the [`filter`][filter], [`map`][map], [`setIntersection`][setintersection], and [`fold`][fold] functions.
 And yet another approach could use the [`filter`][filter], [`sort`][sort], and [`uniq`][uniq] functions.
@@ -10,7 +10,7 @@ And yet another approach could use the [`filter`][filter], [`sort`][sort], and [
 
 No matter which approach is used, it is considered best practice to mark the `isPangram` function as [`@safe`][safe] (as well as any helper functions.)
 
-## Approach: Bitwise operations with `fold`
+## Approach: Bitwise operations with `filter` and `fold`
 
 ```d
 module pangram;
@@ -30,7 +30,7 @@ bool isPangram(string text)
 }
 ```
 
-For more information, check the [bitwise operations with `fold` approach][approach-bitwise-fold].
+For more information, check the [bitwise operations with `fold` approach][approach-bitwise-filter-fold].
 
 ## Approach: `all` with `find`
 
@@ -114,7 +114,7 @@ although the bitwise approach is likely most efficient.
 [sort]: https://dlang.org/phobos/std_algorithm_sorting.html#sort
 [uniq]: https://dlang.org/phobos/std_algorithm_iteration.html#uniq
 [safe]: https://dlang.org/spec/function.html#function-safety
-[approach-bitwise-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/bitwise-fold
+[approach-bitwise-filter-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/bitwise-filter-fold
 [approach-all-find]: https://exercism.org/tracks/d/exercises/pangram/approaches/all-find
 [approach-filter-map-setintersection-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/filter-map-setintersection-fold
 [approach-filter-sort-uniq]: https://exercism.org/tracks/d/exercises/pangram/approaches/filter-sort-uniq
