@@ -20,16 +20,9 @@
     },
     {
       "uuid": "886a22e0-906f-4f55-95a9-76071d5f326c",
-      "slug": "filter-map-setintersection-fold",
-      "title": "filter and map with fold",
-      "blurb": "Use filter and map with setIntersection and fold to return the answer.",
-      "authors": ["bobahop"]
-    },
-    {
-      "uuid": "1e43cfa2-778c-49b5-8606-3b2b6c8169b8",
-      "slug": "filter-sort-uniq",
-      "title": "filter and sort with uniq",
-      "blurb": "Use filter and sort with uniq to return the answer.",
+      "slug": "filter-map-sort-uniq-fold",
+      "title": "filter and map with sort, uniq and fold",
+      "blurb": "Use filter and map with sort, uniq and fold to return the answer.",
       "authors": ["bobahop"]
     }
   ]
