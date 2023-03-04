@@ -1,5 +1,0 @@
-@safe
-pure bool isPangram(string text)
-{
-    return text.toLower.filter!isAlpha.array.sort.uniq.array.length == 26;
-}
