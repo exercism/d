@@ -24,10 +24,10 @@ The `isPangram` function is marked [`@safe`][safe] to ensure the compiler disall
 
 An unsigned integer ([`uint`][uint]) binding is defined to hold the bits representing the lowercase letters of the English alphabet.
 
-[Uniform Function Call Syntax][ufcs] is used to call a chain of funtions, starting with the [toLower][tolower] function called on the text input.
+[Uniform Function Call Syntax][ufcs] is used to call a chain of functions, starting with the [toLower][tolower] function called on the text input.
 
 The lowercased characters are passed into the [`filter`][filter] function,
-which uses the [`isAlpha`][isalpha] function to filter in only characters that are ASCII alphabetic.
+which uses the [`isAlpha`][isalpha] function to filter in only characters that are [ASCII][ascii] alphabetic.
 
 The surviving letters are passed into the [`fold`][fold] function which is seeded with `letters` value of `0`.
 The [lambda][lambda] takes each letter TODO
@@ -39,4 +39,5 @@ The [lambda][lambda] takes each letter TODO
 [tolower]: https://dlang.org/phobos/std_uni.html#toLower
 [ufcs]: https://tour.dlang.org/tour/en/gems/uniform-function-call-syntax-ufcs
 [isalpha]: https://dlang.org/phobos/std_ascii.html#isAlpha
+[ascii]: https://www.asciitable.com/
 [lambda]: https://tour.dlang.org/tour/en/basics/delegates
