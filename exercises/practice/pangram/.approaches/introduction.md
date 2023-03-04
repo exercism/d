@@ -11,15 +11,15 @@ No matter which approach is used, it is considered best practice to mark the `is
 [`@safe`][safe] and [`pure`][pure] (as well as any helper functions.)
 
 All of these approach examples use the Unicode version of lowercasing an entire string ([`std.uni.toLower`][uni-toLower]`)
-and then filtering, like so:
+and then filter for ASCII alphabetic characters, like so:
 
 ```d
 text.toLower
     .filter!isAlpha
 ```
 
-Another way could use the ASCII version of lowercasing ([`std.ascii.toLower`][ascii-toLower]`), which only works on one character at a time,
-so it would need to be called something like so
+Another way could `filter` first and then use the ASCII version of lowercasing ([`std.ascii.toLower`][ascii-toLower]`), which only works on one character at a time,
+so it would need to be called something like this:
 
 ```d
 text.filter!isAlpha
