@@ -39,8 +39,7 @@ import std.algorithm.iteration : fold;
 import std.ascii : isAlpha;
 import std.uni : toLower;
 
-@safe
-pure bool isPangram(string text)
+@safe pure bool isPangram(string text)
 {
     uint letters = 0;
     return text.toLower
@@ -62,8 +61,7 @@ import std.uni : toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
-@safe
-pure bool isPangram(string text)
+@safe pure bool isPangram(string text)
 {
     auto textLowered = text.toLower;
     return abc.all!((ltr) => !textLowered.find(ltr).empty);
@@ -86,8 +84,7 @@ import std.uni : toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
-@safe
-pure bool isPangram(string text)
+@safe pure bool isPangram(string text)
 {
     return text.toLower
         .filter!isAlpha
