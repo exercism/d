@@ -8,7 +8,8 @@ And yet another approach could use the [`filter`][filter], [`sort`][sort], and [
 
 ## General guidance
 
-No matter which approach is used, it is considered best practice to mark the `isPangram` function as [`@safe`][safe] (as well as any helper functions.)
+No matter which approach is used, it is considered best practice to mark the `isPangram` function as
+[`@safe`][safe] and [`pure`][pure] (as well as any helper functions.)
 
 ## Approach: Bitwise operations with `filter` and `fold`
 
@@ -21,7 +22,7 @@ import std.ascii : isAlpha;
 import std.uni : toLower;
 
 @safe
-bool isPangram(string text)
+pure bool isPangram(string text)
 {
     uint letters = 0;
     return text.toLower
@@ -44,7 +45,7 @@ import std.uni : toLower;
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
 @safe
-bool isPangram(string text)
+pure bool isPangram(string text)
 {
     auto textLowered = text.toLower;
     return abc.all!((ltr) => !textLowered.find(ltr).empty);
@@ -62,13 +63,12 @@ import std.algorithm : filter, map;
 import std.algorithm.iteration : fold;
 import std.algorithm.setops : setIntersection;
 import std.array : array;
-import std.ascii : isAlpha;
-import std.uni : toLower;
+import std.ascii : isAlpha, toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
 @safe
-bool isPangram(string text)
+pure bool isPangram(string text)
 {
     return text.filter!isAlpha
         .map!toLower
@@ -91,7 +91,7 @@ import std.ascii : isAlpha;
 import std.uni : toLower;
 
 @safe
-bool isPangram(string text)
+pure bool isPangram(string text)
 {
     return text.toLower.filter!isAlpha.array.sort.uniq.array.length == 26;
 }
@@ -114,6 +114,7 @@ although the bitwise approach is likely most efficient.
 [sort]: https://dlang.org/phobos/std_algorithm_sorting.html#sort
 [uniq]: https://dlang.org/phobos/std_algorithm_iteration.html#uniq
 [safe]: https://dlang.org/spec/function.html#function-safety
+[pure]: https://dlang.org/spec/function.html#pure-functions
 [approach-bitwise-filter-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/bitwise-filter-fold
 [approach-all-find]: https://exercism.org/tracks/d/exercises/pangram/approaches/all-find
 [approach-filter-map-setintersection-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/filter-map-setintersection-fold
