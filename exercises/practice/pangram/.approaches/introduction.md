@@ -8,7 +8,7 @@ And yet another approach could use the [`filter`][filter], [`sort`][sort], and [
 
 ## General guidance
 
-No matter which approach is used, it is considered best practice to mark the `is_pangram` function as [`@safe`][safe] (as well as any helper functions.)
+No matter which approach is used, it is considered best practice to mark the `isPangram` function as [`@safe`][safe] (as well as any helper functions.)
 
 ## Approach: Bitwise operations with `fold`
 
