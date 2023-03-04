@@ -1,7 +1,7 @@
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
 @safe
-bool isPangram(string text)
+pure bool isPangram(string text)
 {
     auto textLowered = text.toLower;
     return abc.all!((ltr) => !textLowered.find(ltr).empty);
