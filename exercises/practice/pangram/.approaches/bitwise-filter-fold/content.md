@@ -8,8 +8,7 @@ import std.algorithm.iteration : fold;
 import std.ascii : isAlpha;
 import std.uni : toLower;
 
-@safe
-pure bool isPangram(string text)
+@safe pure bool isPangram(string text)
 {
     uint letters = 0;
     return text.toLower
