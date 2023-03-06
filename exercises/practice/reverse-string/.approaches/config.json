@@ -1,0 +1,15 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "82d351a0-eb04-417c-9989-bafd61114ae2",
+      "slug": "bygrapheme-retro-bycodepoint-text",
+      "title": "byGrapheme and retro with byCodePoint and text",
+      "blurb": "Use byGrapheme and retro with byCodePoint and text to handle Unicode.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
