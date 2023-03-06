@@ -83,8 +83,7 @@ import std.ascii : isAlpha, toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
-@safe
-pure bool isPangram(string text)
+@safe pure bool isPangram(string text)
 {
     return text.filter!isAlpha
         .map!toLower
