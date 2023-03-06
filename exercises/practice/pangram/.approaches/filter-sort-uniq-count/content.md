@@ -59,7 +59,7 @@ The `ab`binding is changed to the `"gh"` value, and the `cd` binding still has i
 The `isPangram` function is marked [`@safe`][safe] to ensure the compiler disallows certain unsafe practices in the function implementation.
 It is also marked as [`pure`][pure] to ensure it does not modify any state external to itself.
 
-[Uniform Function Call Syntax][ufcs] is used to call a chain of functions, starting with the [toLower][tolower] function called on the text input.
+[Uniform Function Call Syntax][ufcs] is used to call a chain of functions, starting with the [`toLower`][tolower] function called on the text input.
 
 The lowercased letters are passed to the [`filter`][filter] function.
 It uses the [`isAlpha`][isalpha] function to filter in only characters that are [ASCII][ascii] alphabetic.
