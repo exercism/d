@@ -3,7 +3,7 @@
 There are many ways to solve Pangram.
 One approach could use [bitwise operations][bitwise] with [`filter`][filter] and [`fold`][fold].
 Another approach could use the [`all`][all] function with the [`find`][find] function.
-Still another approach could use the [`filter`][filter] and [`sort`][sort] with the [`uniq`][uniq] and [`fold`][fold] functions.
+Still another approach could use the [`filter`][filter] and [`sort`][sort] with the [`uniq`][uniq] and [`count`][count] functions.
 
 ## General guidance
 
@@ -70,32 +70,32 @@ private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
 For more information, check the [`all` with `find` approach][approach-all-find].
 
-## Approach: `filter` and `sort` with `uniq` and `fold`
+## Approach: `filter` and `sort` with `uniq` and `count`
 
 ```d
 module pangram;
 
-import std.algorithm : filter, sort;
+import std.algorithm : filter, map, sort;
 import std.algorithm.iteration : uniq;
+import std.algorithm.searching : count;
 import std.array : array;
-import std.algorithm.iteration : fold;
-import std.ascii : isAlpha;
-import std.uni : toLower;
+import std.ascii : isAlpha, toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
-@safe pure bool isPangram(string text)
+@safe
+pure bool isPangram(string text)
 {
-    return text.toLower
-        .filter!isAlpha
+    return text.filter!isAlpha
+        .map!toLower
         .array
         .sort
         .uniq
-        .fold!((a, _) => a + 1)(0) == 26;
+        .count == 26;
 }
 ```
 
-For more information, check the [`filter` and `sort` with `uniq` and `fold` approach][approach-filter-sort-uniq-fold].
+For more information, check the [`filter` and `sort` with `uniq` and `count` approach][approach-filter-sort-uniq-count].
 
 ## Which approach to use?
 
@@ -108,6 +108,7 @@ although the bitwise approach is likely most efficient.
 [filter]: https://dlang.org/phobos/std_algorithm_iteration.html#.filter
 [map]: https://dlang.org/phobos/std_algorithm_iteration.html#map
 [fold]: https://dlang.org/phobos/std_algorithm_iteration.html#fold
+[count]: https://dlang.org/phobos/std_algorithm_searching.html#count
 [sort]: https://dlang.org/phobos/std_algorithm_sorting.html#sort
 [uniq]: https://dlang.org/phobos/std_algorithm_iteration.html#uniq
 [safe]: https://dlang.org/spec/function.html#function-safety
@@ -116,4 +117,4 @@ although the bitwise approach is likely most efficient.
 [ascii-tolower]: https://dlang.org/library/std/ascii/to_lower.html
 [approach-bitwise-filter-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/bitwise-filter-fold
 [approach-all-find]: https://exercism.org/tracks/d/exercises/pangram/approaches/all-find
-[approach-filter-sort-uniq-fold]: https://exercism.org/tracks/d/exercises/pangram/approaches/filter-sort-uniq-fold
+[approach-filter-sort-uniq-count]: https://exercism.org/tracks/d/exercises/pangram/approaches/filter-sort-uniq-count
