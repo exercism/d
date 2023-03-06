@@ -1,8 +1,8 @@
 @safe pure bool isPangram(string text) {
-    return text.toLower
-        .filter!isAlpha
+    return text.filter!isAlpha
+        .map!toLower
         .array
         .sort
         .uniq
-        .fold!((a, _) => a + 1)(0) == 26;
+        .count == 26;
 }
