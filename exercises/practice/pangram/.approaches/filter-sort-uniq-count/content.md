@@ -1,25 +1,25 @@
-# `filter` and `sort` with `uniq` and `fold`
+# `filter` and `sort` with `uniq` and `count`
 
 ```d
 module pangram;
 
-import std.algorithm : filter, sort;
+import std.algorithm : filter, map, sort;
 import std.algorithm.iteration : uniq;
+import std.algorithm.searching : count;
 import std.array : array;
-import std.algorithm.iteration : fold;
-import std.ascii : isAlpha;
-import std.uni : toLower;
+import std.ascii : isAlpha, toLower;
 
 private immutable abc = "abcdefghijklmnopqrstuvwxyz";
 
-@safe pure bool isPangram(string text)
+@safe
+pure bool isPangram(string text)
 {
-    return text.toLower
-        .filter!isAlpha
+    return text.filter!isAlpha
+        .map!toLower
         .array
         .sort
         .uniq
-        .fold!((a, _) => a + 1)(0) == 26;
+        .count == 26;
 }
 ```
 
@@ -71,14 +71,11 @@ to work properly.
 
 If all of the English letters are in the input text, then the number of letter elements resulting from `uniq` will be `26`.
 
-To count the letters, they are passed in to the [`fold`][fold] function, which is seeded with `0`.
-The [lambda][lambda] takes `a` for the accumulating value and the character is disregarded. 
-`1` is added to the accumulating value for each iteration.
-
-When the `fold` is done, it returns the count of elements resulting from the `uniq`.
+To count the letters, they are passed in to the [`count`][count] function.
+When `count` is done, it returns the number of elements resulting from `uniq`.
 If all of the English letters are in the text input, then the result will equal `26`.
 
-Finally, `isPangram` returns the result of comparing the result of `uniq` with `26`.
+Finally, `isPangram` returns the result of comparing the `count` of `uniq` letters with `26`.
 
 [immutable]: https://dlang.org/spec/const3.html#immutable_storage_class
 [string]: https://dlang.org/phobos/std_string.html
@@ -87,7 +84,7 @@ Finally, `isPangram` returns the result of comparing the result of `uniq` with `
 [ascii]: https://www.asciitable.com/
 [array]: https://dlang.org/library/std/array/array.html
 [uniq]: https://dlang.org/phobos/std_algorithm_iteration.html#uniq
-[fold]: https://dlang.org/phobos/std_algorithm_iteration.html#fold
+[count]: https://dlang.org/phobos/std_algorithm_searching.html#count
 [sort]: https://dlang.org/phobos/std_algorithm_sorting.html#sort
 [safe]: https://dlang.org/spec/function.html#function-safety
 [pure]: https://dlang.org/spec/function.html#pure-functions
