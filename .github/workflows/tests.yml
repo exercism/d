@@ -12,13 +12,13 @@ on:
 jobs:
   exercises:
     name: Check exercises
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         dc: [dmd-latest, ldc-latest]
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
-      - uses: dlang-community/setup-dlang@v1
+      - uses: dlang-community/setup-dlang@43589c229861e1720e187a344c67dad1d9eefe4c
         with:
           compiler: ${{ matrix.dc }}
       - name: Run tests
