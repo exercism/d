@@ -1,13 +1,12 @@
 name: Tests
 on:
   pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
-      - gha
-  schedule:
-    # Weekly.
-    - cron: "0 0 * * 0"
+  workflow_dispatch:
 
 jobs:
   exercises:
