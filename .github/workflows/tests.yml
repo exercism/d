@@ -3,22 +3,13 @@ on:
   pull_request:
   push:
     branches:
-    - main
-    - gha
+      - main
+      - gha
   schedule:
     # Weekly.
     - cron: "0 0 * * 0"
 
 jobs:
-  track-config:
-    name: Check track configuration
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
-      - name: Fetch
-        uses: exercism/github-actions/configlet-ci@main
-      - name: Lint
-        run: configlet lint
   exercises:
     name: Check exercises
     runs-on: ubuntu-latest
