@@ -1,0 +1,8 @@
+@safe pure bool isPangram(string text) {
+    return text.filter!isAlpha
+        .map!toLower
+        .array
+        .sort
+        .uniq
+        .count == 26;
+}

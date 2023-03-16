@@ -1,0 +1,7 @@
+@safe pure bool isPangram(string text)
+{
+    uint letters = 0;
+    return text.toLower
+        .filter!isAlpha
+        .fold!((a, b) => a | (1 << (b - 'a')))(letters) == 0b00000011_1111_1111_1111_1111_1111_1111;
+}
