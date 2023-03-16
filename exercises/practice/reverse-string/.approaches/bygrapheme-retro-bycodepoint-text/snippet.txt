@@ -1,0 +1,8 @@
+import std.array : array;
+import std.conv : text;
+import std.range : retro;
+import std.uni : byCodePoint, byGrapheme;
+@safe pure string reverseString(string phrase)
+{
+    return phrase.byGrapheme.array.retro.byCodePoint.text;
+}
