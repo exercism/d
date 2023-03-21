@@ -1,0 +1,2 @@
+return a.zip(b)
+    .count!((strands) => strands[0] != strands[1]);
