@@ -22,7 +22,6 @@ bool isIsogram(string phrase)
             ltrs = ltrs | (1 << (ltr - 'a'));
         else
             return false;
-
     }
     return true;
 }
