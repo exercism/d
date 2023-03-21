@@ -12,7 +12,7 @@ module isogram;
 import std.algorithm.iteration : filter, map;
 import std.ascii : isAlpha, toLower;
 
-bool isIsogram(string phrase)
+@safe pure bool isIsogram(string phrase)
 {
     uint ltrs = 0;
     foreach (ltr; phrase.filter!isAlpha
@@ -35,7 +35,7 @@ For more information, check the [`filter` and  `map` with `foreach` approach][ap
 import std.algorithm.iteration : filter, fold, map;
 import std.ascii : isAlpha, toLower;
 
-bool isIsogram(string phrase)
+@safe pure bool isIsogram(string phrase)
 {
     uint letters = 0;
     return (phrase.filter!isAlpha
