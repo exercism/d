@@ -13,12 +13,8 @@ import std.exception : enforce;
 import std.range : zip;
 
 @safe pure ulong distance(string a, string b)
-in
 {
     enforce(a.length == b.length, "strands must be of equal length");
-}
-do
-{
     return a.zip(b)
         .count!((strands) => strands[0] != strands[1]);
 }
