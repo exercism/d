@@ -1,0 +1,8 @@
+foreach (ltr; phrase.filter!isAlpha
+        .map!toLower)
+{
+    if (!(ltrs & (1 << (ltr - 'a'))))
+        ltrs = ltrs | (1 << (ltr - 'a'));
+    else
+        return false;
+}

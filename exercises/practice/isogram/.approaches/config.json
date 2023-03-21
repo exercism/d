@@ -1,0 +1,22 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "dde5f357-b1f8-4079-991a-a326b0ce6e1a",
+      "slug": "filter-map-foreach",
+      "title": "filter and map with foreach",
+      "blurb": "Use filter and map with foreach to return the answer.",
+      "authors": ["bobahop"]
+    },
+    {
+      "uuid": "92f8d92b-9d11-45cc-bbeb-faf965d51ac0",
+      "slug": "filter-map-fold",
+      "title": "filter and map with fold",
+      "blurb": "Use filter and map with fold to return the answer.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
