@@ -1,0 +1,15 @@
+{
+  "introduction": {
+    "authors": ["bobahop"],
+    "contributors": []
+  },
+  "approaches": [
+    {
+      "uuid": "a8b3febf-2c8b-4ad3-8169-f5b2665a5ddd",
+      "slug": "zip-count",
+      "title": "zip with count",
+      "blurb": "Use zip with count to return the answer.",
+      "authors": ["bobahop"]
+    }
+  ]
+}
