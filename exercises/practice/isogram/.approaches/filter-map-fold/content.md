@@ -4,7 +4,7 @@
 import std.algorithm.iteration : filter, fold, map;
 import std.ascii : isAlpha, toLower;
 
-bool isIsogram(string phrase)
+@safe pure bool isIsogram(string phrase)
 {
     uint letters = 0;
     return (phrase.filter!isAlpha
