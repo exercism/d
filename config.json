@@ -16,7 +16,7 @@
     "highlightjs_language": "d"
   },
   "test_runner": {
-    "average_run_time": 2.0
+    "average_run_time": 2
   },
   "checklist_issue": 6,
   "files": {
