@@ -18,7 +18,6 @@
   "test_runner": {
     "average_run_time": 2
   },
-  "checklist_issue": 6,
   "files": {
     "solution": [
       "source/%{snake_slug}.d"
@@ -34,7 +33,6 @@
     ]
   },
   "exercises": {
-    "concept": [],
     "practice": [
       {
         "slug": "armstrong-numbers",
@@ -469,7 +467,6 @@
       }
     ]
   },
-  "concepts": [],
   "key_features": [
     {
       "title": "Expressive",
@@ -503,15 +500,15 @@
     }
   ],
   "tags": [
+    "execution_mode/compiled",
     "paradigm/functional",
     "paradigm/imperative",
     "paradigm/object_oriented",
+    "platform/linux",
+    "platform/mac",
+    "platform/windows",
     "typing/static",
     "typing/strong",
-    "execution_mode/compiled",
-    "platform/windows",
-    "platform/mac",
-    "platform/linux",
     "used_for/backends",
     "used_for/cross_platform_development",
     "used_for/embedded_systems",

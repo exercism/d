@@ -1,7 +1,8 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": [
+      "bobahop"
+    ]
   },
   "approaches": [
     {
@@ -9,7 +10,9 @@
       "slug": "bygrapheme-retro-bycodepoint-text",
       "title": "byGrapheme and retro with byCodePoint and text",
       "blurb": "Use byGrapheme and retro with byCodePoint and text to handle Unicode.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     }
   ]
 }
