@@ -1,7 +1,8 @@
 {
   "introduction": {
-    "authors": ["bobahop"],
-    "contributors": []
+    "authors": [
+      "bobahop"
+    ]
   },
   "approaches": [
     {
@@ -9,21 +10,27 @@
       "slug": "bitwise-filter-fold",
       "title": "bitwise operations with filter and fold",
       "blurb": "Use bitwise operations with filter and fold to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "c9807c77-adb9-49c7-9dfc-7164d69147f8",
       "slug": "all-find",
       "title": "all with find",
       "blurb": "Use all with find to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     },
     {
       "uuid": "886a22e0-906f-4f55-95a9-76071d5f326c",
       "slug": "filter-sort-uniq-count",
       "title": "filter and sort with uniq and count",
       "blurb": "Use filter and sort with uniq and count to return the answer.",
-      "authors": ["bobahop"]
+      "authors": [
+        "bobahop"
+      ]
     }
   ]
 }
