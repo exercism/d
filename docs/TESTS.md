@@ -21,7 +21,7 @@ Working through each exercise is a process of:
   * Enable the next test
 
 *Note:* D has support for unit testing direct in the language so usually the unit tests
-reside in the same file as the implementation. The unittests are ran before the body of
+reside in the same file as the implementation. The unittests are run before the body of
 main and are enabled in the final executable by using the **-unittest** compiler switch.
 
 @TODO add IDE related instructions.
