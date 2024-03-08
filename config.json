@@ -464,6 +464,14 @@
           "nested_classes",
           "reactive_programming"
         ]
+      },
+      {
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "uuid": "753c4d89-02b0-4856-935b-6471a84b4892",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       }
     ]
   },
