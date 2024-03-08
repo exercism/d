@@ -51,6 +51,12 @@ unittest
             assert("IX" == convert(9));
         }
 
+        // sixteen_yields_XVI
+        {
+            writefln("Conversion of 16: %s", convert(16));
+            assert("XVI" == convert(16));
+        }
+
         // twenty_seven_yields_XXVII
         {
             writefln("Conversion of 27: %s", convert(27));
@@ -63,10 +69,22 @@ unittest
             assert("XLVIII" == convert(48));
         }
 
+        // forty_nine_yields_XLIX
+        {
+            writefln("Conversion of 48: %s", convert(49));
+            assert("XLIX" == convert(49));
+        }
+
         // fifty_nine_yields_LIX
         {
             writefln("Conversion of 59: %s", convert(59));
             assert("LIX" == convert(59));
+        }
+
+        // sixty_six_yields_LXVI
+        {
+            writefln("Conversion of 66: %s", convert(66));
+            assert("LXVI" == convert(66));
         }
 
         // ninety_three_yields_XCIII
@@ -87,6 +105,12 @@ unittest
             assert("CLXIII" == convert(163));
         }
 
+        // one_hundred_sixty_six_yields_CLXVI
+        {
+            writefln("Conversion of 166: %s", convert(166));
+            assert("CLXVI" == convert(166));
+        }
+
         // four_hundred_two_yields_CDII
         {
             writefln("Conversion of 402: %s", convert(402));
@@ -97,6 +121,12 @@ unittest
         {
             writefln("Conversion of 575: %s", convert(575));
             assert("DLXXV" == convert(575));
+        }
+
+        // six_hundred_sixty_six_yields_DCLXVI
+        {
+            writefln("Conversion of 666: %s", convert(666));
+            assert("DCLXVI" == convert(666));
         }
 
         // nine_hundred_eleven_yields_CMXI
@@ -111,10 +141,28 @@ unittest
             assert("MXXIV" == convert(1024));
         }
 
-        // three_thousand_yields_MMM)
+        // one_thousand_six_hundred_sixty_six_yields_MDCLXVI
+        {
+            writefln("Conversion of 1666: %s", convert(1666));
+            assert("MDCLXVI" == convert(1666));
+        }
+
+        // three_thousand_yields_MMM
         {
             writefln("Conversion of 3000: %s", convert(3000));
             assert("MMM" == convert(3000));
+        }
+
+        // three_thousand_one_yields_MMMI
+        {
+            writefln("Conversion of 3001: %s", convert(3001));
+            assert("MMMI" == convert(3001));
+        }
+
+        // three_thousand_nine_hundred_ninety_nine_yields_MMMCMXCIX
+        {
+            writefln("Conversion of 3999: %s", convert(3999));
+            assert("MMMCMXCIX" == convert(3999));
         }
     }
 
