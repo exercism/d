@@ -4,17 +4,17 @@ class Allergies
 {
     this(immutable uint score)
     {
-        // implement this
+        // implement this function
     }
 
     final bool allergicTo(immutable string item)
     {
-        // implement this
+        // implement this function
     }
 
     final string[] list()
     {
-        // implement this
+        // implement this function
     }
 }
 
