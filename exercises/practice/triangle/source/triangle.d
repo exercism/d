@@ -7,84 +7,113 @@ enum TriangleType
     scalene
 }
 
+TriangleType kind(double a, double b, double c)
+{
+    // Implement this function
+}
+
 unittest
 {
     import std.exception : assertThrown;
 
     immutable int allTestsEnabled = 0;
 
-    // equilateral_triangles_have_equal_sides
+    // equilateral triangle - all sides are equal
     {
         assert(TriangleType.equilateral == kind(2, 2, 2));
     }
 
     static if (allTestsEnabled)
     {
-        // larger_equilateral_triangles_also_have_equal_sides
+        // equilateral triangle - any side is uneven
         {
-            assert(TriangleType.equilateral == kind(10, 10, 10));
+            assert(TriangleType.equilateral != kind(2, 3, 2));
         }
 
-        // isosceles_triangles_have_last_two_sides_equal
+        // equilateral triangle - no sides are equal
+        {
+            assert(TriangleType.equilateral != kind(5, 4, 6));
+        }
+        
+        // equilateral triangle - all zero sides is not a triangle
+        {
+            assertThrown(kind(0, 0, 0));
+        }
+        
+        // equilateral triangle - sides may be floats
+        {
+            assert(TriangleType.equilateral == kind(0.5, 0.5, 0.5));
+        }
+
+        // isosceles triangle - last two sides are equal
         {
             assert(TriangleType.isosceles == kind(3, 4, 4));
         }
 
-        // isosceles_triangles_have_first_and_last_sides_equal
+        // isosceles triangle - first and last sides are equal
         {
             assert(TriangleType.isosceles == kind(4, 3, 4));
         }
 
-        // isosceles_triangles_have_first_two_sides_equal
+        //  isosceles triangle - no sides are equal
         {
-            assert(TriangleType.isosceles == kind(4, 4, 3));
+            assert(TriangleType.isosceles != kind(2, 3, 4));
         }
 
-        // isosceles_triangles_have_in_fact_exactly_two_sides_equal
-        {
-            assert(TriangleType.isosceles == kind(10, 10, 2));
-        }
-
-        // scalene_triangles_have_no_equal_sides
-        {
-            assert(TriangleType.scalene == kind(3, 4, 5));
-        }
-
-        // scalene_triangles_have_no_equal_sides_at_a_larger_scale_too
-        {
-            assert(TriangleType.scalene == kind(10, 11, 12));
-        }
-
-        // scalene_triangles_have_no_equal_sides_in_descending_order_either
-        {
-            assert(TriangleType.scalene == kind(5, 4, 2));
-        }
-
-        // very_small_triangles_are_legal
-        {
-            assert(TriangleType.scalene == kind(0.4, 0.6, 0.3));
-        }
-
-        // triangles_with_no_size_are_illegal
-        {
-            assertThrown(kind(0, 0, 0));
-        }
-
-        // triangles_with_negative_sides_are_illegal
-        {
-            assertThrown(kind(3, 4, -5));
-        }
-
-        // triangles_violating_triangle_inequality_are_illegal
+        // isosceles triangle - first triangle inequality violation
         {
             assertThrown(kind(1, 1, 3));
         }
 
-        // larger_triangles_violating_triangle_inequality_are_illegal
+        // isosceles triangle - second triangle inequality violation
+        {
+            assertThrown(kind(1, 3, 1));
+        }
+
+        // isosceles triangle - third triangle inequality violation
+        {
+            assertThrown(kind(3, 1, 1));
+        }
+
+        // isosceles triangle - sides may be floats
+        {
+            assert(TriangleType.isosceles == kind(0.5, 0.4, 0.5));
+        }
+
+        // scalene triangle - no sides are equal
+        {
+            assert(TriangleType.scalene == kind(5, 4, 6));
+        }
+
+        // scalene triangle - all sides are equal
+        {
+            assert(TriangleType.scalene != kind(4, 4, 4));
+        }
+
+        // scalene triangle - first and second sides are equal
+        {
+            assert(TriangleType.scalene != kind(4, 4, 3));
+        }
+
+        // scalene triangle - first and third sides are equal
+        {
+            assert(TriangleType.scalene != kind(3, 4, 3));
+        }
+
+        // scalene triangle - second and third sides are equal
+        {
+            assert(TriangleType.scalene != kind(4, 3, 3));
+        }
+
+        // scalene triangle - may not volate triangle inequality
         {
             assertThrown(kind(7, 3, 2));
         }
 
+        // scalene triangle - sides may be floats
+        {
+            assert(TriangleType.scalene == kind(0.5, 0.4, 0.6));
+        }
     }
 
 }

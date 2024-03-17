@@ -8,7 +8,7 @@ enum TriangleType
 };
 
 /**
- * Return what kind of triagle that is.
+ * Return what kind of triangle that is.
  */
 TriangleType kind(double a, double b, double c)
 {
