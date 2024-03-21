@@ -135,6 +135,14 @@
         ]
       },
       {
+        "slug": "sieve",
+        "name": "Sieve",
+        "uuid": "62ea1661-cdf6-4291-9c0f-3a8c911ce940",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "ed189c57-0585-4534-a44a-e23d795f91a1",

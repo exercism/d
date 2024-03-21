@@ -1,0 +1,2 @@
+name "sieve"
+buildRequirements "disallowDeprecations"
