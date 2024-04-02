@@ -1,0 +1,2 @@
+name "binary-search"
+buildRequirements "disallowDeprecations"
