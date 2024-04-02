@@ -1,0 +1,2 @@
+name "dnd-character"
+buildRequirements "disallowDeprecations"

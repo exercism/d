@@ -462,6 +462,14 @@
         ]
       },
       {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "c9d2212d-7854-41cb-be85-9b04132b2137",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "44d24e19-2600-469d-a405-d08d2a524b95",

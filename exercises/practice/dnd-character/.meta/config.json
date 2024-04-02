@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "source/dnd_character.d"
+    ],
+    "test": [
+      "source/dnd_character.d"
+    ],
+    "example": [
+      "example/dnd_character.d"
+    ]
+  },
+  "blurb": "Randomly generate Dungeons & Dragons characters.",
+  "source": "Simon Shine, Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945"
+}
