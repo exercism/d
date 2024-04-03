@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "contributors": [
+    "BethanyG"
+  ],
+  "files": {
+    "solution": [
+      "source/acronym.d"
+    ],
+    "test": [
+      "source/acronym.d"
+    ],
+    "example": [
+      "example/acronym.d"
+    ]
+  },
+  "blurb": "Convert a long phrase to its acronym.",
+  "source": "Julien Vanier",
+  "source_url": "https://github.com/monkbroc"
+}
