@@ -81,12 +81,12 @@ unittest
         // Random character is valid
         {
             DndCharacter character = new DndCharacter();
-            assert(iota(3, 18).canFind(character.strength));
-            assert(iota(3, 18).canFind(character.dexterity));
-            assert(iota(3, 18).canFind(character.constitution));
-            assert(iota(3, 18).canFind(character.intelligence));
-            assert(iota(3, 18).canFind(character.wisdom));
-            assert(iota(3, 18).canFind(character.charisma));
+            assert(iota(3, 19).canFind(character.strength));
+            assert(iota(3, 19).canFind(character.dexterity));
+            assert(iota(3, 19).canFind(character.constitution));
+            assert(iota(3, 19).canFind(character.intelligence));
+            assert(iota(3, 19).canFind(character.wisdom));
+            assert(iota(3, 19).canFind(character.charisma));
             assert(character.hitpoints == (10 + modifier(character.constitution)));
         }
 
