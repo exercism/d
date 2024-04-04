@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "source/robot_simulator.d"
+    ],
+    "test": [
+      "source/robot_simulator.d"
+    ],
+    "example": [
+      "example/robot_simulator.d"
+    ]
+  },
+  "blurb": "Write a robot simulator.",
+  "source": "Inspired by an interview question at a famous company."
+}
