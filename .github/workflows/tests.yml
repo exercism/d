@@ -17,7 +17,7 @@ jobs:
         dc: [dmd-latest, ldc-latest]
     steps:
       - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
-      - uses: dlang-community/setup-dlang@2979e3ea011f6a234cd3a47dcbeb60f451c9635f
+      - uses: dlang-community/setup-dlang@0a7469b93f791d83f30932c6fd105796c6966e20
         with:
           compiler: ${{ matrix.dc }}
       - name: Run tests
