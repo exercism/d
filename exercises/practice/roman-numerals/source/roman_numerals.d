@@ -159,6 +159,12 @@ unittest
             assert("MMMI" == convert(3001));
         }
 
+        // three_thousand_eight_hundred_eighty_eight_yields_MMMDCCCLXXXVIII
+        {
+            writefln("Conversion of 3888: %s", convert(3888));
+            assert("MMMDCCCLXXXVIII" == convert(3888));
+        }
+
         // three_thousand_nine_hundred_ninety_nine_yields_MMMCMXCIX
         {
             writefln("Conversion of 3999: %s", convert(3999));
