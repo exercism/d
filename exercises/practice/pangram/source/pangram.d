@@ -33,7 +33,7 @@ unittest
         // Mixed case and punctuation
         assert(isPangram("\"Five quacking Zephyrs jolt my wax bed\""));
 
-        // Case insensitive
-        assert(!isPangram("the quick brown fox jumps over with lazy FX"));
+        // a-m and A-M are 26 different characters but not a pangram
+        assert(!isPangram("abcdefghijklm ABCDEFGHIJKLM"));
     }
 }
