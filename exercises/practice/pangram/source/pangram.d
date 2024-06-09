@@ -2,7 +2,7 @@ module pangram;
 
 unittest
 {
-    immutable bool allTestsEnabled = false;
+    immutable int allTestsEnabled = 0;
 
     // Empty sentence
     assert(!isPangram(""));

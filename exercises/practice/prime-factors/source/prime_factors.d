@@ -2,7 +2,7 @@ module prime_factors;
 
 unittest
 {
-    immutable bool allTestsEnabled = false;
+    immutable int allTestsEnabled = 0;
 
     // No factors
     assert(factors(1) == []);
