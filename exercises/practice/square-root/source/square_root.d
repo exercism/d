@@ -26,7 +26,7 @@ unittest
         // root of 196
         assert(squareRoot(196) == 14);
 
-        // root of 650525
-        assert(squareRoot(650525) == 255);
+        // root of 65025
+        assert(squareRoot(65025) == 255);
     }
 }
