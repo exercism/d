@@ -16,7 +16,7 @@ jobs:
       matrix:
         dc: [dmd-latest, ldc-latest]
     steps:
-      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
       - uses: dlang-community/setup-dlang@0a7469b93f791d83f30932c6fd105796c6966e20
         with:
           compiler: ${{ matrix.dc }}
