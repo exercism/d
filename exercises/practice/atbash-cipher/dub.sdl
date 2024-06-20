@@ -1,0 +1,2 @@
+name "atbash-cipher"
+buildRequirements "disallowDeprecations"

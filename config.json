@@ -463,6 +463,14 @@
         ]
       },
       {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "c845c319-60f8-409d-88a6-84a7c529eaf7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "2ba799a8-eab9-44a0-9b31-a10e72baa38b",
