@@ -494,6 +494,14 @@
         ]
       },
       {
+        "slug": "pascals-triangle",
+        "name": "Pascals Triangle",
+        "uuid": "2de80883-1847-4fbe-aa33-0b773f356273",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "dnd-character",
         "name": "D&D Character",
         "uuid": "c9d2212d-7854-41cb-be85-9b04132b2137",
