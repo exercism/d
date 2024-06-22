@@ -570,6 +570,14 @@
         "difficulty": 2
       },
       {
+        "slug": "book-store",
+        "name": "Book Store",
+        "uuid": "e2bf9fe6-b4a9-49a9-ad66-245714f57740",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "zebra-puzzle",
         "name": "Zebra Puzzle",
         "uuid": "89f3152d-2af5-4f93-b15d-22ae8ca7e1f5",
