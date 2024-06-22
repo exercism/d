@@ -515,6 +515,14 @@
         ]
       },
       {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "9d386afd-6d15-4606-98a1-c88894416cda",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "react",
         "name": "React",
         "uuid": "31dd1e53-2b5e-4d40-ac4c-a68fe5e6635c",
