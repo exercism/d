@@ -1,5 +1,33 @@
 module difference_of_squares;
 
+struct Squares
+{
+    this(uint max) pure
+    {
+        // implement this function
+    }
+
+    @property uint squareOfSum() const pure
+    {
+        // implement this property
+    }
+
+    @property uint sumOfSquares() const pure
+    {
+        // implement this property
+    }
+
+    @property uint difference() const pure
+    {
+        // implement this property
+    }
+}
+
+Squares squares(uint max) pure
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
@@ -23,6 +51,12 @@ unittest
 
         // Sum of squares 100
         assert(squares(100).sumOfSquares == 338_350);
+
+        // Difference of squares 1
+        assert(squares(100).difference == 0);
+
+        // Difference of squares 5
+        assert(squares(100).difference == 5);
 
         // Difference of squares 100
         assert(squares(100).difference == 25_164_150);
