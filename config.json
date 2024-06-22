@@ -510,6 +510,14 @@
         "difficulty": 2
       },
       {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "a05da6f2-faba-44e9-b40c-100c3fa68d8d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "44d24e19-2600-469d-a405-d08d2a524b95",
@@ -529,21 +537,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
-      },
-      {
-        "slug": "react",
-        "name": "React",
-        "uuid": "31dd1e53-2b5e-4d40-ac4c-a68fe5e6635c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 10,
-        "topics": [
-          "delegates",
-          "generics",
-          "higher_order_functions",
-          "nested_classes",
-          "reactive_programming"
-        ]
       },
       {
         "slug": "scrabble-score",
@@ -600,6 +593,21 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
+      },
+      {
+        "slug": "react",
+        "name": "React",
+        "uuid": "31dd1e53-2b5e-4d40-ac4c-a68fe5e6635c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 10,
+        "topics": [
+          "delegates",
+          "generics",
+          "higher_order_functions",
+          "nested_classes",
+          "reactive_programming"
+        ]
       }
     ]
   },
