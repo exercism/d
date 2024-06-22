@@ -4,7 +4,7 @@ pure int steps(immutable int number)
 {
     if (number < 1)
     {
-        throw new Exception("Only positive numbers are allowed");
+        throw new Exception("Only positive integers are allowed");
     }
 
     int result = 0;
