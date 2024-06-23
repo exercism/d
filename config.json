@@ -426,6 +426,14 @@
         ]
       },
       {
+        "slug": "phone-number",
+        "name": "Phone Number",
+        "uuid": "83c44fc0-51e0-4207-9d4a-7867c551fd7c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "d7dd5df3-ff36-47ee-88db-e0f974a4cb19",
