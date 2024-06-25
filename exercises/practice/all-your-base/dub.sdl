@@ -1,0 +1,2 @@
+name "all-your-base"
+buildRequirements "disallowDeprecations"
