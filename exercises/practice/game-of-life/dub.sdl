@@ -1,0 +1,2 @@
+name "game-of-life"
+buildRequirements "disallowDeprecations"

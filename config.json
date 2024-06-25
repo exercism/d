@@ -547,6 +547,14 @@
         ]
       },
       {
+        "slug": "game-of-life",
+        "name": "Game Of Life",
+        "uuid": "a870cea4-04e6-4423-aa12-a72da5d18e69",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "knapsack",
         "name": "Knapsack",
         "uuid": "9d386afd-6d15-4606-98a1-c88894416cda",
