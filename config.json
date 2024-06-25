@@ -555,6 +555,14 @@
         "difficulty": 5
       },
       {
+        "slug": "pythagorean-triplet",
+        "name": "Pythagorean Triplet",
+        "uuid": "dc415515-ad72-41a3-8d42-a7d976618848",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "753c4d89-02b0-4856-935b-6471a84b4892",
