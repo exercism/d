@@ -29,12 +29,12 @@ enum Drink
     water
 }
 
-enum Smoke {
-    chesterfields,
-    kools,
-    luckyStrike,
-    oldGold,
-    parliaments
+enum Hobby {
+    reading,
+    painting,
+    football,
+    dancing,
+    chess
 }
 
 enum Pet
@@ -92,19 +92,19 @@ class ZebraPuzzle
                     if (drinks[Drink.milk] != 2)
                         continue;
 
-                    int[] smokes = [0, 1, 2, 3, 4];
+                    int[] hobbies = [0, 1, 2, 3, 4];
                     do
                     {
-                        // 8. Kools are smoked in the yellow house.
-                        if (smokes[Smoke.kools] != colors[Color.yellow])
+                        // 8. The person in the yellow house is a painter.
+                        if (hobbies[Hobby.painting] != colors[Color.yellow])
                             continue;
 
-                        // 13. The Lucky Strike smoker drinks orange juice.
-                        if (smokes[Smoke.luckyStrike] != drinks[Drink.orangeJuice])
+                        // 13. The person who plays football drinks orange juice.
+                        if (hobbies[Hobby.football] != drinks[Drink.orangeJuice])
                             continue;
 
-                        // 14. The Japanese smokes Parliaments.
-                        if (nationalities[Nationality.japanese] != smokes[Smoke.parliaments])
+                        // 14. The Japanese person plays chess.
+                        if (nationalities[Nationality.japanese] != hobbies[Hobby.chess])
                             continue;
 
                         int[] pets = [0, 1, 2, 3, 4];
@@ -114,16 +114,16 @@ class ZebraPuzzle
                             if (nationalities[Nationality.spaniard] != pets[Pet.dog])
                                 continue;
 
-                            // 7. The Old Gold smoker owns snails.
-                            if (smokes[Smoke.oldGold] != pets[Pet.snails])
+                            // 7. The snail owner likes to go dancing.
+                            if (hobbies[Hobby.dancing] != pets[Pet.snails])
                                 continue;
 
-                            // 11. The man who smokes Chesterfields lives in the house next to the man with the fox.
-                            if (!adjacent(smokes[Smoke.chesterfields], pets[Pet.fox]))
+                            // 11. The person who enjoys reading lives in the house next to the person with the fox.
+                            if (!adjacent(hobbies[Hobby.reading], pets[Pet.fox]))
                                 continue;
 
-                            // 12. Kools are smoked in the house next to the house where the horse is kept.
-                            if (!adjacent(smokes[Smoke.kools], pets[Pet.horse]))
+                            // 12. The painter's house is next to the house with the horse.
+                            if (!adjacent(hobbies[Hobby.painting], pets[Pet.horse]))
                                 continue;
 
                             foreach (nationality; [Nationality.englishman,
@@ -139,7 +139,7 @@ class ZebraPuzzle
                                     ownsZebra_ = nationality;
                             }
                         } while (nextPermutation(pets));
-                    } while (nextPermutation(smokes));
+                    } while (nextPermutation(hobbies));
                 } while (nextPermutation(drinks));
             } while (nextPermutation(colors));
         } while (nextPermutation(nationalities));
