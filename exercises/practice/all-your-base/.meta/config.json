@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "source/all_your_base.d"
+    ],
+    "test": [
+      "source/all_your_base.d"
+    ],
+    "example": [
+      "example/all_your_base.d"
+    ]
+  },
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base."
+}

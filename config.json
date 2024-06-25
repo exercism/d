@@ -479,6 +479,14 @@
         ]
       },
       {
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "uuid": "9c1ca27b-5dd6-4169-b56a-91400d62b8ca",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "c845c319-60f8-409d-88a6-84a7c529eaf7",
