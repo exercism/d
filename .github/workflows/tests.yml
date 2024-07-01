@@ -11,10 +11,11 @@ on:
 jobs:
   exercises:
     name: Check exercises
-    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        dc: [dmd-latest, ldc-latest]
+        os: [ubuntu-24.04, windows-2022]
+        dc: [dmd-2.109.0, ldc-1.38.0]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
       - uses: dlang-community/setup-dlang@0a7469b93f791d83f30932c6fd105796c6966e20
