@@ -467,6 +467,14 @@
         ]
       },
       {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "3a65f7b9-7aea-4393-9246-9a30cd7fb8e7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "series",
         "name": "Series",
         "uuid": "14c3c478-9dc1-470b-8517-35c3ceac3f47",
