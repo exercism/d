@@ -5,7 +5,11 @@
 [![GitHub forks](https://img.shields.io/github/forks/exercism/d.svg)](https://github.com/exercism/d/network)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/exercism/d/master/LICENSE)
 
-Exercism exercises in the D Programming Language
+**`D`** is one of many programming languages you can study on [exercism.org](https://exercism.org/).
+This repo holds all the instructions, tests, code, & support files for D _exercises_ currently under development or implemented & available for students.
+If you haven't already, you can check out and study the live language track [here](https://exercism.org/tracks/d).
+
+🌟 &nbsp;&nbsp;The test runner is currently using the DMD compiler v2.109.0.
 
 ## Filenames
 
