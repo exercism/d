@@ -337,6 +337,14 @@
         ]
       },
       {
+        "slug": "micro-blog",
+        "name": "Micro Blog",
+        "uuid": "8d36d22e-f33f-4753-9d10-486159a256ab",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "resistor-color",
         "name": "Resistor Color",
         "uuid": "975c6fb4-f447-42ee-a1df-62ea9ac5a011",
