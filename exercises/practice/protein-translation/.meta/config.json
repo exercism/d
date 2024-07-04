@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "source/protein_translation.d"
+    ],
+    "test": [
+      "source/protein_translation.d"
+    ],
+    "example": [
+      "example/protein_translation.d"
+    ]
+  },
+  "blurb": "Translate RNA sequences into proteins.",
+  "source": "Tyler Long"
+}
