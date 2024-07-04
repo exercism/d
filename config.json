@@ -550,6 +550,14 @@
         "difficulty": 4
       },
       {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "02123c09-a496-48a7-b76e-5150f148a186",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "dnd-character",
         "name": "D&D Character",
         "uuid": "c9d2212d-7854-41cb-be85-9b04132b2137",
