@@ -1,0 +1,2 @@
+name "protein-translation"
+buildRequirements "disallowDeprecations"

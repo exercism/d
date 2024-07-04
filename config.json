@@ -345,6 +345,14 @@
         "difficulty": 2
       },
       {
+        "slug": "protein-translation",
+        "name": "Protein Translation",
+        "uuid": "7ba9bb49-551d-47a9-9662-f66560d9d0c4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "resistor-color",
         "name": "Resistor Color",
         "uuid": "975c6fb4-f447-42ee-a1df-62ea9ac5a011",
