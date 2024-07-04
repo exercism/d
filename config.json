@@ -244,6 +244,14 @@
         ]
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "7d762bca-0aac-4ba9-8035-157a93ab5df5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "280c5e37-fbbe-41f0-9113-e645586c8731",
