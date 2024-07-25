@@ -19,12 +19,12 @@ struct GradeSchool
     string[] grade(int grade)
     {
         return students
-               .byKeyValue
-               .filter!(kvp => kvp.value == grade)
-               .map!(kvp => kvp.key)
-               .array
-               .sort
-               .array;
+                .byKeyValue
+                .filter!(kvp => kvp.value == grade)
+                .map!(kvp => kvp.key)
+                .array
+                .sort
+                .array;
     }
 
     string[] roster()
