@@ -547,6 +547,14 @@
         ]
       },
       {
+        "slug": "grade-school",
+        "name": "Grade School",
+        "uuid": "8972fa0d-5d14-4703-8fe7-3a89ee8c0b7f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "grains",
         "name": "Grains",
         "uuid": "e29d6573-0829-4ad8-9ae9-0160e70738ea",
