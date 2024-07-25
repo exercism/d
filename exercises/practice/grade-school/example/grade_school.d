@@ -23,7 +23,7 @@ struct GradeSchool
                .filter!(kvp => kvp.value == grade)
                .map!(kvp => kvp.key)
                .array
-               .sort()
+               .sort
                .array;
     }
 
