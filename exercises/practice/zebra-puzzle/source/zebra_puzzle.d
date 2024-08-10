@@ -6,7 +6,7 @@ enum Nationality
     japanese,
     norwegian,
     spaniard,
-    ukranian
+    ukrainian
 }
 
 class ZebraPuzzle

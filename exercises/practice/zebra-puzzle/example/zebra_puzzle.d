@@ -8,7 +8,7 @@ enum Nationality
     japanese,
     norwegian,
     spaniard,
-    ukranian
+    ukrainian
 }
 
 enum Color
@@ -85,7 +85,7 @@ class ZebraPuzzle
                         continue;
 
                     // 5. The Ukrainian drinks tea.
-                    if (nationalities[Nationality.ukranian] != drinks[Drink.tea])
+                    if (nationalities[Nationality.ukrainian] != drinks[Drink.tea])
                         continue;
 
                     // 9. Milk is drunk in the middle house.
@@ -130,7 +130,7 @@ class ZebraPuzzle
                                                    Nationality.japanese,
                                                    Nationality.norwegian,
                                                    Nationality.spaniard,
-                                                   Nationality.ukranian])
+                                                   Nationality.ukrainian])
                             {
                                 if (nationalities[nationality] == drinks[Drink.water])
                                     drinksWater_ = nationality;
