@@ -1,5 +1,10 @@
 module bob;
 
+pure string hey(immutable string text)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;

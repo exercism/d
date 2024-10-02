@@ -1,5 +1,10 @@
 module darts;
 
+pure int score(immutable float x, immutable float y)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;

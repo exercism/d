@@ -4,6 +4,11 @@ import std.array : array;
 import std.algorithm.sorting : sort;
 import std.algorithm.comparison : equal;
 
+pure int[dchar] transform(immutable string[int] score_map)
+{
+    // implement this function
+}
+
 unittest
 {
 

@@ -1,5 +1,10 @@
 module collatz_conjecture;
 
+pure int steps(immutable int number)
+{
+    // implement this function
+}
+
 unittest
 {
     import std.exception : assertThrown;

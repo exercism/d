@@ -1,5 +1,10 @@
 module armstrong_numbers;
 
+pure bool isArmstrongNumber(immutable int number)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
