@@ -1,5 +1,15 @@
 module run_length_encoding;
 
+pure string encode(immutable string input)
+{
+    // implement this function
+}
+
+pure string decode(immutable string input)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;

@@ -1,5 +1,34 @@
 module circular;
 
+class Buffer(ElementType)
+{
+public:
+    this(size_t capacity)
+    {
+        // implement this function
+    }
+
+    ElementType pop()
+    {
+        // implement this function
+    }
+
+    void push(ElementType element)
+    {
+        // implement this function
+    }
+
+    void clear()
+    {
+        // implement this function
+    }
+
+    void forcePush(ElementType element)
+    {
+        // implement this function
+    }
+}
+
 unittest
 {
     import std.exception : assertThrown;

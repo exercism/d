@@ -1,5 +1,10 @@
 module sum_of_multiples;
 
+pure int calculateSum(immutable int[] factors, immutable int limit)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
