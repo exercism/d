@@ -1,5 +1,10 @@
 module reverse_string;
 
+pure string reverseString(immutable string value)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;

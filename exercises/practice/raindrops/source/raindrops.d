@@ -1,3 +1,8 @@
+pure string convert(immutable int n)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
