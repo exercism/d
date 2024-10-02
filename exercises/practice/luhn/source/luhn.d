@@ -1,5 +1,10 @@
 module luhn;
 
+pure bool valid(immutable string input)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;

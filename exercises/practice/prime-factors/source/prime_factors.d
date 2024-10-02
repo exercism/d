@@ -1,5 +1,10 @@
 module prime_factors;
 
+pure int[] factors(immutable long value)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;

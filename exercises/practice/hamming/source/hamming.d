@@ -1,5 +1,10 @@
 module hamming;
 
+pure int distance(immutable string lhs, immutable string rhs)
+{
+    // implement this function
+}
+
 unittest
 {
     import std.exception : assertThrown;

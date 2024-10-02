@@ -1,5 +1,10 @@
 module pangram;
 
+pure bool isPangram(immutable string str)
+{
+    // implement this function
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
