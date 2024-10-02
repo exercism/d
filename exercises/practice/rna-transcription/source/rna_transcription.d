@@ -1,5 +1,10 @@
 module rna_transcription;
 
+pure string toRna(immutable string dna)
+{
+    // implement this function
+}
+
 unittest
 {
     import std.exception : assertThrown;

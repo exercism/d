@@ -2,6 +2,11 @@ module roman_numerals;
 
 import std.stdio;
 
+string convert(ulong number)
+{
+    // implement this function
+}
+
 unittest
 {
 
