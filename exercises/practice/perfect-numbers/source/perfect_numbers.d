@@ -7,6 +7,11 @@ enum Classification
     ABUNDANT
 }
 
+pure Classification classify(immutable int input)
+{
+    // implement this function
+}
+
 unittest
 {
     import std.exception : assertThrown;

@@ -1,5 +1,10 @@
 module nth_prime;
 
+pure int prime(immutable int number)
+{
+    // implement this function
+}
+
 unittest
 {
     import std.exception : assertThrown;
