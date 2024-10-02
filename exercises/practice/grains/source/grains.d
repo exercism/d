@@ -1,5 +1,15 @@
 module grains;
 
+pure ulong square(immutable ulong num)
+{
+    // implement this function
+}
+
+pure ulong total()
+{
+    // implement this function
+}
+
 unittest
 {
     import std.exception : assertThrown;
