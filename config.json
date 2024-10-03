@@ -683,6 +683,14 @@
         "difficulty": 2
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "5cc28e11-822e-4cef-b909-53f41fe4c91c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "e2bf9fe6-b4a9-49a9-ad66-245714f57740",
