@@ -80,6 +80,9 @@ unittest
 
         // Random character is valid
         {
+            import std.range : iota;
+            import std.algorithm : canFind;
+
             DndCharacter character = new DndCharacter();
             assert(iota(3, 19).canFind(character.strength));
             assert(iota(3, 19).canFind(character.dexterity));
