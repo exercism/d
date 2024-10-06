@@ -683,6 +683,14 @@
         "difficulty": 2
       },
       {
+        "slug": "affine-cipher",
+        "name": "Affine Cipher",
+        "uuid": "19d44506-07c6-4ae0-88c8-1450266c4e7b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "state-of-tic-tac-toe",
         "name": "State of Tic-Tac-Toe",
         "uuid": "5cc28e11-822e-4cef-b909-53f41fe4c91c",
