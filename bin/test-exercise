@@ -1,37 +1,38 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-if [ $# -eq 0 ]; then
-  echo "usage: $0 exercise-slug"
+if (( $# == 0 )) || [[ ! -d "$1" ]]; then
+  cat <<END_HELP >&2
+usage: $0 exercise_path
+
+example: $0 ./exercises/practice/two-bucket
+END_HELP
   exit 1
 fi
 
-dir=$1
+cd "$1"
 
-cd $dir
+src=$(jq -r '.files.solution[0]' .meta/config.json)
+example=$(jq -r '.files.example[0]' .meta/config.json)
 
-status=0
+testdir=$(mktemp -d)
+trap 'rm -r "$testdir"' EXIT
 
-mv source testbak
-cp -r example source
-# copy unittests from stub to example
-# can't do >> *.d, so get the filename of the source file.
-src=$(ls source/*.d)
-sed -n '/unittest/,$ p' testbak/*.d >> $src
-if ! grep -q unittest $src ; then
-  echo "$dir failed to copy tests into example"
-  status=1
-fi
-# find any line that contains both `if` and `allTestsEnabled`,
-# and change the `allTestsEnabled` in that line to `true`
-# Thus, making all tests run.
-sed -i'' -e 's/if\(.*\)allTestsEnabled\(.*\)/if\1true\2/' $src
-if ! dub test ; then
-  echo "$dir test has failed"
-  status=1
-fi
-# Restore so that if we are running locally,
-# we don't accidentally commit the directory moves.
-rm -r source
-mv testbak source
+cp ./dub.sdl "$testdir"
+mkdir "$testdir/source"
+{
+    cat "$example"
+    sed -nE '
+        /unittest/,$ {
+            s/(int allTestsEnabled =).*/\1 1;/
+            p
+        }
+    ' "$src"
+} > "${testdir}/${src}"
 
+cd "$testdir"
+
+dub test
+status=$?
+
+((status == 0))  || echo "$1 test has failed" >&2
 exit $status

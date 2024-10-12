@@ -728,6 +728,14 @@
           "nested_classes",
           "reactive_programming"
         ]
+      },
+      {
+        "slug": "two-bucket",
+        "name": "Two Bucket",
+        "uuid": "3a93b272-a5e3-4da6-b83e-6a273ff934e5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ]
   },
