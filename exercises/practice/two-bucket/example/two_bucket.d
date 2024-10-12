@@ -60,7 +60,7 @@ pure TwoBucketResult measure(TwoBucketInput input)
     int moves = 1;
 
     // 2. fill second bucket if it's the goal
-    if (second.size == input.goal) {
+    if (second.size == input.goal && first.amount != input.goal) {
         second.fill();
         moves++;
     }
