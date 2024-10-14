@@ -32,7 +32,7 @@ unittest
         assert(result == TwoBucketResult(4, "one", 5));
     }
 
-    //static if (allTestsEnabled)
+    static if (allTestsEnabled)
     {
         // Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two
         {
