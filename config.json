@@ -547,6 +547,14 @@
         ]
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "3ccd0e96-2b32-4d30-9fc5-aef997b43e47",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "8972fa0d-5d14-4703-8fe7-3a89ee8c0b7f",
