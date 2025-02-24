@@ -13,6 +13,7 @@ pure State gamestate(immutable string[] board)
 
 unittest
 {
+    import std.algorithm.comparison : equal;
     import std.exception : assertThrown;
 
     immutable int allTestsEnabled = 0;
@@ -24,7 +25,7 @@ unittest
             "X  ",
             "X  ",
         ];
-        assert(gamestate(board) == State.win);
+        assert(equal(gamestate(board), State.win));
     }
 
     static if (allTestsEnabled)
@@ -36,7 +37,7 @@ unittest
                 " X ",
                 " X ",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where X won via right column victory
@@ -46,7 +47,7 @@ unittest
                 "  X",
                 "  X",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where O won via left column victory
@@ -56,7 +57,7 @@ unittest
                 "OX ",
                 "O  ",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where O won via middle column victory
@@ -66,7 +67,7 @@ unittest
                 " OX",
                 " O ",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where O won via right column victory
@@ -76,7 +77,7 @@ unittest
                 " XO",
                 "  O",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where X won via top row victory
@@ -86,7 +87,7 @@ unittest
                 "XOO",
                 "O  ",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where X won via middle row victory
@@ -96,7 +97,7 @@ unittest
                 "XXX",
                 " O ",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where X won via bottom row victory
@@ -106,7 +107,7 @@ unittest
                 "O X",
                 "XXX",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where O won via top row victory
@@ -116,7 +117,7 @@ unittest
                 "XXO",
                 "XX ",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where O won via middle row victory
@@ -126,7 +127,7 @@ unittest
                 "OOO",
                 "X  ",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where O won via bottom row victory
@@ -136,7 +137,7 @@ unittest
                 " XX",
                 "OOO",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where X won via falling diagonal victory
@@ -146,7 +147,7 @@ unittest
                 " X ",
                 "  X",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where X won via rising diagonal victory
@@ -156,7 +157,7 @@ unittest
                 "OX ",
                 "X  ",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where O won via falling diagonal victory
@@ -166,7 +167,7 @@ unittest
                 "OOX",
                 "X O",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where O won via rising diagonal victory
@@ -176,7 +177,7 @@ unittest
                 " OX",
                 "OXX",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where X won via a row and a column victory
@@ -186,7 +187,7 @@ unittest
                 "XOO",
                 "XOO",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Won games-Finished game where X won via two diagonal victories
@@ -196,7 +197,7 @@ unittest
                 "OXO",
                 "XOX",
             ];
-            assert(gamestate(board) == State.win);
+            assert(equal(gamestate(board), State.win));
         }
 
         // Drawn games-Draw
@@ -206,7 +207,7 @@ unittest
                 "XXO",
                 "OXO",
             ];
-            assert(gamestate(board) == State.draw);
+            assert(equal(gamestate(board), State.draw));
         }
 
         // Drawn games-Another draw
@@ -216,7 +217,7 @@ unittest
                 "OXX",
                 "XOO",
             ];
-            assert(gamestate(board) == State.draw);
+            assert(equal(gamestate(board), State.draw));
         }
 
         // Ongoing games-Ongoing game: one move in
@@ -226,7 +227,7 @@ unittest
                 "X  ",
                 "   ",
             ];
-            assert(gamestate(board) == State.ongoing);
+            assert(equal(gamestate(board), State.ongoing));
         }
 
         // Ongoing games-Ongoing game: two moves in
@@ -236,7 +237,7 @@ unittest
                 " X ",
                 "   ",
             ];
-            assert(gamestate(board) == State.ongoing);
+            assert(equal(gamestate(board), State.ongoing));
         }
 
         // Ongoing games-Ongoing game: five moves in
@@ -246,7 +247,7 @@ unittest
                 " XO",
                 "OX ",
             ];
-            assert(gamestate(board) == State.ongoing);
+            assert(equal(gamestate(board), State.ongoing));
         }
 
         // Invalid boards-Invalid board: X went twice

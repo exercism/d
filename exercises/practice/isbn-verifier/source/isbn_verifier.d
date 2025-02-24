@@ -1,10 +1,5 @@
 module isbn_verifier;
 
-pure bool isValid(immutable string isbn)
-{
-    // implement this function
-}
-
 unittest
 {
     immutable int allTestsEnabled = 0;
