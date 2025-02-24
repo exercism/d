@@ -9,6 +9,7 @@ uint maximumValue(Item[] items, uint maximumWeight)
 {
     // implement this function
 }
+
 unittest
 {
     immutable int allTestsEnabled = 0;

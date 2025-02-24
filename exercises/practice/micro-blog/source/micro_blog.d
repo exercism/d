@@ -1,10 +1,5 @@
 module micro_blog;
 
-pure string truncate(immutable string phrase)
-{
-    // implement this function
-}
-
 unittest
 {
     immutable int allTestsEnabled = 0;

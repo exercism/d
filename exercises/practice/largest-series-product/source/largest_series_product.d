@@ -1,10 +1,5 @@
 module largest_series_product;
 
-pure ulong largestProduct(immutable string digits, int span)
-{
-    // implement this function
-}
-
 unittest
 {
     import std.exception : assertThrown;

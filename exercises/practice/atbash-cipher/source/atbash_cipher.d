@@ -1,15 +1,5 @@
 module atbash_cipher;
 
-pure string encode(immutable string phrase)
-{
-    // implement this function
-}
-
-pure string decode(immutable string phrase)
-{
-    // implement this function
-}
-
 unittest
 {
     immutable int allTestsEnabled = 0;

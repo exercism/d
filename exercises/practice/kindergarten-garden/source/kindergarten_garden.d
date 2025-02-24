@@ -47,8 +47,7 @@ unittest
             assert(plants(diagram, "Bob") == expected);
         }
 
-        // Partial garden-multiple students for the same garden with three
-        // students-second student's garden
+        // Partial garden-multiple students for the same garden with three students-second student's garden
         {
             immutable string diagram = "VVCCGG\nVVCCGG";
             string[4] expected = [
@@ -60,8 +59,7 @@ unittest
             assert(plants(diagram, "Bob") == expected);
         }
 
-        // Partial garden-multiple students for the same garden with three
-        // students-third student's garden
+        // Partial garden-multiple students for the same garden with three students-third student's garden
         {
             immutable string diagram = "VVCCGG\nVVCCGG";
             string[4] expected = [

@@ -1,14 +1,7 @@
 module phone_number;
 
-pure string clean(immutable string phrase)
-{
-    // implement this function
-}
-
 unittest
 {
-    import std.exception : assertThrown;
-
     immutable int allTestsEnabled = 0;
 
     // Cleans the number
