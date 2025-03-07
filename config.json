@@ -113,7 +113,7 @@
       },
       {
         "slug": "isbn-verifier",
-        "name": "Isbn Verifier",
+        "name": "ISBN Verifier",
         "uuid": "8bf69e6b-bcf1-48b3-95ed-de89199e541b",
         "practices": [],
         "prerequisites": [],
@@ -273,7 +273,7 @@
       },
       {
         "slug": "two-fer",
-        "name": "Two Fer",
+        "name": "Two-Fer",
         "uuid": "4d9c55db-88c2-4cab-a456-f6d9844dbfdc",
         "practices": [],
         "prerequisites": [],
@@ -620,7 +620,7 @@
       },
       {
         "slug": "game-of-life",
-        "name": "Game Of Life",
+        "name": "Conway's Game of Life",
         "uuid": "a870cea4-04e6-4423-aa12-a72da5d18e69",
         "practices": [],
         "prerequisites": [],
