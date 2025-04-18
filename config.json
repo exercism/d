@@ -519,6 +519,14 @@
         ]
       },
       {
+        "slug": "twelve-days",
+        "name": "Twelve Days",
+        "uuid": "f9ca770d-1dcd-4ab5-8cbb-80cd007d0587",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "799f5b50-8764-4ffc-8ba2-3cbd052485c7",
