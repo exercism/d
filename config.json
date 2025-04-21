@@ -252,6 +252,14 @@
         ]
       },
       {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "c0cd3d7d-27b2-4c05-8dba-4ab5d370802c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "7d762bca-0aac-4ba9-8035-157a93ab5df5",
