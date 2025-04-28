@@ -1,0 +1,2 @@
+name "food-chain"
+buildRequirements "disallowDeprecations"
