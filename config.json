@@ -425,6 +425,14 @@
         ]
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "bede5552-fa61-4ff4-b455-332afaa5f3d6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "crypto-square",
         "name": "Crypto Square",
         "uuid": "45afc532-3f6c-4b9e-90f6-c53a79551af1",
