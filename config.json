@@ -747,6 +747,14 @@
         "difficulty": 6
       },
       {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "3f639685-d503-4564-9337-df303a9a9c74",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "42f82a28-3ab5-450b-9a38-27ce6e180f59",
