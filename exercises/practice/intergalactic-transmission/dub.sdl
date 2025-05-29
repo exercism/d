@@ -1,0 +1,2 @@
+name "intergalactic-transmission"
+buildRequirements "disallowDeprecations"
