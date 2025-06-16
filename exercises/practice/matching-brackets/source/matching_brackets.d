@@ -50,11 +50,20 @@ unittest
         // Paired and wrong nested brackets
         assert(!isPaired("[({]})"));
 
+        // Paired and wrong nested brackets but innermost are correct
+        assert(!isPaired("[({}])"));
+
         // Paired and incomplete brackets
         assert(!isPaired("{}["));
 
         // Too many closing brackets
         assert(!isPaired("[]]"));
+
+        // Early unexpected brackets
+        assert(!isPaired(")()"));
+
+        // Early mismatched brackets
+        assert(!isPaired("{)()"));
 
         // Math expression
         assert(isPaired("(((185 + 223.85) * 15) - 543)/2"));
