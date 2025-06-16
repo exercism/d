@@ -71,9 +71,6 @@ unittest
         // Alternate silence
         assert(hey("\t\t\t\t\t\t\t\t\t\t") == "Fine. Be that way!");
 
-        // Multiple line question
-        assert(hey("\nDoes this cryogenic chamber make me look fat?\nNo.") == "Whatever.");
-
         // Ending with whitespace
         assert(hey("Okay if like my  spacebar  quite a bit?   ") == "Sure.");
 
@@ -82,6 +79,9 @@ unittest
 
         // Non-question ending with whitespace
         assert(hey("This is a statement ending with whitespace      ") == "Whatever.");
+
+        // Multiple line question
+        assert(hey("\nDoes this cryogenic chamber make\n me look fat?") == "Sure.");
     }
 
 }
