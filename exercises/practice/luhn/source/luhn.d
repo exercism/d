@@ -32,6 +32,12 @@ unittest
         // Invalid credit card
         assert(!valid("8273 1232 7352 0569"));
 
+        // Invalid long number with an even remainder
+        assert(!valid("1 2345 6789 1234 5678 9012"));
+
+        // Invalid long number with a remainder divisible by 5
+        assert(!valid("1 2345 6789 1234 5678 9013"));
+
         // Valid number with an even number of digits
         assert(valid("095 245 88"));
 
@@ -56,16 +62,19 @@ unittest
         // Input digit 9 is correctly converted to output digit 9
         assert(valid("091"));
 
-        /*
-        Convert non-digits to their ascii values and then offset them by 48 sometimes accidentally declare an invalid string to be valid. 
-        This test is designed to avoid that solution.
-        */
+        // Very long input is valid
+        assert(valid("9999999999 9999999999 9999999999 9999999999"));
+
+        // Valid luhn with an odd number of digits and non zero first digit
+        assert(valid("109"));
 
         // Using ascii value for non-doubled non-digit isn't allowed
         assert(!valid("055b 444 285"));
 
         // Using ascii value for doubled non-digit isn't allowed
         assert(!valid(":9"));
-    }
 
+        // Non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed
+        assert(!valid("59%59"));
+    }
 }
