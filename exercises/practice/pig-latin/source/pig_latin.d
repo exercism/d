@@ -9,7 +9,7 @@ unittest
 {
     immutable int allTestsEnabled = 0;
 
-    // word beginning wth a
+    // word beginning with a
     assert(translate("apple") == "appleay");
 
     static if (allTestsEnabled)
@@ -40,6 +40,9 @@ unittest
 
         // word beginning with q without a following u
         assert(translate("qat") == "atqay");
+
+        // word beginning with consonant and vowel containing qu
+        assert(translate("liquid") == "iquidlay");
 
         // word beginning with ch
         assert(translate("chair") == "airchay");
@@ -78,4 +81,3 @@ unittest
         assert(translate("quick fast run") == "ickquay astfay unray");
     }
 }
-
