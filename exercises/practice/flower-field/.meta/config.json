@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "source/flower_field.d"
+    ],
+    "test": [
+      "source/flower_field.d"
+    ],
+    "example": [
+      "example/flower_field.d"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}

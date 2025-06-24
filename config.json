@@ -739,6 +739,14 @@
         "difficulty": 5
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "795b1d74-3c0f-45c2-ade6-f38de1d0676b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "game-of-life",
         "name": "Conway's Game of Life",
         "uuid": "a870cea4-04e6-4423-aa12-a72da5d18e69",
@@ -760,7 +768,8 @@
         "uuid": "42f82a28-3ab5-450b-9a38-27ce6e180f59",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 6
+        "difficulty": 6,
+        "status": "deprecated"
       },
       {
         "slug": "book-store",
