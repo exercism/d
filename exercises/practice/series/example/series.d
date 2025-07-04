@@ -61,6 +61,9 @@ int[] digits(string input)
 
 int[][] slice(string input, uint stride = 1)
 {
+    if (stride == 0)
+        throw new Exception("slice length cannot be zero");
+
     if (input.length < stride)
         throw new Exception("Stride is longer than input.");
 

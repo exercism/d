@@ -50,63 +50,77 @@ unittest
             assert(equal(actual, expected));
         }
 
-        // can_slice_by_2
+        // Slices of one from one
         {
-            const int[][] expected = [
-                [9, 8], [8, 2], [2, 7], [7, 3], [3, 4], [4, 6], [6, 3]
-            ];
-            const int[][] actual = slice("98273463", 2);
+            const int[][] expected = [[1]];
+            const int[][] actual = slice("1", 1);
 
             assert(equal(actual, expected));
         }
 
-        // can_slice_by_3
+        // Slices of one from two
         {
-            const int[][] expected = [[0, 1, 2], [1, 2, 3], [2, 3, 4]];
-            const int[][] actual = slice("01234", 3);
+            const int[][] expected = [[1], [2]];
+            const int[][] actual = slice("12", 1);
 
             assert(equal(actual, expected));
         }
 
-        // can_slice_by_3_with_duplicate_digits
+        // Slices of two
         {
-            const int[][] expected = [[3, 1, 0], [1, 0, 0], [0, 0, 1]];
-            const int[][] actual = slice("31001", 3);
+            const int[][] expected = [[3, 5]];
+            const int[][] actual = slice("35", 2);
 
             assert(equal(actual, expected));
         }
 
-        // can_slice_by_4
+        // Slices of two overlap
         {
-            const int[][] expected = [[3, 1, 0], [1, 0, 0], [0, 0, 1]];
-            const int[][] actual = slice("31001", 3);
+            const int[][] expected = [[9, 1], [1, 4], [4, 2]];
+            const int[][] actual = slice("9142", 2);
 
             assert(equal(actual, expected));
         }
 
-        // can_slice_by_5
+        // Slices can include duplicates
         {
-            const int[][] expected = [[8, 1, 2, 2, 8]];
-            const int[][] actual = slice("81228", 5);
+            const int[][] expected = [[7, 7, 7], [7, 7, 7], [7, 7, 7], [7, 7, 7]];
+            const int[][] actual = slice("777777", 3);
 
             assert(equal(actual, expected));
         }
 
-        // exception_if_not_enough_digits_to_slice
+        // Slices of a long series
         {
-            assertThrown(slice("01032987583", 12));
+            const int[][] expected = [[9, 1, 8, 4, 9], [1, 8, 4, 9, 3], [8, 4, 9, 3, 9], [4, 9, 3, 9, 0], [9, 3, 9, 0, 4], [3, 9, 0, 4, 2], [9, 0, 4, 2, 4], [0, 4, 2, 4, 3]];
+            const int[][] actual = slice("918493904243", 5);
+
+            assert(equal(actual, expected));
         }
 
-        // exception_if_invalid_input
+        // Slice length is too large
         {
-            assertThrown(slice("01032i987583", 12));
+            assertThrown(slice("12345", 6));
         }
 
-        // exception_if_invalid_input_2
+        // Slice length is way too large
         {
-            assertThrown(digits("01032i987583"));
+            assertThrown(slice("12345", 42));
         }
 
+        // Slice length cannot be zero
+        {
+            assertThrown(slice("12345", 0));
+        }
+
+        // Slice length cannot be negative
+        {
+            assertThrown(slice("123", -1));
+        }
+
+        // Empty series is invalid
+        {
+            assertThrown(slice("", 1));
+        }
     }
-
 }
