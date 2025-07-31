@@ -12,6 +12,12 @@ unittest
 
     static if (allTestsEnabled)
     {
+        // normalize_to_empty
+        {
+            auto theCipher = new Cipher("... --- ...");
+            assert("" == theCipher.normalizePlainText());
+        }
+
         // normalize_numbers
         {
             auto theCipher = new Cipher("1, 2, 3 GO!");
@@ -84,6 +90,12 @@ unittest
         {
             auto theCipher = new Cipher("Vampires are people too!");
             assert("vrel aepe mset paoo irpo" == theCipher.normalize.cipherText());
+        }
+
+        // normalized_Cipher_text3
+        {
+            auto theCipher = new Cipher("If man was meant to stay on the ground, god would have given us roots.");
+            assert("imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau" == theCipher.normalize.cipherText());
         }
     }
 
