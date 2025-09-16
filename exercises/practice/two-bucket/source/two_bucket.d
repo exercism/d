@@ -64,6 +64,18 @@ unittest
             assert(result == TwoBucketResult(2, "two", 2));
         }
 
+        // Measure using bucket one much bigger than bucket two
+        {
+            auto result = measure(TwoBucketInput(5, 1, 2, "one"));
+            assert(result == TwoBucketResult(6, "one", 1));
+        }
+
+        // Measure using bucket one much smaller than bucket two
+        {
+            auto result = measure(TwoBucketInput(3, 15, 9, "one"));
+            assert(result == TwoBucketResult(6, "two", 0));
+        }
+
         // Not possible to reach the goal
         {
             assertThrown(measure(TwoBucketInput(6, 15, 5, "one")));
