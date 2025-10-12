@@ -1,0 +1,2 @@
+name "killer-sudoku-helper"
+buildRequirements "disallowDeprecations"
