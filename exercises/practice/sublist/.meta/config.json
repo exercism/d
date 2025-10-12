@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "source/sublist.d"
+    ],
+    "test": [
+      "source/sublist.d"
+    ],
+    "example": [
+      "example/sublist.d"
+    ]
+  },
+  "blurb": "Write a function to determine if a list is a sublist of another list."
+}
