@@ -812,6 +812,14 @@
         "difficulty": 7
       },
       {
+        "slug": "change",
+        "name": "Change",
+        "uuid": "92ac940d-44dd-4e70-bc38-247ecd6215fa",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "zebra-puzzle",
         "name": "Zebra Puzzle",
         "uuid": "89f3152d-2af5-4f93-b15d-22ae8ca7e1f5",
