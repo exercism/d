@@ -755,6 +755,14 @@
         "difficulty": 5
       },
       {
+        "slug": "variable-length-quantity",
+        "name": "Variable Length Quantity",
+        "uuid": "754b9ada-00c5-4dbe-a97e-fc0c049e14cc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "799f5b50-8764-4ffc-8ba2-3cbd052485c7",
