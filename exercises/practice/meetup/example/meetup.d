@@ -1,21 +1,7 @@
 module meetup;
 
+import std.datetime.date;
 import std.format;
-
-enum Month {
-    january,
-    february,
-    march,
-    april,
-    may,
-    june,
-    july,
-    august,
-    september,
-    october,
-    november,
-    december,
-}
 
 enum Week {
     first,
@@ -24,16 +10,6 @@ enum Week {
     fourth,
     teenth,
     last,
-}
-
-enum Day {
-    monday,
-    tuesday,
-    wednesday,
-    thursday,
-    friday,
-    saturday,
-    sunday,
 }
 
 pure bool isLeap(ushort year)
@@ -45,18 +21,18 @@ pure int daysInMonth(ushort year, Month month)
 {
     switch (month)
     {
-        case Month.january: return 31;
-        case Month.february: return isLeap(year) ? 29 : 28;
-        case Month.march: return 31;
-        case Month.april: return 30;
+        case Month.jan: return 31;
+        case Month.feb: return isLeap(year) ? 29 : 28;
+        case Month.mar: return 31;
+        case Month.apr: return 30;
         case Month.may: return 31;
-        case Month.june: return 30;
-        case Month.july: return 31;
-        case Month.august: return 31;
-        case Month.september: return 30;
-        case Month.october: return 31;
-        case Month.november: return 30;
-        case Month.december: return 31;
+        case Month.jun: return 30;
+        case Month.jul: return 31;
+        case Month.aug: return 31;
+        case Month.sep: return 30;
+        case Month.oct: return 31;
+        case Month.nov: return 30;
+        case Month.dec: return 31;
         default: assert(0);
     }
 }
@@ -79,29 +55,29 @@ pure int monthOffset(Month month)
 {
     switch (month)
     {
-        case Month.january: return 307; // offset from the end of February of previous year
-        case Month.february: return 338;
-        case Month.march: return 1;
-        case Month.april: return 32;
+        case Month.jan: return 307; // offset from the end of February of previous year
+        case Month.feb: return 338;
+        case Month.mar: return 1;
+        case Month.apr: return 32;
         case Month.may: return 62;
-        case Month.june: return 93;
-        case Month.july: return 123;
-        case Month.august: return 154;
-        case Month.september: return 185;
-        case Month.october: return 215;
-        case Month.november: return 246;
-        case Month.december: return 276;
+        case Month.jun: return 93;
+        case Month.jul: return 123;
+        case Month.aug: return 154;
+        case Month.sep: return 185;
+        case Month.oct: return 215;
+        case Month.nov: return 246;
+        case Month.dec: return 276;
         default: assert(0);
     }
 }
 
-pure Day dayOfWeek(ushort year, Month month, int dayOfMonth)
+pure DayOfWeek dayOfWeek(ushort year, Month month, int dayOfMonth)
 {
-    int y = (month == Month.january || month == Month.february) ? year - 1 : year;
-    return cast(Day)((y + (y / 4) - (y / 100) + (y / 400) + monthOffset(month) + dayOfMonth) % 7);
+    int y = (month == Month.jan || month == Month.feb) ? year - 1 : year;
+    return cast(DayOfWeek)((y + (y / 4) - (y / 100) + (y / 400) + monthOffset(month) + dayOfMonth + 1) % 7);
 }
 
-pure int meetupDayOfMonth(ushort year, Month month, Week week, Day day)
+pure int meetupDayOfMonth(ushort year, Month month, Week week, DayOfWeek day)
 {
     auto dayOfMonth = weekConcludes(year, month, week);
     auto last = cast(int)dayOfWeek(year, month, dayOfMonth);
@@ -110,8 +86,8 @@ pure int meetupDayOfMonth(ushort year, Month month, Week week, Day day)
     return dayOfMonth + required - (last + adjustment);
 }
 
-pure string meetup(ushort year, Month month, Week week, Day day)
+pure string meetup(ushort year, Month month, Week week, DayOfWeek day)
 {
     auto dayOfMonth = meetupDayOfMonth(year, month, week, day);
-    return format("%04d-%02d-%02d", year, cast(int)month + 1, dayOfMonth);
+    return format("%04d-%02d-%02d", year, cast(int)month, dayOfMonth);
 }
