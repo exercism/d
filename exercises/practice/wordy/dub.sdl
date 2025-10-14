@@ -1,0 +1,2 @@
+name "wordy"
+buildRequirements "disallowDeprecations"
