@@ -46,7 +46,7 @@ unittest
             assert(annotate(garden) == expected);
         }
 
-        // garden with only flowers
+        // Garden full of flowers
         {
             immutable string[] garden = [
                 "***",
@@ -187,6 +187,17 @@ unittest
                 "112*4*",
                 "1*22*2",
                 "111111",
+            ];
+            assert(annotate(garden) == expected);
+        }
+
+        // Multiple adjacent flowers
+        {
+            immutable string[] garden = [
+                " ** ",
+            ];
+            string[] expected = [
+                "1**1",
             ];
             assert(annotate(garden) == expected);
         }
