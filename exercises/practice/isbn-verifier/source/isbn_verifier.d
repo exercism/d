@@ -32,6 +32,12 @@ unittest
         // X is only valid as a check digit
         assert(!isValid("3-598-2X507-9"));
 
+        // Only one check digit is allowed
+        assert(!isValid("3-598-21508-96"));
+
+        // X is not substituted by the value 10
+        assert(!isValid("3-598-2X507-5"));
+
         // Valid isbn without separating dashes
         assert(isValid("3598215088"));
 
