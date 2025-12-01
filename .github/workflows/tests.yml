@@ -17,7 +17,7 @@ jobs:
         dc: [dmd-2.109.0, ldc-1.38.0]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
       - uses: dlang-community/setup-dlang@0a7469b93f791d83f30932c6fd105796c6966e20
         with:
           compiler: ${{ matrix.dc }}
