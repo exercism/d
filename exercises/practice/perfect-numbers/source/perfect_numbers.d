@@ -42,6 +42,9 @@ unittest
         // Large abundant number is classified correctly
         assert(classify(33_550_335) == Classification.ABUNDANT);
 
+        // Perfect square abundant number is classified correctly
+        assert(classify(196) == Classification.ABUNDANT);
+
         // Deficient numbers
 
         // Smallest prime deficient number is classified correctly
