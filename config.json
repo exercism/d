@@ -884,6 +884,14 @@
         "difficulty": 7
       },
       {
+        "slug": "alphametics",
+        "name": "Alphametics",
+        "uuid": "d962ba3a-8fe9-4db2-86ef-d379f294d9ae",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "connect",
         "name": "Connect",
         "uuid": "087ca9a0-0ef4-4406-8a9a-bcd338ebf782",
