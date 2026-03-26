@@ -820,6 +820,14 @@
         "status": "deprecated"
       },
       {
+        "slug": "palindrome-products",
+        "name": "Palindrome Products",
+        "uuid": "a0a6e0e8-44ac-4600-a43e-9e0cf48f8d0e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "say",
         "name": "Say",
         "uuid": "20d8ebd6-682c-4cde-8783-4c2ff508642a",
