@@ -615,6 +615,14 @@
         ]
       },
       {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "9f2b2441-cf91-4954-93b1-2f668da5bba5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "86665e86-d4db-449d-a3fc-2727398dadf1",
