@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "Narkunan"
+  ],
   "files": {
     "solution": [
       "source/simple_cipher.d"
