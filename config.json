@@ -929,6 +929,14 @@
           "nested_classes",
           "reactive_programming"
         ]
+      },
+      {
+        "slug": "simple-cipher",
+        "name": "Simple Cipher",
+        "uuid": "3ce7b91b-330f-4fbb-8e9a-3638bd90281b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
