@@ -1,11 +1,15 @@
 module acronym;
 
-import std.regex; 
-import std.string;
+import std.algorithm : map;
+import std.array : array;
+import std.regex : regex, matchAll;
+import std.string : replace, toUpper;
 
-immutable r = regex(r"(?<!_)\B[\w']+|[\W_]");
+immutable r = regex(`[A-Z]+`);
 
 string abbreviate(immutable string phrase)
 {
-    return replaceAll(phrase.toUpper(), r, "");
+    return matchAll(phrase.replace("'", "").toUpper, r)
+        .map!(m => m.hit[0])
+        .array;
 }
