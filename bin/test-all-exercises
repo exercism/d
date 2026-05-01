@@ -14,12 +14,9 @@ exercises=$(dirname "$(dirname "$0")")/exercises
 failed_file=$(mktemp)
 trap 'rm -f "$failed_file"' EXIT
 
-# shellcheck disable=SC2016 # $1, $2, $3 are evaluated by the inner sh -c.
-printf '%s\n' "$exercises"/practice/*/ | xargs -P "$jobs" -I{} sh -c '
-  if ! "$1" "$3"; then
-    basename "$3" >> "$2"
-  fi
-' _ "$test_one" "$failed_file" "{}"
+# shellcheck disable=SC2016
+cmd=$(printf '"%s" "$1" || basename "$1" >> "%s"' "$test_one" "$failed_file")
+printf '%s\n' "$exercises"/practice/*/ | xargs -P "$jobs" -I{} sh -c "${cmd}" _ "{}"
 
 if [ -s "$failed_file" ]; then
   echo "The following exercises failed"
