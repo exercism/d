@@ -288,5 +288,25 @@ unittest
             ];
             assertThrown(gamestate(board));
         }
+
+        // Invalid boards-Invalid board: O kept playing after X wins
+        {
+            immutable string[] board = [
+                "OO ",
+                "XXX",
+                " O ",
+            ];
+            assertThrown(gamestate(board));
+        }
+
+        // Invalid boards-Invalid board: X kept playing after O wins
+        {
+            immutable string[] board = [
+                "XX ",
+                "OOO",
+                " XX",
+            ];
+            assertThrown(gamestate(board));
+        }
     }
 }
