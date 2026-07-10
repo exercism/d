@@ -51,6 +51,16 @@ pure State gamestate(immutable string[] board)
             throw new Exception("Impossible board: game should have ended after the game was won");
         }
 
+        if (win_x && count_o == count_x)
+        {
+            throw new Exception("Impossible board: O kept playing after X wins");
+        }
+
+        if (win_o && count_x > count_o)
+        {
+            throw new Exception("Impossible board: X kept playing after O wins");
+        }
+
         return State.win;
     }
 
