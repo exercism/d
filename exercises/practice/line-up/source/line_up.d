@@ -68,9 +68,29 @@ unittest
         assert(equal("Washi, you are the 21st customer we serve today. Thank you!",
                      format("Washi", 21)));
 
+        // Format exceptional ordinal numeral 22 ending in nd even though it is a multiple of 11
+        assert(equal("Ingrid, you are the 22nd customer we serve today. Thank you!",
+                     format("Ingrid", 22)));
+
+        // Format exceptional ordinal numeral 33 ending in rd even though it is a multiple of 11
+        assert(equal("Mario, you are the 33rd customer we serve today. Thank you!",
+                     format("Mario", 33)));
+
+        // Format exceptional ordinal numeral 52 ending in nd even though it is a multiple of 13
+        assert(equal("Quentin, you are the 52nd customer we serve today. Thank you!",
+                     format("Quentin", 52)));
+
         // Format exceptional ordinal numeral 62
         assert(equal("Nayra, you are the 62nd customer we serve today. Thank you!",
                      format("Nayra", 62)));
+
+        // Format non-exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12
+        assert(equal("Ugo, you are the 72nd customer we serve today. Thank you!",
+                     format("Ugo", 72)));
+
+        // Format exceptional ordinal numeral 91 ending in st even though it is a multiple of 13
+        assert(equal("Boris, you are the 91st customer we serve today. Thank you!",
+                     format("Boris", 91)));
 
         // Format exceptional ordinal numeral 100
         assert(equal("John, you are the 100th customer we serve today. Thank you!",
@@ -87,5 +107,9 @@ unittest
         // Format exceptional ordinal numeral 123
         assert(equal("Yma, you are the 123rd customer we serve today. Thank you!",
                      format("Yma", 123)));
+
+        // Format large number 972 ending in nd even though it is a multiple of 12
+        assert(equal("Elias, you are the 972nd customer we serve today. Thank you!",
+                     format("Elias", 972)));
     }
 }
