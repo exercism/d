@@ -1,7 +1,15 @@
+*.swp
+.DS_Store
 bin/configlet
 bin/configlet.exe
+bin/latest-configlet.tar.gz
+bin/latest-configlet.zip
+bin/configlet.zip
+
 *.o
 .gdb*
 *-test-library
 .dub
-.idea
+
+__pycache__/
+*.pyc

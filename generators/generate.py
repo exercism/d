@@ -1,0 +1,207 @@
+#!/usr/bin/env python3
+"""Generate the unit tests of practice exercises from canonical data."""
+
+import argparse
+import importlib
+import json
+import re
+import subprocess
+import sys
+from pathlib import Path
+from types import ModuleType
+from typing import Any
+
+import lib
+import tomllib
+
+ROOT = Path(__file__).resolve().parent.parent
+GENERATORS = ROOT / "generators" / "exercises"
+CACHE_PREFIX = "Using cached 'problem-specifications' dir: "
+ADDITIONAL_CASES = "additional-test-cases.json"
+ASSERT_THROWN_IMPORT = "import std.exception : assertThrown;"
+
+Case = dict[str, Any]
+
+
+class GeneratorError(Exception):
+    """A problem that prevents an exercise from being generated."""
+
+
+def snake(slug: str) -> str:
+    return slug.replace("-", "_")
+
+
+def problem_specifications_dir() -> Path:
+    """Locate configlet's cached copy of problem-specifications."""
+    configlet = ROOT / "bin" / "configlet"
+    if not configlet.exists():
+        raise GeneratorError("bin/configlet not found; run bin/fetch-configlet")
+    result = subprocess.run(
+        [str(configlet), "info", "-o", "-v", "d"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    for line in result.stdout.splitlines():
+        if line.startswith(CACHE_PREFIX):
+            path = Path(line.removeprefix(CACHE_PREFIX).strip())
+            if path.is_dir():
+                return path
+    raise GeneratorError(
+        "problem-specifications cache not found; run bin/configlet sync"
+    )
+
+
+def flatten(cases: list[Case], parents: tuple[str, ...] = ()) -> list[Case]:
+    """Flatten nested groups, recording the descriptions of enclosing groups."""
+    flattened = []
+    for case in cases:
+        if "cases" in case:
+            description = case.get("description")
+            nested = (*parents, description) if description else parents
+            flattened.extend(flatten(case["cases"], nested))
+        else:
+            flattened.append({**case, "parents": parents})
+    return flattened
+
+
+def canonical_cases(slug: str, specifications: Path, exercise_dir: Path) -> list[Case]:
+    """Load the canonical cases selected by the exercise's tests.toml."""
+    data_path = specifications / "exercises" / slug / "canonical-data.json"
+    if not data_path.exists():
+        return []
+    cases = flatten(json.loads(data_path.read_text(encoding="utf-8"))["cases"])
+
+    toml_path = exercise_dir / ".meta" / "tests.toml"
+    if not toml_path.exists():
+        raise GeneratorError(f"{toml_path.relative_to(ROOT)} not found")
+    tests = tomllib.loads(toml_path.read_text(encoding="utf-8"))
+
+    selected = []
+    for case in cases:
+        uuid = case["uuid"]
+        if uuid not in tests:
+            print(
+                f"warning: {slug}: {uuid} ({case['description']}) "
+                "is missing from tests.toml; skipped",
+                file=sys.stderr,
+            )
+        elif tests[uuid].get("include", True):
+            selected.append(case)
+    return selected
+
+
+def additional_cases(exercise_dir: Path) -> list[Case]:
+    """Load the track-specific cases of an exercise, if it has any."""
+    path = exercise_dir / ".meta" / ADDITIONAL_CASES
+    if not path.exists():
+        return []
+    return flatten(json.loads(path.read_text(encoding="utf-8")))
+
+
+def load_module(slug: str) -> ModuleType:
+    if not (GENERATORS / f"{snake(slug)}.py").exists():
+        raise GeneratorError(
+            f"no generator for {slug}; expected generators/exercises/{snake(slug)}.py"
+        )
+    return importlib.import_module(f"exercises.{snake(slug)}")
+
+
+def describe(case: Case) -> str:
+    description = " - ".join((*case["parents"], case["description"]))
+    return description[:1].upper() + description[1:]
+
+
+def render_case(module: ModuleType, case: Case) -> str:
+    """Render one case as a comment followed by its statements."""
+    body = module.gen_case(case).strip("\n")
+    if "\n" in body:
+        body = "{\n" + lib.indent(body) + "\n}"
+    return f"// {describe(case)}\n{body}"
+
+
+def render_unittest(module: ModuleType, cases: list[Case]) -> str:
+    """Render the unittest block, with all but the first case disabled."""
+    rendered = [render_case(module, case) for case in cases]
+
+    sections = []
+    if any("assertThrown(" in text for text in rendered):
+        sections.append(ASSERT_THROWN_IMPORT)
+    sections.append("immutable int allTestsEnabled = 0;")
+    sections.append(rendered[0])
+    if len(rendered) > 1:
+        gated = lib.indent("\n\n".join(rendered[1:]))
+        sections.append("static if (allTestsEnabled)\n{\n" + gated + "\n}")
+
+    return "unittest\n{\n" + lib.indent("\n\n".join(sections)) + "\n}\n"
+
+
+def stub(path: Path) -> str:
+    """Return the part of the source file that precedes the tests."""
+    content = path.read_text(encoding="utf-8") if path.exists() else ""
+    if not content.strip():
+        raise GeneratorError(
+            f"{path.relative_to(ROOT)} has no stub; create the stub first"
+        )
+    match = re.search(r"^unittest\b", content, flags=re.MULTILINE)
+    if match:
+        return content[: match.start()]
+    return content.rstrip("\n") + "\n\n"
+
+
+def generate(slug: str, specifications: Path) -> None:
+    exercise_dir = ROOT / "exercises" / "practice" / slug
+    if not exercise_dir.is_dir():
+        raise GeneratorError(f"exercise {slug} not found")
+    module = load_module(slug)
+
+    cases = canonical_cases(slug, specifications, exercise_dir)
+    cases.extend(additional_cases(exercise_dir))
+    if not cases:
+        raise GeneratorError(f"no test cases found for {slug}")
+
+    config = json.loads((exercise_dir / ".meta" / "config.json").read_text())
+    path = exercise_dir / config["files"]["test"][0]
+    content = stub(path) + render_unittest(module, cases)
+    path.write_text(content, encoding="utf-8", newline="\n")
+
+
+def generated_slugs() -> list[str]:
+    return sorted(
+        path.stem.replace("_", "-")
+        for path in GENERATORS.glob("*.py")
+        if path.stem != "__init__"
+    )
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("slugs", nargs="*", metavar="slug", help="exercise slug")
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="generate every exercise that has a generator",
+    )
+    args = parser.parse_args()
+    if args.all == bool(args.slugs):
+        parser.error("specify either exercise slugs or --all")
+
+    slugs = generated_slugs() if args.all else args.slugs
+    status = 0
+    try:
+        specifications = problem_specifications_dir()
+    except (GeneratorError, subprocess.CalledProcessError) as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 1
+    for slug in slugs:
+        try:
+            generate(slug, specifications)
+        except GeneratorError as error:
+            print(f"error: {error}", file=sys.stderr)
+            status = 1
+    return status
+
+
+if __name__ == "__main__":
+    sys.exit(main())
