@@ -32,4 +32,3 @@ Exercism assumes that you are familiar with the concept of test-driven
 development. Each exercise comes with a series of tests that are already
 written for you. You progress through the exercise one test at a time,
 writing an implementation incrementally to satisfy the tests.
-

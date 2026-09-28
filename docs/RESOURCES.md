@@ -8,4 +8,3 @@
 * [IDEs](https://wiki.dlang.org/IDEs)
 * [D Style Guide](https://dlang.org/dstyle.html)
 * Internet at large
-

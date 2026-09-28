@@ -23,4 +23,3 @@ of [unique features](http://dlang.org/overview.html):
 
 The [D Language Foundation](https://dlang.org/foundation.html) is the organization devoted to developing and
 advancing the D language.
-
