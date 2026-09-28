@@ -22,6 +22,9 @@ ASSERT_THROWN_IMPORT = "import std.exception : assertThrown;"
 
 Case = dict[str, Any]
 
+# Avoid leaving __pycache__ in the exercise directories.
+sys.dont_write_bytecode = True
+
 
 def problem_specifications_dir() -> pathlib.Path:
     """Locate configlet's cached copy of problem-specifications."""
@@ -41,13 +44,15 @@ def problem_specifications_dir() -> pathlib.Path:
     )
 
 
-def flatten(cases: list[Case], parents: tuple[str, ...] = ()) -> list[Case]:
+def flatten(cases: list[Case], parents: list[str] | None = None) -> list[Case]:
     """Flatten nested groups, recording the descriptions of enclosing groups."""
     flattened = []
+    if parents is None:
+        parents = []
     for case in cases:
         if "cases" in case:
             description = case.get("description")
-            nested = (*parents, description) if description else parents
+            nested = parents + [description] if description else parents
             flattened.extend(flatten(case["cases"], nested))
         else:
             flattened.append({**case, "parents": parents})
@@ -89,7 +94,7 @@ def additional_cases(exercise_dir: pathlib.Path) -> list[Case]:
 
 
 def generator_path(slug: str) -> pathlib.Path:
-    return EXERCISES / slug / ".meta" / f"{slug}.py"
+    return EXERCISES / slug / ".meta" / "test_generator.py"
 
 
 def load_module(slug: str) -> ModuleType:
@@ -98,8 +103,6 @@ def load_module(slug: str) -> ModuleType:
         raise FileNotFoundError(
             f"no generator for {slug}; expected {path.relative_to(ROOT)}"
         )
-    # Avoid leaving __pycache__ in the exercise directory.
-    sys.dont_write_bytecode = True
     spec = importlib.util.spec_from_file_location(path.stem, path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
