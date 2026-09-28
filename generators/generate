@@ -139,7 +139,7 @@ def stub(path: pathlib.Path) -> str:
     """Return the part of the source file that precedes the tests."""
     content = path.read_text(encoding="utf-8")
     if not content.strip():
-        raise ValueError(f"{path.relative_to(ROOT)} has no stub; create the stub first")
+        raise EOFError(f"{path.relative_to(ROOT)} is empty; create the stub first")
     match = re.search(r"^unittest\b", content, flags=re.MULTILINE)
     if match:
         return content[: match.start()]
@@ -153,7 +153,8 @@ def generate(slug: str, specifications: pathlib.Path) -> None:
     cases = canonical_cases(slug, specifications, exercise_dir)
     cases.extend(additional_cases(exercise_dir))
     if not cases:
-        raise ValueError(f"no test cases found for {slug}")
+        print(f"warning: {slug}: no test cases found; skipped", file=sys.stderr)
+        return
 
     config = json.loads((exercise_dir / ".meta" / "config.json").read_text())
     path = exercise_dir / config["files"]["test"][0]
@@ -167,7 +168,7 @@ def generated_slugs() -> list[str]:
     )
 
 
-def main() -> int:
+def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("slugs", nargs="*", metavar="slug", help="exercise slug")
     parser.add_argument(
@@ -180,20 +181,13 @@ def main() -> int:
         parser.error("specify either exercise slugs or --all")
 
     slugs = generated_slugs() if args.all else args.slugs
-    status = 0
     try:
         specifications = problem_specifications_dir()
-    except (FileNotFoundError, subprocess.CalledProcessError) as error:
-        print(f"error: {error}", file=sys.stderr)
-        return 1
-    for slug in slugs:
-        try:
+        for slug in slugs:
             generate(slug, specifications)
-        except (FileNotFoundError, ValueError) as error:
-            print(f"error: {error}", file=sys.stderr)
-            status = 1
-    return status
+    except (FileNotFoundError, EOFError, subprocess.CalledProcessError) as error:
+        sys.exit(f"error: {error}")
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
