@@ -20,5 +20,6 @@ repos:
     rev: v0.16.9
     hooks:
     -   id: ruff-check
-        args: [--fix]
+        args: [--fix, --target-version, py314]
     -   id: ruff-format
+        args: [--target-version, py314]

@@ -7,12 +7,12 @@ import json
 import re
 import subprocess
 import sys
+import tomllib
 from pathlib import Path
 from types import ModuleType
 from typing import Any
 
 import lib
-import tomllib
 
 ROOT = Path(__file__).resolve().parent.parent
 EXERCISES = ROOT / "exercises" / "practice"
