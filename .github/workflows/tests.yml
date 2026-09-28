@@ -12,9 +12,10 @@ jobs:
   exercises:
     name: Check exercises
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-26.04, windows-2025]
-        dc: [dmd-2.109.0, ldc-1.38.0]
+        dc: [dmd-2.109.0, ldc-1.43.0]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
