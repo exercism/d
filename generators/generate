@@ -2,7 +2,7 @@
 """Generate the unit tests of practice exercises from canonical data."""
 
 import argparse
-import importlib
+import importlib.util
 import json
 import re
 import subprocess
@@ -15,7 +15,7 @@ import lib
 import tomllib
 
 ROOT = Path(__file__).resolve().parent.parent
-GENERATORS = ROOT / "generators" / "exercises"
+EXERCISES = ROOT / "exercises" / "practice"
 CACHE_PREFIX = "Using cached 'problem-specifications' dir: "
 ADDITIONAL_CASES = "additional-test-cases.json"
 ASSERT_THROWN_IMPORT = "import std.exception : assertThrown;"
@@ -25,10 +25,6 @@ Case = dict[str, Any]
 
 class GeneratorError(Exception):
     """A problem that prevents an exercise from being generated."""
-
-
-def snake(slug: str) -> str:
-    return slug.replace("-", "_")
 
 
 def problem_specifications_dir() -> Path:
@@ -100,12 +96,22 @@ def additional_cases(exercise_dir: Path) -> list[Case]:
     return flatten(json.loads(path.read_text(encoding="utf-8")))
 
 
+def generator_path(slug: str) -> Path:
+    return EXERCISES / slug / ".meta" / f"{slug}.py"
+
+
 def load_module(slug: str) -> ModuleType:
-    if not (GENERATORS / f"{snake(slug)}.py").exists():
+    path = generator_path(slug)
+    if not path.exists():
         raise GeneratorError(
-            f"no generator for {slug}; expected generators/exercises/{snake(slug)}.py"
+            f"no generator for {slug}; expected {path.relative_to(ROOT)}"
         )
-    return importlib.import_module(f"exercises.{snake(slug)}")
+    # Avoid leaving __pycache__ in the exercise directory.
+    sys.dont_write_bytecode = True
+    spec = importlib.util.spec_from_file_location(path.stem, path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def describe(case: Case) -> str:
@@ -151,7 +157,7 @@ def stub(path: Path) -> str:
 
 
 def generate(slug: str, specifications: Path) -> None:
-    exercise_dir = ROOT / "exercises" / "practice" / slug
+    exercise_dir = EXERCISES / slug
     if not exercise_dir.is_dir():
         raise GeneratorError(f"exercise {slug} not found")
     module = load_module(slug)
@@ -169,9 +175,7 @@ def generate(slug: str, specifications: Path) -> None:
 
 def generated_slugs() -> list[str]:
     return sorted(
-        path.stem.replace("_", "-")
-        for path in GENERATORS.glob("*.py")
-        if path.stem != "__init__"
+        path.name for path in EXERCISES.iterdir() if generator_path(path.name).exists()
     )
 
 
