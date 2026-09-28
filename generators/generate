@@ -23,15 +23,11 @@ ASSERT_THROWN_IMPORT = "import std.exception : assertThrown;"
 Case = dict[str, Any]
 
 
-class GeneratorError(Exception):
-    """A problem that prevents an exercise from being generated."""
-
-
 def problem_specifications_dir() -> pathlib.Path:
     """Locate configlet's cached copy of problem-specifications."""
     configlet = ROOT / "bin" / "configlet"
     if not configlet.exists():
-        raise GeneratorError("bin/configlet not found; run bin/fetch-configlet")
+        raise FileNotFoundError("bin/configlet not found; run bin/fetch-configlet")
     output = subprocess.check_output(
         [configlet, "info", "-o", "-v", "d"], cwd=ROOT, text=True
     )
@@ -40,7 +36,7 @@ def problem_specifications_dir() -> pathlib.Path:
             path = pathlib.Path(line.removeprefix(CACHE_PREFIX).strip())
             if path.is_dir():
                 return path
-    raise GeneratorError(
+    raise FileNotFoundError(
         "problem-specifications cache not found; run bin/configlet sync"
     )
 
@@ -68,8 +64,6 @@ def canonical_cases(
     cases = flatten(json.loads(data_path.read_text(encoding="utf-8"))["cases"])
 
     toml_path = exercise_dir / ".meta" / "tests.toml"
-    if not toml_path.exists():
-        raise GeneratorError(f"{toml_path.relative_to(ROOT)} not found")
     tests = tomllib.loads(toml_path.read_text(encoding="utf-8"))
 
     selected = []
@@ -101,7 +95,7 @@ def generator_path(slug: str) -> pathlib.Path:
 def load_module(slug: str) -> ModuleType:
     path = generator_path(slug)
     if not path.exists():
-        raise GeneratorError(
+        raise FileNotFoundError(
             f"no generator for {slug}; expected {path.relative_to(ROOT)}"
         )
     # Avoid leaving __pycache__ in the exercise directory.
@@ -143,11 +137,9 @@ def render_unittest(module: ModuleType, cases: list[Case]) -> str:
 
 def stub(path: pathlib.Path) -> str:
     """Return the part of the source file that precedes the tests."""
-    content = path.read_text(encoding="utf-8") if path.exists() else ""
+    content = path.read_text(encoding="utf-8")
     if not content.strip():
-        raise GeneratorError(
-            f"{path.relative_to(ROOT)} has no stub; create the stub first"
-        )
+        raise ValueError(f"{path.relative_to(ROOT)} has no stub; create the stub first")
     match = re.search(r"^unittest\b", content, flags=re.MULTILINE)
     if match:
         return content[: match.start()]
@@ -156,14 +148,12 @@ def stub(path: pathlib.Path) -> str:
 
 def generate(slug: str, specifications: pathlib.Path) -> None:
     exercise_dir = EXERCISES / slug
-    if not exercise_dir.is_dir():
-        raise GeneratorError(f"exercise {slug} not found")
     module = load_module(slug)
 
     cases = canonical_cases(slug, specifications, exercise_dir)
     cases.extend(additional_cases(exercise_dir))
     if not cases:
-        raise GeneratorError(f"no test cases found for {slug}")
+        raise ValueError(f"no test cases found for {slug}")
 
     config = json.loads((exercise_dir / ".meta" / "config.json").read_text())
     path = exercise_dir / config["files"]["test"][0]
@@ -193,13 +183,13 @@ def main() -> int:
     status = 0
     try:
         specifications = problem_specifications_dir()
-    except (GeneratorError, subprocess.CalledProcessError) as error:
+    except (FileNotFoundError, subprocess.CalledProcessError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1
     for slug in slugs:
         try:
             generate(slug, specifications)
-        except GeneratorError as error:
+        except (FileNotFoundError, ValueError) as error:
             print(f"error: {error}", file=sys.stderr)
             status = 1
     return status
