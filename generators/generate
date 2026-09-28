@@ -4,17 +4,17 @@
 import argparse
 import importlib.util
 import json
+import pathlib
 import re
 import subprocess
 import sys
 import tomllib
-from pathlib import Path
 from types import ModuleType
 from typing import Any
 
 import lib
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = pathlib.Path(__file__).resolve().parent.parent
 EXERCISES = ROOT / "exercises" / "practice"
 CACHE_PREFIX = "Using cached 'problem-specifications' dir: "
 ADDITIONAL_CASES = "additional-test-cases.json"
@@ -27,7 +27,7 @@ class GeneratorError(Exception):
     """A problem that prevents an exercise from being generated."""
 
 
-def problem_specifications_dir() -> Path:
+def problem_specifications_dir() -> pathlib.Path:
     """Locate configlet's cached copy of problem-specifications."""
     configlet = ROOT / "bin" / "configlet"
     if not configlet.exists():
@@ -41,7 +41,7 @@ def problem_specifications_dir() -> Path:
     )
     for line in result.stdout.splitlines():
         if line.startswith(CACHE_PREFIX):
-            path = Path(line.removeprefix(CACHE_PREFIX).strip())
+            path = pathlib.Path(line.removeprefix(CACHE_PREFIX).strip())
             if path.is_dir():
                 return path
     raise GeneratorError(
@@ -62,7 +62,9 @@ def flatten(cases: list[Case], parents: tuple[str, ...] = ()) -> list[Case]:
     return flattened
 
 
-def canonical_cases(slug: str, specifications: Path, exercise_dir: Path) -> list[Case]:
+def canonical_cases(
+    slug: str, specifications: pathlib.Path, exercise_dir: pathlib.Path
+) -> list[Case]:
     """Load the canonical cases selected by the exercise's tests.toml."""
     data_path = specifications / "exercises" / slug / "canonical-data.json"
     if not data_path.exists():
@@ -88,7 +90,7 @@ def canonical_cases(slug: str, specifications: Path, exercise_dir: Path) -> list
     return selected
 
 
-def additional_cases(exercise_dir: Path) -> list[Case]:
+def additional_cases(exercise_dir: pathlib.Path) -> list[Case]:
     """Load the track-specific cases of an exercise, if it has any."""
     path = exercise_dir / ".meta" / ADDITIONAL_CASES
     if not path.exists():
@@ -96,7 +98,7 @@ def additional_cases(exercise_dir: Path) -> list[Case]:
     return flatten(json.loads(path.read_text(encoding="utf-8")))
 
 
-def generator_path(slug: str) -> Path:
+def generator_path(slug: str) -> pathlib.Path:
     return EXERCISES / slug / ".meta" / f"{slug}.py"
 
 
@@ -143,7 +145,7 @@ def render_unittest(module: ModuleType, cases: list[Case]) -> str:
     return "unittest\n{\n" + lib.indent("\n\n".join(sections)) + "\n}\n"
 
 
-def stub(path: Path) -> str:
+def stub(path: pathlib.Path) -> str:
     """Return the part of the source file that precedes the tests."""
     content = path.read_text(encoding="utf-8") if path.exists() else ""
     if not content.strip():
@@ -156,7 +158,7 @@ def stub(path: Path) -> str:
     return content.rstrip("\n") + "\n\n"
 
 
-def generate(slug: str, specifications: Path) -> None:
+def generate(slug: str, specifications: pathlib.Path) -> None:
     exercise_dir = EXERCISES / slug
     if not exercise_dir.is_dir():
         raise GeneratorError(f"exercise {slug} not found")
