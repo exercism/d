@@ -32,14 +32,10 @@ def problem_specifications_dir() -> pathlib.Path:
     configlet = ROOT / "bin" / "configlet"
     if not configlet.exists():
         raise GeneratorError("bin/configlet not found; run bin/fetch-configlet")
-    result = subprocess.run(
-        [str(configlet), "info", "-o", "-v", "d"],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-        check=True,
+    output = subprocess.check_output(
+        [configlet, "info", "-o", "-v", "d"], cwd=ROOT, text=True
     )
-    for line in result.stdout.splitlines():
+    for line in output.splitlines():
         if line.startswith(CACHE_PREFIX):
             path = pathlib.Path(line.removeprefix(CACHE_PREFIX).strip())
             if path.is_dir():
