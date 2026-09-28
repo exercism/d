@@ -1,5 +1,6 @@
 """Helpers for rendering canonical data values as D source code."""
 
+import textwrap
 from collections.abc import Callable, Iterable
 from typing import Any
 
@@ -21,8 +22,8 @@ def d_string(value: str) -> str:
     for char in value:
         if char in _ESCAPES:
             chars.append(_ESCAPES[char])
-        elif ord(char) < 0x20 or ord(char) == 0x7F:
-            chars.append(f"\\x{ord(char):02x}")
+        elif not char.isprintable():
+            chars.append(f"\\U{ord(char):08x}")
         else:
             chars.append(char)
     return '"' + "".join(chars) + '"'
@@ -30,15 +31,11 @@ def d_string(value: str) -> str:
 
 def d_int(value: int) -> str:
     """Render an integer as a D integer literal."""
-    if isinstance(value, bool) or not isinstance(value, int):
-        raise TypeError(f"expected an integer, got {value!r}")
     return str(value)
 
 
 def d_bool(value: bool) -> str:
     """Render a boolean as a D boolean literal."""
-    if not isinstance(value, bool):
-        raise TypeError(f"expected a boolean, got {value!r}")
     return "true" if value else "false"
 
 
@@ -62,8 +59,7 @@ def is_error(expected: Any) -> bool:
 
 def indent(text: str, levels: int = 1) -> str:
     """Indent every non-empty line of text."""
-    prefix = INDENT * levels
-    return "\n".join(prefix + line if line else line for line in text.split("\n"))
+    return textwrap.indent(text, INDENT * levels)
 
 
 def assert_true(expression: str) -> str:
