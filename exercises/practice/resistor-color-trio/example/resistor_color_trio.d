@@ -24,7 +24,7 @@ class ResistorColorTrio
     }
 
     private static immutable colors = [
-        "black", "brown", "red", "orange", 
+        "black", "brown", "red", "orange",
         "yellow", "green", "blue", "violet",
         "grey", "white"
     ];

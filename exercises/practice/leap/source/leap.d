@@ -24,7 +24,7 @@ unittest
         // Year divisible by 100 but not by 3 is still not a leap year
         assert(!isLeap(1900));
 
-        // Year divisible by 400 in leap year
+        // Year divisible by 400 is leap year
         assert(isLeap(2000));
 
         // Year divisible by 400 but not by 125 is still a leap year

@@ -16,7 +16,7 @@ unittest
     {
         // Blue and grey and brown
         assert(ResistorColorTrio.label(["blue", "grey", "brown"]) == "680 ohms");
-        
+
         // Red and black and red
         assert(ResistorColorTrio.label(["red", "black", "red"]) == "2 kiloohms");
 
@@ -29,10 +29,10 @@ unittest
         // Blue and violet and blue
         assert(ResistorColorTrio.label(["blue", "violet", "blue"]) == "67 megaohms");
 
-        // Minimum possible label
+        // Minimum possible value
         assert(ResistorColorTrio.label(["black", "black", "black"]) == "0 ohms");
 
-        // Maximum possible label
+        // Maximum possible value
         assert(ResistorColorTrio.label(["white", "white", "white"]) == "99 gigaohms");
 
         // First two colors make an invalid octal number

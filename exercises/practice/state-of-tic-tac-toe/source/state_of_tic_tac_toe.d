@@ -17,7 +17,7 @@ unittest
 
     immutable int allTestsEnabled = 0;
 
-    // Won games-Finished game where X won via left column victory
+    // Won games - Finished game where X won via left column victory
     {
         immutable string[] board = [
             "XOO",
@@ -29,7 +29,7 @@ unittest
 
     static if (allTestsEnabled)
     {
-        // Won games-Finished game where X won via middle column victory
+        // Won games - Finished game where X won via middle column victory
         {
             immutable string[] board = [
                 "OXO",
@@ -39,7 +39,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where X won via right column victory
+        // Won games - Finished game where X won via right column victory
         {
             immutable string[] board = [
                 "OOX",
@@ -49,7 +49,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where O won via left column victory
+        // Won games - Finished game where O won via left column victory
         {
             immutable string[] board = [
                 "OXX",
@@ -59,7 +59,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where O won via middle column victory
+        // Won games - Finished game where O won via middle column victory
         {
             immutable string[] board = [
                 "XOX",
@@ -69,7 +69,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where O won via right column victory
+        // Won games - Finished game where O won via right column victory
         {
             immutable string[] board = [
                 "XXO",
@@ -79,7 +79,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where X won via top row victory
+        // Won games - Finished game where X won via top row victory
         {
             immutable string[] board = [
                 "XXX",
@@ -89,7 +89,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where X won via middle row victory
+        // Won games - Finished game where X won via middle row victory
         {
             immutable string[] board = [
                 "O  ",
@@ -99,7 +99,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where X won via bottom row victory
+        // Won games - Finished game where X won via bottom row victory
         {
             immutable string[] board = [
                 " OO",
@@ -109,7 +109,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where O won via top row victory
+        // Won games - Finished game where O won via top row victory
         {
             immutable string[] board = [
                 "OOO",
@@ -119,7 +119,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where O won via middle row victory
+        // Won games - Finished game where O won via middle row victory
         {
             immutable string[] board = [
                 "XX ",
@@ -129,7 +129,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where O won via bottom row victory
+        // Won games - Finished game where O won via bottom row victory
         {
             immutable string[] board = [
                 "XOX",
@@ -139,7 +139,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where X won via falling diagonal victory
+        // Won games - Finished game where X won via falling diagonal victory
         {
             immutable string[] board = [
                 "XOO",
@@ -149,7 +149,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where X won via rising diagonal victory
+        // Won games - Finished game where X won via rising diagonal victory
         {
             immutable string[] board = [
                 "O X",
@@ -159,7 +159,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where O won via falling diagonal victory
+        // Won games - Finished game where O won via falling diagonal victory
         {
             immutable string[] board = [
                 "OXX",
@@ -169,7 +169,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where O won via rising diagonal victory
+        // Won games - Finished game where O won via rising diagonal victory
         {
             immutable string[] board = [
                 "  O",
@@ -179,7 +179,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where X won via a row and a column victory
+        // Won games - Finished game where X won via a row and a column victory
         {
             immutable string[] board = [
                 "XXX",
@@ -189,7 +189,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Won games-Finished game where X won via two diagonal victories
+        // Won games - Finished game where X won via two diagonal victories
         {
             immutable string[] board = [
                 "XOX",
@@ -199,7 +199,7 @@ unittest
             assert(gamestate(board) == State.win);
         }
 
-        // Drawn games-Draw
+        // Drawn games - Draw
         {
             immutable string[] board = [
                 "XOX",
@@ -209,7 +209,7 @@ unittest
             assert(gamestate(board) == State.draw);
         }
 
-        // Drawn games-Another draw
+        // Drawn games - Another draw
         {
             immutable string[] board = [
                 "XXO",
@@ -219,7 +219,7 @@ unittest
             assert(gamestate(board) == State.draw);
         }
 
-        // Ongoing games-Ongoing game: one move in
+        // Ongoing games - Ongoing game: one move in
         {
             immutable string[] board = [
                 "   ",
@@ -229,7 +229,7 @@ unittest
             assert(gamestate(board) == State.ongoing);
         }
 
-        // Ongoing games-Ongoing game: two moves in
+        // Ongoing games - Ongoing game: two moves in
         {
             immutable string[] board = [
                 "O  ",
@@ -239,7 +239,7 @@ unittest
             assert(gamestate(board) == State.ongoing);
         }
 
-        // Ongoing games-Ongoing game: five moves in
+        // Ongoing games - Ongoing game: five moves in
         {
             immutable string[] board = [
                 "X  ",
@@ -249,7 +249,7 @@ unittest
             assert(gamestate(board) == State.ongoing);
         }
 
-        // Invalid boards-Invalid board: X went twice
+        // Invalid boards - Invalid board: X went twice
         {
             immutable string[] board = [
                 "XX ",
@@ -259,7 +259,7 @@ unittest
             assertThrown(gamestate(board));
         }
 
-        // Invalid boards-Invalid board: O started
+        // Invalid boards - Invalid board: O started
         {
             immutable string[] board = [
                 "OOX",
@@ -269,7 +269,7 @@ unittest
             assertThrown(gamestate(board));
         }
 
-        // Invalid boards-Invalid board: X won and O kept playing
+        // Invalid boards - Invalid board: X won and O kept playing
         {
             immutable string[] board = [
                 "XXX",
@@ -279,7 +279,7 @@ unittest
             assertThrown(gamestate(board));
         }
 
-        // Invalid boards-Invalid board: players kept playing after a win
+        // Invalid boards - Invalid board: players kept playing after a win
         {
             immutable string[] board = [
                 "XXX",
@@ -289,7 +289,7 @@ unittest
             assertThrown(gamestate(board));
         }
 
-        // Invalid boards-Invalid board: O kept playing after X wins
+        // Invalid boards - Invalid board: O kept playing after X wins
         {
             immutable string[] board = [
                 "OO ",
@@ -299,7 +299,7 @@ unittest
             assertThrown(gamestate(board));
         }
 
-        // Invalid boards-Invalid board: X kept playing after O wins
+        // Invalid boards - Invalid board: X kept playing after O wins
         {
             immutable string[] board = [
                 "XX ",

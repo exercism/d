@@ -12,7 +12,7 @@ pure int[] primes(immutable int limit)
     {
         int current = nums.front;
         results ~= nums.front;
-        
+
         nums = nums.dropOne().filter!(n => n % current != 0).array;
     }
 

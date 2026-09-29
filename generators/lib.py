@@ -29,9 +29,21 @@ def d_string(value: str) -> str:
     return '"' + "".join(chars) + '"'
 
 
+def d_lines(lines: Iterable[str]) -> str:
+    """Render lines of text as a string, with one line of text per line."""
+    text = "\n".join(lines)
+    literals = [d_string(line) for line in text.splitlines(keepends=True)]
+    return " ~\n".join(INDENT + literal for literal in literals)
+
+
 def d_int(value: int) -> str:
     """Render an integer as a D integer literal."""
     return str(value)
+
+
+def d_grouped_int(value: int) -> str:
+    """Render an integer, separating groups of digits when it has five or more."""
+    return f"{value:_}" if abs(value) >= 10_000 else str(value)
 
 
 def d_bool(value: bool) -> str:
@@ -75,6 +87,13 @@ def assert_false(expression: str) -> str:
 def assert_eq(actual: str, expected: str) -> str:
     """Assert that two expressions are equal."""
     return f"assert({actual} == {expected});"
+
+
+def assert_equal(first: str, second: str, wrap: bool = False) -> str:
+    """Assert that two ranges are equal, optionally one argument per line."""
+    prefix = "assert(equal("
+    separator = ",\n" + " " * len(prefix) if wrap else ", "
+    return f"{prefix}{first}{separator}{second}));"
 
 
 def assert_throws(expression: str) -> str:

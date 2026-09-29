@@ -33,4 +33,3 @@ pure string[] commands(immutable int number)
 
     return actions;
 }
-

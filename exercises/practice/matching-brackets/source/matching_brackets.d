@@ -69,7 +69,6 @@ unittest
         assert(isPaired("(((185 + 223.85) * 15) - 543)/2"));
 
         // Complex latex expression
-        assert(isPaired(
-                "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)"));
+        assert(isPaired("\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)"));
     }
 }

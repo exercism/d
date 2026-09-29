@@ -18,7 +18,7 @@ unittest
         // The sound for 5 is Plang
         assert(convert(5) == "Plang");
 
-        // the sound for 7 is Plong
+        // The sound for 7 is Plong
         assert(convert(7) == "Plong");
 
         // The sound for 6 is Pling as it has a factor 3
@@ -63,5 +63,4 @@ unittest
         // The sound for 3125 is Plang as it has a factor 5
         assert(convert(3125) == "Plang");
     }
-
 }

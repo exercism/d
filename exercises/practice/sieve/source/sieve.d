@@ -50,7 +50,5 @@ unittest
 
             assert(primes(1000) == expected);
         }
-
     }
-
 }

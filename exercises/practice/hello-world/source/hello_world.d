@@ -7,5 +7,6 @@ string hello()
 
 unittest
 {
+    // Say Hi!
     assert(hello() == "Hello, World!");
 }

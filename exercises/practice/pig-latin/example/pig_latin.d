@@ -23,4 +23,3 @@ string translate(immutable string input)
     }
     return results.join(" ");
 }
-

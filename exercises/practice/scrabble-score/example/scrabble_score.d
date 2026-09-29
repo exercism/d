@@ -20,7 +20,7 @@ pure int score(immutable string word)
             case 'T':
                 points += 1;
                 break;
-            case 'D': 
+            case 'D':
             case 'G':
                 points += 2;
                 break;
@@ -33,7 +33,7 @@ pure int score(immutable string word)
             case 'F':
             case 'H':
             case 'V':
-            case 'W': 
+            case 'W':
             case 'Y':
                 points += 4;
                 break;

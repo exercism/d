@@ -45,4 +45,3 @@ unittest
         assert(commands(0) == []);
     }
 }
-

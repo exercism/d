@@ -14,4 +14,4 @@ def gen_case(case):
     else:
         lines.append(f"int[] expected = {d_array(case['expected'])};")
         lines.append(assert_eq(call, "expected"))
-    return "\n".join(lines)
+    return lines
