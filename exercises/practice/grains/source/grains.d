@@ -16,17 +16,28 @@ unittest
 
     immutable int allTestsEnabled = 0;
 
-    // Returns the number of grains on the square
+    // Returns the number of grains on the square - grains on square 1
     assert(square(1) == 1);
 
     static if (allTestsEnabled)
     {
+        // Returns the number of grains on the square - grains on square 2
         assert(square(2) == 2);
+
+        // Returns the number of grains on the square - grains on square 3
         assert(square(3) == 4);
+
+        // Returns the number of grains on the square - grains on square 4
         assert(square(4) == 8);
+
+        // Returns the number of grains on the square - grains on square 16
         assert(square(16) == 32_768);
-        assert(square(32) == 2_147_483_648uL);
-        assert(square(64) == 9_223_372_036_854_775_808uL);
+
+        // Returns the number of grains on the square - grains on square 32
+        assert(square(32) == 2_147_483_648);
+
+        // Returns the number of grains on the square - grains on square 64
+        assert(square(64) == 9_223_372_036_854_775_808);
 
         // Square 0 raises an exception
         assertThrown(square(0));
@@ -38,6 +49,6 @@ unittest
         assertThrown(square(65));
 
         // Returns the total number of grains on the board
-        assert(total() == 18_446_744_073_709_551_615uL);
+        assert(total() == 18_446_744_073_709_551_615);
     }
 }

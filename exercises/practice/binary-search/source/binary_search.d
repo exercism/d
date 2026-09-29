@@ -15,7 +15,9 @@ class BinarySearch
 
 unittest
 {
-    const int allTestsEnabled = 0;
+    import std.exception : assertThrown;
+
+    immutable int allTestsEnabled = 0;
 
     // Finds a value in an array with one element
     {
@@ -25,9 +27,6 @@ unittest
 
     static if (allTestsEnabled)
     {
-
-        import std.exception : assertThrown;
-
         // Finds a value in the middle of an array
         {
             BinarySearch bs = new BinarySearch([1, 3, 4, 6, 8, 9, 11]);
@@ -87,6 +86,5 @@ unittest
             BinarySearch bs = new BinarySearch([1, 2]);
             assertThrown(bs.find(0));
         }
-
     }
 }

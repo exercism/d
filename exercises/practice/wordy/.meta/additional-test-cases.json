@@ -1,0 +1,18 @@
+[
+  {
+    "description": "large number multiplication and addition",
+    "property": "answer",
+    "input": {
+      "question": "What is 342668567865 multiplied by 348 plus 6576456942334?"
+    },
+    "expected": 125825118559354
+  },
+  {
+    "description": "large number division and subtraction",
+    "property": "answer",
+    "input": {
+      "question": "What is 6548074074001254 divided by 654 minus 9876543210001?"
+    },
+    "expected": 135802468900
+  }
+]

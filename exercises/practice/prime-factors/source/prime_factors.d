@@ -17,11 +17,26 @@ unittest
         // Prime number
         assert(factors(2) == [2]);
 
+        // Another prime number
+        assert(factors(3) == [3]);
+
         // Square of a prime
         assert(factors(9) == [3, 3]);
 
+        // Product of first prime
+        assert(factors(4) == [2, 2]);
+
         // Cube of a prime
         assert(factors(8) == [2, 2, 2]);
+
+        // Product of second prime
+        assert(factors(27) == [3, 3, 3]);
+
+        // Product of third prime
+        assert(factors(625) == [5, 5, 5, 5]);
+
+        // Product of first and second prime
+        assert(factors(6) == [2, 3]);
 
         // Product of primes and non-primes
         assert(factors(12) == [2, 2, 3]);

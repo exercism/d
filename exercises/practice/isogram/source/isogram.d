@@ -49,5 +49,8 @@ unittest
 
         // Same first and last characters
         assert(!isIsogram("angola"));
+
+        // Word with duplicated character and with two hyphens
+        assert(!isIsogram("up-to-date"));
     }
 }

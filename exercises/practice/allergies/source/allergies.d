@@ -30,7 +30,6 @@ unittest
 
     static if (allTestsEnabled)
     {
-
         // testing for eggs allergy: allergic only to eggs
         {
             scope Allergies allergies = new Allergies(1);
@@ -55,7 +54,7 @@ unittest
             assert(allergies.allergicTo("eggs"));
         }
 
-        // testing for peanuts allergy: not allergic to peanuts
+        // testing for peanuts allergy: not allergic to anything
         {
             scope Allergies allergies = new Allergies(0);
             assert(!allergies.allergicTo("peanuts"));
@@ -85,7 +84,7 @@ unittest
             assert(allergies.allergicTo("peanuts"));
         }
 
-        // testing for shellfish allergy: not allergic to shellfish
+        // testing for shellfish allergy: not allergic to anything
         {
             scope Allergies allergies = new Allergies(0);
             assert(!allergies.allergicTo("shellfish"));
@@ -115,61 +114,7 @@ unittest
             assert(allergies.allergicTo("shellfish"));
         }
 
-        // testing for eggs allergy: allergic only to eggs
-        {
-            scope Allergies allergies = new Allergies(1);
-            assert(allergies.allergicTo("eggs"));
-        }
-
-        // testing for eggs allergy: allergic to eggs and something else
-        {
-            scope Allergies allergies = new Allergies(3);
-            assert(allergies.allergicTo("eggs"));
-        }
-
-        // testing for eggs allergy: allergic to something, but not eggs
-        {
-            scope Allergies allergies = new Allergies(2);
-            assert(!allergies.allergicTo("eggs"));
-        }
-
-        // testing for eggs allergy: allergic to everything
-        {
-            scope Allergies allergies = new Allergies(255);
-            assert(allergies.allergicTo("eggs"));
-        }
-
-        // testing for peanuts allergy: not allergic to peanuts
-        {
-            scope Allergies allergies = new Allergies(0);
-            assert(!allergies.allergicTo("peanuts"));
-        }
-
-        // testing for peanuts allergy: allergic only to peanuts
-        {
-            scope Allergies allergies = new Allergies(2);
-            assert(allergies.allergicTo("peanuts"));
-        }
-
-        // testing for peanuts allergy: allergic to peanuts and something else
-        {
-            scope Allergies allergies = new Allergies(7);
-            assert(allergies.allergicTo("peanuts"));
-        }
-
-        // testing for peanuts allergy: allergic to something, but not peanuts
-        {
-            scope Allergies allergies = new Allergies(5);
-            assert(!allergies.allergicTo("peanuts"));
-        }
-
-        // testing for peanuts allergy: allergic to everything
-        {
-            scope Allergies allergies = new Allergies(255);
-            assert(allergies.allergicTo("peanuts"));
-        }
-
-        // testing for strawberries allergy: not allergic to strawberries
+        // testing for strawberries allergy: not allergic to anything
         {
             scope Allergies allergies = new Allergies(0);
             assert(!allergies.allergicTo("strawberries"));
@@ -199,7 +144,7 @@ unittest
             assert(allergies.allergicTo("strawberries"));
         }
 
-        // testing for tomatoes allergy: not allergic to tomatoes
+        // testing for tomatoes allergy: not allergic to anything
         {
             scope Allergies allergies = new Allergies(0);
             assert(!allergies.allergicTo("tomatoes"));
@@ -229,7 +174,7 @@ unittest
             assert(allergies.allergicTo("tomatoes"));
         }
 
-        // testing for chocolate allergy: not allergic to chocolate
+        // testing for chocolate allergy: not allergic to anything
         {
             scope Allergies allergies = new Allergies(0);
             assert(!allergies.allergicTo("chocolate"));
@@ -259,7 +204,7 @@ unittest
             assert(allergies.allergicTo("chocolate"));
         }
 
-        // testing for pollen allergy: not allergic to pollen
+        // testing for pollen allergy: not allergic to anything
         {
             scope Allergies allergies = new Allergies(0);
             assert(!allergies.allergicTo("pollen"));
@@ -289,7 +234,7 @@ unittest
             assert(allergies.allergicTo("pollen"));
         }
 
-        // testing for cats allergy: not allergic to cats
+        // testing for cats allergy: not allergic to anything
         {
             scope Allergies allergies = new Allergies(0);
             assert(!allergies.allergicTo("cats"));
@@ -376,7 +321,7 @@ unittest
                 "tomatoes",
                 "chocolate",
                 "pollen",
-                "cats"
+                "cats",
             ];
             assert(result == expected);
         }
@@ -393,7 +338,7 @@ unittest
                 "tomatoes",
                 "chocolate",
                 "pollen",
-                "cats"
+                "cats",
             ];
             assert(result == expected);
         }
@@ -409,7 +354,7 @@ unittest
                 "tomatoes",
                 "chocolate",
                 "pollen",
-                "cats"
+                "cats",
             ];
             assert(result == expected);
         }
@@ -422,5 +367,4 @@ unittest
             assert(result == expected);
         }
     }
-
 }

@@ -7,8 +7,6 @@ pure string toRna(immutable string dna)
 
 unittest
 {
-    import std.exception : assertThrown;
-
     immutable int allTestsEnabled = 0;
 
     // Empty RNA sequence
@@ -31,5 +29,4 @@ unittest
         // RNA complement
         assert(toRna("ACGTGGTCTTAA") == "UGCACCAGAAUU");
     }
-
 }

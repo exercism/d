@@ -1,0 +1,18 @@
+[
+  {
+    "description": "upper case and punctuation",
+    "property": "isPangram",
+    "input": {
+      "sentence": "\"FIVE QUACKING ZEPHYRS JOLT MY WAX BED.\""
+    },
+    "expected": true
+  },
+  {
+    "description": "upper case, missing the letter 'x'",
+    "property": "isPangram",
+    "input": {
+      "sentence": "THE QUICK BROWN FISH JUMPS OVER THE LAZY DOG"
+    },
+    "expected": false
+  }
+]

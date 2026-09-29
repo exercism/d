@@ -21,7 +21,6 @@ unittest
 
     static if (allTestsEnabled)
     {
-        
         // detects two anagrams
         {
             immutable string subject = "solemn";
@@ -165,7 +164,7 @@ unittest
         // words other than themselves can be anagrams
         {
             immutable string subject = "LISTEN";
-            immutable string[] candidates = ["Listen", "Silent", "LISTEN"];
+            immutable string[] candidates = ["LISTEN", "Silent"];
             string[] actual = findAnagrams(subject, candidates);
             string[] expected = ["Silent"];
 
@@ -183,4 +182,3 @@ unittest
         }
     }
 }
-
