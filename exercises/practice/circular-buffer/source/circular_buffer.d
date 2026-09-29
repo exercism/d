@@ -35,15 +35,14 @@ unittest
 
     immutable int allTestsEnabled = 0;
 
-    // Reading empty buffer should fail"
+    // Reading empty buffer should fail
     {
-        auto myBuffer = new Buffer!(int)(1UL);
+        auto myBuffer = new Buffer!(int)(1);
         assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
     }
 
     static if (allTestsEnabled)
     {
-
         // Can read an item just written
         {
             auto myBuffer = new Buffer!(char)(1);
@@ -51,11 +50,11 @@ unittest
             assert(myBuffer.pop() == '1');
         }
 
-        // Each item may only be read once"
+        // Each item may only be read once
         {
-            auto myBuffer = new Buffer!(char)(1);
-            myBuffer.push('1');
-            assert(myBuffer.pop() == '1');
+            auto myBuffer = new Buffer!(short)(1);
+            myBuffer.push(1);
+            assert(myBuffer.pop() == 1);
             assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
         }
 
@@ -70,10 +69,9 @@ unittest
 
         // Full buffer can't be written to
         {
-            auto myBuffer = new Buffer!(char)(1);
-            myBuffer.push('1');
-            assertThrown(myBuffer.push('2'),
-                    "Full buffer should throw exception if new element pushed!");
+            auto myBuffer = new Buffer!(long)(1);
+            myBuffer.push(1);
+            assertThrown(myBuffer.push(2), "Full buffer should throw exception if new element pushed!");
         }
 
         // A read frees up capacity for another write
@@ -87,13 +85,13 @@ unittest
 
         // Read position is maintained even across multiple writes
         {
-            auto myBuffer = new Buffer!(char)(3);
-            myBuffer.push('1');
-            myBuffer.push('2');
-            assert(myBuffer.pop() == '1');
-            myBuffer.push('3');
-            assert(myBuffer.pop() == '2');
-            assert(myBuffer.pop() == '3');
+            auto myBuffer = new Buffer!(int)(3);
+            myBuffer.push(1);
+            myBuffer.push(2);
+            assert(myBuffer.pop() == 1);
+            myBuffer.push(3);
+            assert(myBuffer.pop() == 2);
+            assert(myBuffer.pop() == 3);
         }
 
         // Items cleared out of buffer can't be read
@@ -106,11 +104,11 @@ unittest
 
         // Clear frees up capacity for another write
         {
-            auto myBuffer = new Buffer!(char)(1);
-            myBuffer.push('1');
+            auto myBuffer = new Buffer!(short)(1);
+            myBuffer.push(1);
             myBuffer.clear();
-            myBuffer.push('2');
-            assert(myBuffer.pop() == '2');
+            myBuffer.push(2);
+            assert(myBuffer.pop() == 2);
         }
 
         // Clear does nothing on empty buffer
@@ -123,11 +121,11 @@ unittest
 
         // Overwrite acts like write on non-full buffer
         {
-            auto myBuffer = new Buffer!(char)(2);
-            myBuffer.push('1');
-            myBuffer.forcePush('2');
-            assert(myBuffer.pop() == '1');
-            assert(myBuffer.pop() == '2');
+            auto myBuffer = new Buffer!(long)(2);
+            myBuffer.push(1);
+            myBuffer.forcePush(2);
+            assert(myBuffer.pop() == 1);
+            assert(myBuffer.pop() == 2);
         }
 
         // Overwrite replaces the oldest item on full buffer
@@ -142,16 +140,16 @@ unittest
 
         // Overwrite replaces the oldest item remaining in buffer following a read
         {
-            auto myBuffer = new Buffer!(char)(3);
-            myBuffer.push('1');
-            myBuffer.push('2');
-            myBuffer.push('3');
-            assert(myBuffer.pop() == '1');
-            myBuffer.push('4');
-            myBuffer.forcePush('5');
-            assert(myBuffer.pop() == '3');
-            assert(myBuffer.pop() == '4');
-            assert(myBuffer.pop() == '5');
+            auto myBuffer = new Buffer!(int)(3);
+            myBuffer.push(1);
+            myBuffer.push(2);
+            myBuffer.push(3);
+            assert(myBuffer.pop() == 1);
+            myBuffer.push(4);
+            myBuffer.forcePush(5);
+            assert(myBuffer.pop() == 3);
+            assert(myBuffer.pop() == 4);
+            assert(myBuffer.pop() == 5);
         }
 
         // Initial clear does not affect wrapping around
@@ -166,7 +164,5 @@ unittest
             assert(myBuffer.pop() == '4');
             assertThrown(myBuffer.pop(), "Empty buffer should throw exception if popped!");
         }
-
     }
-
 }

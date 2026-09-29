@@ -28,17 +28,16 @@ unittest
         // Long different strands
         assert(distance("GGACGGATTCTG", "AGGACGGATTCT") == 9);
 
-        // Disallow first strand longer 
+        // Disallow first strand longer
         assertThrown(distance("AATG", "AAA"));
 
         // Disallow second strand longer
-        assertThrown(distance("AAA", "AGTG"));
+        assertThrown(distance("ATA", "AGTG"));
 
-        // Disallow left empty strand
+        // Disallow empty first strand
         assertThrown(distance("", "G"));
 
-        // Disallow right empty strand
+        // Disallow empty second strand
         assertThrown(distance("G", ""));
     }
-
 }

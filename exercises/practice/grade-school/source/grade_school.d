@@ -63,10 +63,10 @@ unittest
         // Cannot add student to same grade in the roster more than once
         {
             GradeSchool school;
-            school.add("Blair", 2);
+            assert(school.add("Blair", 2));
             assert(school.add("James", 2));
             assert(!school.add("James", 2));
-            school.add("Paul", 2);
+            assert(school.add("Paul", 2));
         }
 
         // Student not added to same grade in the roster more than once
@@ -97,10 +97,10 @@ unittest
         // Cannot add same student to multiple grades in the roster
         {
             GradeSchool school;
-            school.add("Blair", 2);
+            assert(school.add("Blair", 2));
             assert(school.add("James", 2));
             assert(!school.add("James", 3));
-            school.add("Paul", 3);
+            assert(school.add("Paul", 3));
         }
 
         // Student not added to multiple grades in the roster

@@ -28,18 +28,17 @@ pure string[] proteins(immutable string strand)
 {
     string[] codons = strand.chunks(3).map!(chunk => chunk.array.to!string).array;
     string[] results = [];
-    
+
     foreach (codon; codons) {
         if(codon!in availableProteins)
             throw new Exception("Invalid codon");
- 
+
         string protein = availableProteins[codon];
         if (protein == "STOP")
             return results;
-        
+
         results ~= protein;
     };
- 
+
     return results;
 }
-

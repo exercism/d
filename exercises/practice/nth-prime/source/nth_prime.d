@@ -23,10 +23,9 @@ unittest
         assert(prime(6) == 13);
 
         // Big prime
-        assert(prime(10_001) == 10_4743);
+        assert(prime(10_001) == 104_743);
 
         // There is no zeroth prime
         assertThrown(prime(0));
     }
-
 }

@@ -21,4 +21,3 @@ pure string[] findAnagrams(immutable string subject, immutable string[] candidat
     }
     return results;
 }
-

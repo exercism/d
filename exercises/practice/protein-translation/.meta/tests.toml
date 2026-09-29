@@ -92,7 +92,6 @@ description = "Sequence of two non-STOP codons does not translate to a STOP codo
 
 [1e75ea2a-f907-4994-ae5c-118632a1cb0f]
 description = "Non-existing codon can't translate"
-include = false
 
 [9eac93f3-627a-4c90-8653-6d0a0595bc6f]
 description = "Unknown amino acids, not part of a codon, can't translate"

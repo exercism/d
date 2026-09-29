@@ -9,7 +9,7 @@ unittest
 {
     import std.exception : assertThrown;
 
-    const int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 0;
 
     // Zero steps for one
     assert(steps(1) == 0);

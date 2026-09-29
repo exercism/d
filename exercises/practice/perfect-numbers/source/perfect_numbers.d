@@ -18,20 +18,16 @@ unittest
 
     immutable int allTestsEnabled = 0;
 
-    // Perfect numbers
-
     // Smallest perfect number is classified correctly
     assert(classify(6) == Classification.PERFECT);
 
-    // Medium perfect number is classified correctly
-    assert(classify(28) == Classification.PERFECT);
-
-    // Large perfect number is classified correctly
-    assert(classify(33_550_336) == Classification.PERFECT);
-
     static if (allTestsEnabled)
     {
-        // Abundant numbers
+        // Medium perfect number is classified correctly
+        assert(classify(28) == Classification.PERFECT);
+
+        // Large perfect number is classified correctly
+        assert(classify(33_550_336) == Classification.PERFECT);
 
         // Smallest abundant number is classified correctly
         assert(classify(12) == Classification.ABUNDANT);
@@ -44,8 +40,6 @@ unittest
 
         // Perfect square abundant number is classified correctly
         assert(classify(196) == Classification.ABUNDANT);
-
-        // Deficient numbers
 
         // Smallest prime deficient number is classified correctly
         assert(classify(2) == Classification.DEFICIENT);
@@ -62,13 +56,10 @@ unittest
         // Edge case (no factors other than itself) is classified correctly
         assert(classify(1) == Classification.DEFICIENT);
 
-        // Invalid inputs
-
-        // Zero is rejected (not a natural number)
+        // Zero is rejected (as it is not a positive integer)
         assertThrown(classify(0));
 
-        // Negative integer is rejected (not a natural number)
+        // Negative integer is rejected (as it is not a positive integer)
         assertThrown(classify(-1));
     }
-
 }

@@ -7,7 +7,6 @@ pure string rotate(immutable string text, immutable int shiftKey)
 
 unittest
 {
-
     immutable int allTestsEnabled = 0;
 
     // rotate a by 0, same output as input
@@ -59,10 +58,7 @@ unittest
 
         // rotate all letters
         {
-            immutable text = "The quick brown fox jumps over the lazy dog.";
-            immutable shiftKey = 13;
-            immutable expected = "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.";
-            assert(expected == rotate(text, shiftKey));
+            assert("Gur dhvpx oebja sbk whzcf bire gur ynml qbt." == rotate("The quick brown fox jumps over the lazy dog.", 13));
         }
     }
 }

@@ -9,7 +9,7 @@ unittest
 {
     import std.exception : assertThrown;
 
-    immutable int allTestsEnabled = 1;
+    immutable int allTestsEnabled = 0;
 
     // Empty RNA sequence results in no proteins
     assert(proteins("") == []);
@@ -107,4 +107,3 @@ unittest
         assert(proteins("UUCUUCUAAUGGU") == ["Phenylalanine", "Phenylalanine"]);
     }
 }
-

@@ -29,7 +29,20 @@ class ZebraPuzzle
 
 unittest
 {
-    ZebraPuzzle zebraPuzzle = new ZebraPuzzle();
-    assert(zebraPuzzle.drinksWater() == Nationality.norwegian);
-    assert(zebraPuzzle.ownsZebra() == Nationality.japanese);
+    immutable int allTestsEnabled = 0;
+
+    // Resident who drinks water
+    {
+        ZebraPuzzle zebraPuzzle = new ZebraPuzzle();
+        assert(zebraPuzzle.drinksWater() == Nationality.norwegian);
+    }
+
+    static if (allTestsEnabled)
+    {
+        // Resident who owns zebra
+        {
+            ZebraPuzzle zebraPuzzle = new ZebraPuzzle();
+            assert(zebraPuzzle.ownsZebra() == Nationality.japanese);
+        }
+    }
 }

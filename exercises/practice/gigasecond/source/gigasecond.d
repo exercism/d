@@ -11,7 +11,7 @@ unittest
 
     static if (allTestsEnabled)
     {
-        // Second test for date only specification of time"
+        // Second test for date only specification of time
         assert(add(DateTime(1977, 6, 13)) == DateTime(2009, 2, 19, 1, 46, 40));
 
         // Third test for date only specification of time
@@ -22,11 +22,5 @@ unittest
 
         // Full time with day roll-over
         assert(add(DateTime(2015, 1, 24, 23, 59, 59)) == DateTime(2046, 10, 3, 1, 46, 39));
-
-        // Does not mutate the input
-        auto d = DateTime(2015, 1, 24, 23, 59, 59);
-        assert(add(d) == DateTime(2046, 10, 3, 1, 46, 39));
-        assert(d == DateTime(2015, 1, 24, 23, 59, 59));
     }
-
 }

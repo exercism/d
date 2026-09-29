@@ -178,13 +178,13 @@ unittest
         // Large number multiplication and addition
         {
             immutable question = "What is 342668567865 multiplied by 348 plus 6576456942334?";
-            assert(answer(question) == 125825118559354L);
+            assert(answer(question) == 125825118559354);
         }
 
         // Large number division and subtraction
         {
             immutable question = "What is 6548074074001254 divided by 654 minus 9876543210001?";
-            assert(answer(question) == 135802468900L);
+            assert(answer(question) == 135802468900);
         }
     }
 }

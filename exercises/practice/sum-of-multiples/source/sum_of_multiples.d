@@ -48,7 +48,7 @@ unittest
         assert(calculateSum([1], 100) == 4950);
 
         // No factors means an empty sum
-        assert(calculateSum([0], 10000) == 0);
+        assert(calculateSum([], 10000) == 0);
 
         // The only multiple of 0 is 0
         assert(calculateSum([0], 1) == 0);
