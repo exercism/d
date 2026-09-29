@@ -35,5 +35,4 @@ unittest
         // Black and brown, one-digit
         assert(ResistorColorDuo.value(["black", "brown"]) == 1);
     }
-
 }

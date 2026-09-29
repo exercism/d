@@ -179,5 +179,4 @@ unittest
             assert(robot.direction == "north");
         }
     }
-
 }

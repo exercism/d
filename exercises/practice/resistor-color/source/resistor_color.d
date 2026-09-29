@@ -16,10 +16,6 @@ unittest
         assert(ResistorColor.colorCode("orange") == 3);
 
         // Colors
-        assert(ResistorColor.colors == [
-                "black", "brown", "red", "orange", "yellow", "green", "blue",
-                "violet", "grey", "white"
-                ]);
+        assert(ResistorColor.colors == ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]);
     }
-
 }

@@ -21,6 +21,7 @@ ADDITIONAL_CASES = "additional-test-cases.json"
 IMPORTS = {
     "equal(": "import std.algorithm.comparison : equal;",
     "assertThrown(": "import std.exception : assertThrown;",
+    "isClose(": "import std.math : isClose;",
 }
 
 Case = dict[str, Any]

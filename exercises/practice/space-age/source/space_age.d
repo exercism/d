@@ -18,32 +18,32 @@ class SpaceAge
         {
             // implement this function
         }
-        
+
         final float on_venus() const
         {
             // implement this function
         }
-        
+
         final float on_mars() const
         {
             // implement this function
         }
-        
+
         final float on_jupiter() const
         {
             // implement this function
         }
-        
+
         final float on_saturn() const
         {
             // implement this function
         }
-        
+
         final float on_uranus() const
         {
             // implement this function
         }
-        
+
         final float on_neptune() const
         {
             // implement this function
@@ -110,5 +110,4 @@ unittest
             assert(age.on_neptune().isClose(0.35, 0.01));
         }
     }
-
 }

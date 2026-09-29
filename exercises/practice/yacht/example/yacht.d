@@ -66,4 +66,3 @@ int score(immutable int[] dice, Category category)
         return 0;
     }
 }
-
