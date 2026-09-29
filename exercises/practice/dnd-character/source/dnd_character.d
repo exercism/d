@@ -111,7 +111,7 @@ unittest
             for (int i = 1; i <= 1000; i++)
             {
                 DndCharacter current = new DndCharacter();
-                
+
                 isSame = current.strength == previous.strength &&
                         current.dexterity == previous.dexterity &&
                         current.constitution == previous.constitution &&

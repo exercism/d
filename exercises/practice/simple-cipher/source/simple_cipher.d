@@ -67,4 +67,3 @@ unittest {
     auto cipher = new VigenereCipher("abc");
     assert(cipher.encode("hello world!") == "hfnlp yosnd!");
 }
-

@@ -34,12 +34,12 @@ unittest
         {
             assert(TriangleType.equilateral != kind(5, 4, 6));
         }
-        
+
         // equilateral triangle - all zero sides is not a triangle
         {
             assertThrown(kind(0, 0, 0));
         }
-        
+
         // equilateral triangle - sides may be floats
         {
             assert(TriangleType.equilateral == kind(0.5, 0.5, 0.5));
