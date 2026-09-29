@@ -9,7 +9,7 @@
 This repo holds all the instructions, tests, code, & support files for D _exercises_ currently under development or implemented & available for students.
 If you haven't already, you can check out and study the live language track [here](https://exercism.org/tracks/d).
 
-🌟 &nbsp;&nbsp;The test runner is currently using the DMD compiler v2.109.0.
+🌟 &nbsp;&nbsp;The test runner is currently using the DMD compiler v2.113.0.
 
 ## Filenames
 
