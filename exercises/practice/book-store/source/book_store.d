@@ -101,11 +101,9 @@ unittest
             assert(total(basket) == 10240);
         }
 
-        // Check that groups of four are created properly even when there are
-        // more groups of three than groups of five
+        // Check that groups of four are created properly even when there are more groups of three than groups of five
         {
-            immutable int[] basket = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2,
-                                      3, 3, 3, 3, 3, 3, 4, 4, 5, 5];
+            immutable int[] basket = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 5, 5];
             assert(total(basket) == 14560);
         }
 
@@ -115,8 +113,7 @@ unittest
             assert(total(basket) == 3360);
         }
 
-        // One group of one and two plus three groups of four is cheaper than
-        // one group of each size
+        // One group of one and two plus three groups of four is cheaper than one group of each size
         {
             immutable int[] basket = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5];
             assert(total(basket) == 10000);

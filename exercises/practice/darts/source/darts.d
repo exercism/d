@@ -23,10 +23,10 @@ unittest
         // On the inner circle
         assert(score(0, -1) == 10);
 
-        // Exactly on centre
+        // Exactly on center
         assert(score(0, 0) == 10);
 
-        // Near the centre
+        // Near the center
         assert(score(-0.1, -0.1) == 10);
 
         // Just within the inner circle

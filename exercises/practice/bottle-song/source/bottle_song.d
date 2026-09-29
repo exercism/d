@@ -9,7 +9,7 @@ unittest
 {
     immutable int allTestsEnabled = 0;
 
-    // Verse-single verse-first generic verse
+    // Verse - single verse - first generic verse
     {
         string expected =
             "Ten green bottles hanging on the wall,\n" ~
@@ -21,7 +21,7 @@ unittest
 
     static if (allTestsEnabled)
     {
-        // Verse-single verse-last generic verse
+        // Verse - single verse - last generic verse
         {
             string expected =
                 "Three green bottles hanging on the wall,\n" ~
@@ -31,7 +31,7 @@ unittest
             assert(recite(3, 1) == expected);
         }
 
-        // Verse-single verse-verse with 2 bottles
+        // Verse - single verse - verse with 2 bottles
         {
             string expected =
                 "Two green bottles hanging on the wall,\n" ~
@@ -41,7 +41,7 @@ unittest
             assert(recite(2, 1) == expected);
         }
 
-        // Verse-single verse-verse with 1 bottle
+        // Verse - single verse - verse with 1 bottle
         {
             string expected =
                 "One green bottle hanging on the wall,\n" ~
@@ -51,7 +51,7 @@ unittest
             assert(recite(1, 1) == expected);
         }
 
-        // Lyrics-multiple verses-first two verses
+        // Lyrics - multiple verses - first two verses
         {
             string expected =
                 "Ten green bottles hanging on the wall,\n" ~
@@ -66,7 +66,7 @@ unittest
             assert(recite(10, 2) == expected);
         }
 
-        // Lyrics-multiple verses-last three verses
+        // Lyrics - multiple verses - last three verses
         {
             string expected =
                 "Three green bottles hanging on the wall,\n" ~
@@ -86,7 +86,7 @@ unittest
             assert(recite(3, 3) == expected);
         }
 
-        // Lyrics-multiple verses-all verses
+        // Lyrics - multiple verses - all verses
         {
             string expected =
                 "Ten green bottles hanging on the wall,\n" ~

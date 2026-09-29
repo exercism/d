@@ -23,5 +23,4 @@ unittest
         // 13 eggs
         assert(eggCount(2_000_000_000) == 13);
     }
-
 }

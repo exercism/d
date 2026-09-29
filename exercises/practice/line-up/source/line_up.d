@@ -8,6 +8,7 @@ pure string format(immutable string name, uint number)
 unittest
 {
     import std.algorithm.comparison : equal;
+
     immutable int allTestsEnabled = 0;
 
     // Format smallest non-exceptional ordinal numeral 4

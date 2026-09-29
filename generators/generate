@@ -18,7 +18,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 EXERCISES = ROOT / "exercises" / "practice"
 CACHE_PREFIX = "Using cached 'problem-specifications' dir: "
 ADDITIONAL_CASES = "additional-test-cases.json"
-ASSERT_THROWN_IMPORT = "import std.exception : assertThrown;"
+IMPORTS = {
+    "equal(": "import std.algorithm.comparison : equal;",
+    "assertThrown(": "import std.exception : assertThrown;",
+}
 
 Case = dict[str, Any]
 
@@ -116,10 +119,11 @@ def describe(case: Case) -> str:
 
 def render_case(module: ModuleType, case: Case) -> str:
     """Render one case as a comment followed by its statements."""
-    body = module.gen_case(case).strip("\n")
-    if "\n" in body:
-        body = "{\n" + lib.indent(body) + "\n}"
-    return f"// {describe(case)}\n{body}"
+    description = getattr(module, "describe", describe)(case)
+    body = module.gen_case(case)
+    if not isinstance(body, str):
+        body = "{\n" + lib.indent("\n".join(body)) + "\n}"
+    return f"// {description}\n{body}"
 
 
 def render_unittest(module: ModuleType, cases: list[Case]) -> str:
@@ -127,9 +131,13 @@ def render_unittest(module: ModuleType, cases: list[Case]) -> str:
     rendered = [render_case(module, case) for case in cases]
 
     sections = []
-    if any("assertThrown(" in text for text in rendered):
-        sections.append(ASSERT_THROWN_IMPORT)
-    sections.append("immutable int allTestsEnabled = 0;")
+    imports = [
+        line for call, line in IMPORTS.items() if any(call in text for text in rendered)
+    ]
+    if imports:
+        sections.append("\n".join(imports))
+    if len(rendered) > 1:
+        sections.append("immutable int allTestsEnabled = 0;")
     sections.append(rendered[0])
     if len(rendered) > 1:
         gated = lib.indent("\n\n".join(rendered[1:]))

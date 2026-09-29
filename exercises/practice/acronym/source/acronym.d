@@ -9,7 +9,7 @@ unittest
 {
     immutable int allTestsEnabled = 0;
 
-    // Basic abbreviation
+    // Basic
     {
         string phrase = "Portable Network Graphics";
         assert(abbreviate(phrase) == "PNG");
@@ -17,7 +17,6 @@ unittest
 
     static if (allTestsEnabled)
     {
-
         // Lowercase words
         {
             string phrase = "Ruby on Rails";
@@ -36,7 +35,7 @@ unittest
             assert(abbreviate(phrase) == "GIMP");
         }
 
-        // punctuation without whitespace
+        // Punctuation without whitespace
         {
             string phrase = "Complementary metal-oxide semiconductor";
             assert(abbreviate(phrase) == "CMOS");

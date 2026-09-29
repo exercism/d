@@ -6,10 +6,8 @@ def gen_case(case):
     numbers = d_string(case["input"]["string"])
     index = d_int(case["input"]["index"])
     expected = d_inline_array(case["expected"])
-    return "\n".join(
-        [
-            f"immutable string numbers = {numbers};",
-            f"int[] expected = {expected};",
-            assert_eq(f"{prop}(numbers, {index})", "expected"),
-        ]
-    )
+    return [
+        f"immutable string numbers = {numbers};",
+        f"int[] expected = {expected};",
+        assert_eq(f"{prop}(numbers, {index})", "expected"),
+    ]
