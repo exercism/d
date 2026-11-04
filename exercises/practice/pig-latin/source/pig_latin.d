@@ -78,6 +78,6 @@ unittest
         assert(translate("my") == "ymay");
 
         // a whole phrase
-        assert(translate("quick fast run") == "ickquay astfay unray");
+        assert(translate("why do squids enjoy xrays") == "ywhay oday idssquay enjoyay xraysay");
     }
 }
