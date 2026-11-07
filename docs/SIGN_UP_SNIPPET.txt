@@ -1,0 +1,14 @@
+string mostCommonWord(string text)
+{
+    int[string] counts;
+    string best;
+    foreach (word; text.toLower.split)
+    {
+        counts[word]++;
+        if (counts[word] > counts.get(best, 0))
+        {
+            best = word;
+        }
+    }
+    return format!`"%s" appears %d times`(best, counts[best]);
+}
