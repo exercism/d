@@ -8,4 +8,5 @@ checks:
   - configlet / configlet
   - i18n / completeness
   - Pre-commit checks
+  - Tests
   - Validate required checks
