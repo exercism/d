@@ -24,3 +24,18 @@ jobs:
           compiler: ${{ matrix.dc }}
       - name: Run tests
         run: bin/test-all-exercises -j 4
+
+  tests:
+    name: Tests
+    needs: exercises
+    if: always()
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Check that every configuration passed
+        env:
+          RESULT: ${{ needs.exercises.result }}
+        run: |
+          if [[ "$RESULT" != "success" ]]; then
+            echo "The exercise tests failed on at least one configuration."
+            exit 1
+          fi
