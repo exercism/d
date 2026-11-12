@@ -763,6 +763,14 @@
         ]
       },
       {
+        "slug": "simple-cipher",
+        "name": "Simple Cipher",
+        "uuid": "3ce7b91b-330f-4fbb-8e9a-3638bd90281b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "state-of-tic-tac-toe",
         "name": "State of Tic-Tac-Toe",
         "uuid": "5cc28e11-822e-4cef-b909-53f41fe4c91c",
@@ -929,14 +937,6 @@
           "nested_classes",
           "reactive_programming"
         ]
-      },
-      {
-        "slug": "simple-cipher",
-        "name": "Simple Cipher",
-        "uuid": "3ce7b91b-330f-4fbb-8e9a-3638bd90281b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
       }
     ]
   },
