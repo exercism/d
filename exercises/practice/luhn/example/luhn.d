@@ -1,3 +1,5 @@
+module luhn;
+
 import std.ascii : isDigit, isWhite;
 import std.algorithm;
 import std.algorithm.searching : all;

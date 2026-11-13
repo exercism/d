@@ -1,4 +1,4 @@
-module knapack;
+module knapsack;
 
 struct Item {
     uint weight;

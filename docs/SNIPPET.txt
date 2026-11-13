@@ -1,4 +1,4 @@
-module helloworld;
+module hello_world;
 
 import std.format;
 
