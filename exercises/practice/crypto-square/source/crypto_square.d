@@ -1,102 +1,64 @@
 module crypto;
 
+struct Cipher
+{
+    // implement this struct
+}
+
 unittest
 {
+    import std.algorithm.comparison : equal;
+
     immutable int allTestsEnabled = 0;
 
-    // normalize_strange_characters
+    // Empty plaintext results in an empty ciphertext
     {
-        auto theCipher = new Cipher("s#$%^&plunk");
-        assert("splunk" == theCipher.normalizePlainText());
+        auto theCipher = Cipher("");
+        assert(equal("", theCipher.cipherText()));
     }
 
     static if (allTestsEnabled)
     {
-        // normalize_to_empty
+        // Normalization results in empty plaintext
         {
-            auto theCipher = new Cipher("... --- ...");
-            assert("" == theCipher.normalizePlainText());
+            auto theCipher = Cipher("... --- ...");
+            assert(equal("", theCipher.cipherText()));
         }
 
-        // normalize_numbers
+        // Lowercase
         {
-            auto theCipher = new Cipher("1, 2, 3 GO!");
-            assert("123go" == theCipher.normalizePlainText());
+            auto theCipher = Cipher("A");
+            assert(equal("a", theCipher.cipherText()));
         }
 
-        // size_of_small_square
+        // Remove spaces
         {
-            auto theCipher = new Cipher("1234");
-            assert(2U == theCipher.size());
+            auto theCipher = Cipher("  b ");
+            assert(equal("b", theCipher.cipherText()));
         }
 
-        // size_of_slightly_larger_square
+        // Remove punctuation
         {
-            auto theCipher = new Cipher("123456789");
-            assert(3U == theCipher.size());
+            auto theCipher = Cipher("@1,%!");
+            assert(equal("1", theCipher.cipherText()));
         }
 
-        // size_of_non_perfect_square
+        // 9 character plaintext results in 3 chunks of 3 characters
         {
-            auto theCipher = new Cipher("123456789abc");
-            assert(4U == theCipher.size());
+            auto theCipher = Cipher("This is fun!");
+            assert(equal("tsf hiu isn", theCipher.cipherText()));
         }
 
-        // size_of_non_perfect_square_less
+        // 8 character plaintext results in 3 chunks, the last one with a trailing space
         {
-            auto theCipher = new Cipher("zomgzombies");
-            assert(4U == theCipher.size());
+            auto theCipher = Cipher("Chill out.");
+            assert(equal("clu hlt io ", theCipher.cipherText()));
         }
 
-        // plain_text_segments_from_phrase
+        // 54 character plaintext results in 8 chunks, the last two with trailing spaces
         {
-            const string[] expected = [
-                "neverv", "exthin", "eheart", "withid", "lewoes"
-            ];
-            auto theCipher = new Cipher("Never vex thine heart with idle woes");
-            const auto actual = theCipher.plainTextSegments();
-
-            assert(expected == actual);
-        }
-
-        // plain_text_segments_from_complex_phrase
-        {
-            const string[] expected = ["zomg", "zomb", "ies"];
-            auto theCipher = new Cipher("ZOMG! ZOMBIES!!!");
-            const auto actual = theCipher.plainTextSegments();
-
-            assert(expected == actual);
-        }
-
-        // Cipher_text_short_phrase
-        {
-            auto theCipher = new Cipher("Time is an illusion. Lunchtime doubly so.");
-            assert("tasneyinicdsmiohooelntuillibsuuml" == theCipher.cipherText());
-        }
-
-        // Cipher_text_long_phrase
-        {
-            auto theCipher = new Cipher("We all know interspecies romance is weird.");
-            assert("wneiaweoreneawssciliprerlneoidktcms" == theCipher.cipherText());
-        }
-
-        // normalized_Cipher_text1
-        {
-            auto theCipher = new Cipher("Madness, and then illumination.");
-            assert("msemo aanin dnin ndla etlt shui" == theCipher.normalize.cipherText());
-        }
-
-        // normalized_Cipher_text2
-        {
-            auto theCipher = new Cipher("Vampires are people too!");
-            assert("vrel aepe mset paoo irpo" == theCipher.normalize.cipherText());
-        }
-
-        // normalized_Cipher_text3
-        {
-            auto theCipher = new Cipher("If man was meant to stay on the ground, god would have given us roots.");
-            assert("imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau" == theCipher.normalize.cipherText());
+            auto theCipher = Cipher("If man was meant to stay on the ground, god would have given us roots.");
+            assert(equal("imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ", theCipher.cipherText()));
         }
     }
-
 }
