@@ -1,3 +1,5 @@
+module rotational_cipher;
+
 import std;
 
 pure string rotate(immutable string text, immutable int shiftKey)

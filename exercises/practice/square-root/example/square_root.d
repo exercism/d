@@ -1,3 +1,5 @@
+module square_root;
+
 pure int squareRoot(immutable int radicand)
 {
     int square = 0;
