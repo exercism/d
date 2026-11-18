@@ -1,0 +1,53 @@
+[
+  {
+    "description": "Orange, orange, red and gold",
+    "comments": [
+      "Adapted from the Julia resistor-color-trio supplements, with a tolerance band added"
+    ],
+    "property": "labelDecoder",
+    "input": {
+      "colors": ["orange", "orange", "red", "gold"]
+    },
+    "expected": {
+      "value": 3.3,
+      "unit": "kiloohms",
+      "tolerance": "±5%"
+    }
+  },
+  {
+    "description": "Orange, orange, green and silver",
+    "property": "labelDecoder",
+    "input": {
+      "colors": ["orange", "orange", "green", "silver"]
+    },
+    "expected": {
+      "value": 3.3,
+      "unit": "megaohms",
+      "tolerance": "±10%"
+    }
+  },
+  {
+    "description": "White, white, violet and green",
+    "property": "labelDecoder",
+    "input": {
+      "colors": ["white", "white", "violet", "green"]
+    },
+    "expected": {
+      "value": 990,
+      "unit": "megaohms",
+      "tolerance": "±0.5%"
+    }
+  },
+  {
+    "description": "White, white, grey and blue",
+    "property": "labelDecoder",
+    "input": {
+      "colors": ["white", "white", "grey", "blue"]
+    },
+    "expected": {
+      "value": 9.9,
+      "unit": "gigaohms",
+      "tolerance": "±0.25%"
+    }
+  }
+]
