@@ -246,38 +246,6 @@
         "difficulty": 2
       },
       {
-        "slug": "resistor-color",
-        "name": "Resistor Color",
-        "uuid": "975c6fb4-f447-42ee-a1df-62ea9ac5a011",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "arrays",
-          "strings"
-        ]
-      },
-      {
-        "slug": "resistor-color-duo",
-        "name": "Resistor Color Duo",
-        "uuid": "6fd7d4dd-7473-4530-a3dc-892be4321efb",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "arrays",
-          "transforming"
-        ]
-      },
-      {
-        "slug": "resistor-color-trio",
-        "name": "Resistor Color Trio",
-        "uuid": "c0cd3d7d-27b2-4c05-8dba-4ab5d370802c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "slug": "reverse-string",
         "name": "Reverse String",
         "uuid": "298095e4-329f-402e-b3bc-28252eddd79b",
@@ -631,6 +599,14 @@
         "difficulty": 4
       },
       {
+        "slug": "grade-school",
+        "name": "Grade School",
+        "uuid": "8972fa0d-5d14-4703-8fe7-3a89ee8c0b7f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "house",
         "name": "House",
         "uuid": "3ccd0e96-2b32-4d30-9fc5-aef997b43e47",
@@ -677,77 +653,56 @@
         "difficulty": 4
       },
       {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "975c6fb4-f447-42ee-a1df-62ea9ac5a011",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "arrays",
+          "strings"
+        ]
+      },
+      {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "6fd7d4dd-7473-4530-a3dc-892be4321efb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "arrays",
+          "transforming"
+        ]
+      },
+      {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "c0cd3d7d-27b2-4c05-8dba-4ab5d370802c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "resistor-color-tolerance",
+        "name": "Resistor Color Tolerance",
+        "uuid": "1e8b6e81-31a6-41cd-bd1e-0f3b61f63d10",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "d7dd5df3-ff36-47ee-88db-e0f974a4cb19",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4,
+        "difficulty": 5,
         "topics": [
           "classes",
           "random_numbers"
         ]
-      },
-      {
-        "slug": "crypto-square",
-        "name": "Crypto Square",
-        "uuid": "45afc532-3f6c-4b9e-90f6-c53a79551af1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "algorithms",
-          "classes",
-          "string_manipulation"
-        ]
-      },
-      {
-        "slug": "grade-school",
-        "name": "Grade School",
-        "uuid": "8972fa0d-5d14-4703-8fe7-3a89ee8c0b7f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "knapsack",
-        "name": "Knapsack",
-        "uuid": "9d386afd-6d15-4606-98a1-c88894416cda",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "meetup",
-        "name": "Meetup",
-        "uuid": "5bd16c82-2889-4719-89e9-3af135f4d82b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "ocr-numbers",
-        "name": "OCR Numbers",
-        "uuid": "ab3b1595-ebb0-46ed-ae5c-46e4c254c07e",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "pig-latin",
-        "name": "Pig Latin",
-        "uuid": "02123c09-a496-48a7-b76e-5150f148a186",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "pythagorean-triplet",
-        "name": "Pythagorean Triplet",
-        "uuid": "dc415515-ad72-41a3-8d42-a7d976618848",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
       },
       {
         "slug": "run-length-encoding",
@@ -803,6 +758,19 @@
         "difficulty": 5
       },
       {
+        "slug": "crypto-square",
+        "name": "Crypto Square",
+        "uuid": "45afc532-3f6c-4b9e-90f6-c53a79551af1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6,
+        "topics": [
+          "algorithms",
+          "classes",
+          "string_manipulation"
+        ]
+      },
+      {
         "slug": "flower-field",
         "name": "Flower Field",
         "uuid": "795b1d74-3c0f-45c2-ade6-f38de1d0676b",
@@ -835,6 +803,22 @@
         "difficulty": 6
       },
       {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "9d386afd-6d15-4606-98a1-c88894416cda",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "5bd16c82-2889-4719-89e9-3af135f4d82b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "42f82a28-3ab5-450b-9a38-27ce6e180f59",
@@ -844,9 +828,33 @@
         "status": "deprecated"
       },
       {
+        "slug": "ocr-numbers",
+        "name": "OCR Numbers",
+        "uuid": "ab3b1595-ebb0-46ed-ae5c-46e4c254c07e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "a0a6e0e8-44ac-4600-a43e-9e0cf48f8d0e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "02123c09-a496-48a7-b76e-5150f148a186",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
+        "slug": "pythagorean-triplet",
+        "name": "Pythagorean Triplet",
+        "uuid": "dc415515-ad72-41a3-8d42-a7d976618848",
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
